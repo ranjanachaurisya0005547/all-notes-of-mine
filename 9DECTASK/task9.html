@@ -1,0 +1,74 @@
+
+<html>
+<head>
+<style>
+*{
+margin:0px auto;
+padding:0px;
+}
+#txt1{
+color:blue;
+text-shadow:10px 10px 3px hotpink;
+font-size:40px;
+word-spacing:10;
+}
+.im1{
+height:300px;
+width:270px;
+margin:100px 10px;
+border:10px solid maroon;
+padding:10px;
+box-shadow:5px 5px 6px;
+float:left;
+}
+#modal{
+height:700px;
+width:1500px;
+background:rgba(0,0,0,.5);
+position:fixed;
+top:0px;
+display:none;
+}
+#inner{
+height:500px;
+width:500px;
+background:white;
+margin-top:50px;
+padding:20px 50px;
+}
+#img1{
+height:400px;
+width:420px;
+margin:12px 25px;
+border:10px double navy;
+padding:10px;
+
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$(".im1").mouseenter(function(){
+var path=$(this).attr("src"); 
+$("#img1").css("box-shadow","0px 0px 6px 5px black inset")
+$("#img1").attr("src",path) 
+$("#modal").css("display","block")
+})
+})
+</script>
+</head>
+<body>
+<br/>
+<center><b id="txt1">jQUERY MODAL</b></center>
+<img src="images/p5.jpg" class="im1"/>
+<img src="images/p3.jpg" class="im1"/>
+<img src="images/p2.jpg" class="im1"/>
+<img src="images/p4.jpg" class="im1"/>
+<div id="modal">
+<div id="inner">
+<a href="task9.html" style="color:red;font-size:33px;float:right;">X</a>
+<img src="images/p1.jpg" id="img1"/>
+</div>
+</div>
+</body>
+</html>

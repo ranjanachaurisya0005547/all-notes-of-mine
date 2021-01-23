@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+   int i=1;          //initialization
+   
+   while(i<=5)       //condition   true true true true true false
+   {
+      printf("ok");   //statement  ok ok ok ok ok 
+		     //updation    2  3  4  5  6
+   }
+   printf("%d",i);
+   getch();    // Now i=6
+}

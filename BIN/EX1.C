@@ -1,0 +1,15 @@
+//Ex1.
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int x=16,y=5;
+   clrscr();
+   printf("%d",x+y);
+   printf("%d",x-y);
+   printf("%d",x*y);
+   printf("%d",x/y);
+   printf("%d",x%y);
+   getch();
+
+}

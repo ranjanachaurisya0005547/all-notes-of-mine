@@ -1,0 +1,12 @@
+//WAP to convert kg to grams
+#inclued<stdio.h>
+#include<conio.h>
+void main()
+{
+   int kg;
+   clrscr();
+   printf("Enter the Value in Kg=");
+   scanf("%d",&kg);
+   printf("%d kg=%d g",kg,(kg*1000));
+   getch();
+}

@@ -1,0 +1,34 @@
+Basic Structure of C Language:
+------------------------
+1:Documentation Section:
+Comments : Comments are those lines that is not executable by compiler.
+   i):Single Line Comment:  //
+   ii):Multiline Comment  /*...text..*/
+----------------------------------------   
+2:Linking section:
+    header files:Header files are the collection of pre-defined function.
+	Whenever you need those functions in your program firstly you have to include the header 
+	files in the program.
+	----------------------
+	#->It is pre-processor Directive
+	include->folder name
+	stdio->header file
+	----------------------
+	#include<stdio.h>
+	#include<conio.h>
+	#include<String.h>
+---------------------------------------
+3:Global Declaration Section:
+
+---------------------------------------
+4;Main Function:
+main()//It is pre-defined function
+{
+   //body of main function or block of main function
+}
+---------------------------------------
+5:Block of Main:
+
+
+
+

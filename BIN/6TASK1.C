@@ -1,0 +1,21 @@
+//WAP a program to find out sum of all even numbers between 1 to 100
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int i,sum=0;
+  clrscr();
+
+  i=1;
+  while(i<=100)
+  {
+     if(i%2==0)
+     {
+	sum=sum+i;
+     }
+     i++;
+  }
+  printf("Sum=%d",sum);
+
+  getch();
+}

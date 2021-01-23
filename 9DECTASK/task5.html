@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+var num=$("input").val();
+var res="";
+for(i=1;i<=num;i++)
+{
+  res+=i*i+"&nbsp;";
+}
+$("#dv").html(res);
+$("#dv").css({background:"maroon",minWidth:"100px",height:"60px",color:"white",padding:"20px",
+fontSize:"22px"});
+})
+})
+</script>
+</head>
+<body>
+Enter A Number:<br/>
+<input type="number"/><br/><br/>
+Result IS:
+<div id="dv"></div>
+<br/><br/><br/>
+<button>Print Square</button>
+</body>
+</html>

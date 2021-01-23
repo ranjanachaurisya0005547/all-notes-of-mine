@@ -1,0 +1,55 @@
+Joining:
+There are four types of joins .It is used to select data from different tables based on a
+comman field.
+-----------------------------------------------------------------------------------------
+1)inner join
+  It is used to select common record from both record.
+  inner join will return only value that matches in both tables.
+  
+  select employee.emp_id,employee.first_name,employee.last_name,branch.branch_name
+  from employee JOIN branch on employee.branch_id=branch.branch_id;
+  
+                          OR
+						  
+  select e.first_name,e.last_name,e.salary,b.branch_name,b.mgr_start_date
+  from employee e,branch b where e.branch_id=b.branch_id and e.salary>60000;
+  
+=========================================================================================  
+2)left join:
+  Left join is used when you want to select all records from first table and  only record 
+  from second table that matches to first table.
+  
+  select employee.emp_id,employee.first_name,employee.last_name,branch.branch_name
+  from employee left JOIN branch on employee.branch_id=branch.branch_id;
+==========================================================================================
+3)right join:
+ Right join select all values from second table and comman records from first table 
+ that matches to the second table.
+  
+  select employee.emp_id,employee.first_name,employee.last_name,branch.branch_name
+  from employee right JOIN branch on employee.branch_id=branch.branch_id;
+==========================================================================================  
+4)full outer join:
+  full outer join returns all the records from the first table and the second table,
+  and returns null at the place of column which not matches to each other.
+  
+  select employee.emp_id,employee.first_name,employee.last_name,branch.branch_name
+  from employee full JOIN branch on employee.branch_id=branch.branch_id;
+========================================================================================== 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

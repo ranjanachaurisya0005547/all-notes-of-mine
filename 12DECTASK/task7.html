@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+*{
+margin:10px auto;
+}
+#box{
+min-height:200px;
+width:200px;
+font-size:22px;
+text-align:center;
+background:#ddd;
+padding:20px;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var num=Number(window.prompt("Enter A Number:"));
+var res="";
+for(i=1;i<=10;i++)
+{
+res+=num+"^"+i+"="+Math.pow(num,i)+"<br/>";
+}
+$("#box").html(res);
+})
+</script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  char str1[50]="Ram",str2[50]=" Verma";
+  clrscr();
+
+  strcat(str1,str2);
+  printf("Concat String:%s",str1);
+
+
+  getch();
+}

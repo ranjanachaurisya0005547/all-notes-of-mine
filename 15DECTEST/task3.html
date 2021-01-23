@@ -1,0 +1,157 @@
+<html>
+<head>
+<style>
+*{
+margin:0px auto;
+padding:0px;
+}
+#box1{
+height:70px;
+width:1343px;
+background:lightgray;
+margin-top:20px;
+padding-left:7px;
+padding-top:30px;
+}
+#box2{
+height:400px;
+width:1350px;
+margin-top:20px;
+}
+textarea{
+height:400px;
+width:1343px;
+resize:none;
+padding:30px;
+font-size:16px;
+}
+#tb{
+height:40px;
+width:1300px;
+background:black;
+font-size:17px;
+color:white;
+padding-left:50px;
+padding-top:20px;
+word-spacing:100;
+}
+select{
+height:30px;
+width:170px;
+border:1px solid black;
+padding-left:10px;
+outline:none;
+}
+button{
+height:30px;
+width:100px;
+font-size:17px;
+font-weight:bold;
+margin:0px 3px;
+}
+input[type=color]
+{
+height:30px;
+width:170px;
+margin-top:5px;
+}
+.B1{font-weight:bold;}
+.U1{text-decoration:underline;}
+.I1{font-style:italic;}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var farr=["FONT","Lucida Handwriting","Lucida Fax","Algerian","Monotype Corsiva"];
+
+var size="<select id='size1'>";
+for(i=14;i<=100;i++)
+{
+size+="<option>"+i+"</option>";
+}
+size+="</select>";
+$("#size").html(size)
+var font="<select id='font1'>";
+
+for(i=0;i<farr.length;i++)
+{
+font+="<option>"+farr[i]+"</option>";
+}
+font+="</select>";
+$("#font").html(font);
+
+$("#size1").change(function(){
+var s=$(this).val();
+$("textarea").css({fontSize:s});
+})
+
+$("#font1").change(function(){
+var f=$(this).val();
+$("textarea").css({fontFamily:f})
+})
+
+$("#B").click(function(){
+$("textarea").toggleClass('B1');
+})
+
+$("#I").click(function(){
+$("textarea").toggleClass('I1')
+})
+
+$("#U").click(function(){
+$("textarea").toggleClass('U1')
+})
+
+$("#L").click(function(){
+$("textarea").css({textAlign:"left"})
+})
+
+$("#R").click(function(){
+$("textarea").css({textAlign:"right"})
+})
+
+$("#C").click(function(){
+$("textarea").css({textAlign:"center"})
+})
+
+$("#J").click(function(){
+$("textarea").css({textAlign:"justify"})
+})
+
+$("#color").change(function(){
+var c=$(this).val();
+$("textarea").css({color:c})
+}) 
+
+$("textarea").keyup(function(){
+var str=$("textarea").val();
+var strw=str.split(" ");
+var strlen=str.split("\n");
+$("#letter").html(str.length);
+$("#word").html(strw.length-1);
+$("#line").html(strlen.length);
+})
+
+
+})
+</script>
+</head>
+<body>
+<div id="box1">
+<span id="size"></span>
+<span id="font"></span>
+<button id="B">b</button><button id="I">i</button><button id="U">u</button>
+<button id="L" class="L1">L</button>
+<button id="R" class="R1">R</button><button id="C" class="C1">C</button><button id="J" class="J1">j</button>
+<input type="color" id="color"/>
+</div>
+<div id="box2">
+<textarea></textarea>
+</div>
+<div id="tb">
+Letters:<span id="letter"></span>
+Words:<span id="word"></span>
+Lines:<span id="line"></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<html>
+<head>
+<style>
+*{
+margin:0px auto;
+padding:0px;
+}
+#outer{
+min-height:600px;
+width:1350px;
+background:#e9ecef;
+}
+#inner{
+height:250px;
+width:1300px;
+}
+#box1{
+height:200px;
+width:200px;
+background:lime;
+margin:30px 30px;
+float:left;
+}
+#box2{
+height:200px;
+width:200px;
+background:maroon;
+margin:30px 30px;
+float:left;
+}
+#box3{
+height:200px;
+width:200px;
+background:hotpink;
+margin:30px 30px;
+float:left;
+}
+#box4{
+height:200px;
+width:200px;
+background:purple;
+margin:30px 30px;
+float:left;
+}
+#box5{
+height:200px;
+width:200px;
+background:orange;
+margin:30px 30px;
+float:left;
+}
+#top{
+height:100px;
+width:1250px;
+}
+#bottom{
+height:300px;
+width:1350px;
+}
+.txt1{
+width:100%;
+height:40px;
+border:2px solid gray;
+border-radius:3px;
+}
+.txt2{
+height:50px;
+width:100%;
+border:2px solid gray;
+border-radius:3px;
+}
+table tr td{
+width:60%;
+}
+.t1{
+font-size:21px;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("#box1").click(function(){
+$(".t1").css("color","lime");
+$(".txt2").css("border","2px solid lime");
+$(".txt1").css("border","2px solid lime");
+$("h1").css("color","lime");
+})
+
+$("#box2").click(function(){
+$(".t1").css("color","maroon");
+$("h1").css("color","maroon");
+$(".txt2").css("border","2px solid maroon");
+$(".txt1").css("border","2px solid maroon");
+})
+
+$("#box3").click(function(){
+$(".t1").css("color","hotpink");
+$("h1").css("color","hotpink");
+$(".txt2").css("border","2px solid hotpink");
+$(".txt1").css("border","2px solid hotpink");
+})
+
+$("#box4").click(function(){
+$(".t1").css("color","purple");
+$("h1").css("color","purple");
+$(".txt2").css("border","2px solid purple");
+$(".txt1").css("border","2px solid purple");
+})
+
+$("#box5").click(function(){
+$(".t1").css("color","orange");
+$("h1").css("color","orange");
+$(".txt2").css("border","2px solid orange");
+$(".txt1").css("border","2px solid orange");
+})
+})
+</script>
+</head>
+<body>
+<div id="outer">
+<div id="inner">
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<div id="box4"></div>
+<div id="box5"></div>
+</div>
+<div id="top">
+<h1><center>Customer Details</center></h1>
+</div>
+<div id="bottom">
+<form>
+<table>
+<tr>
+<td class="t1">First Name</td>
+<td class="t1">Last Name</td>
+</tr>
+<tr>
+<td><input type="text" class="txt1"/></td>
+<td><input type="text" class="txt1"/></td>
+</tr>
+<tr>
+<td colspan="2" class="t1">Address</td>
+</tr>
+<tr>
+<td colspan="2"><textarea class="txt2"></textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" class="t1">Email</td>
+</tr>
+<tr>
+<td colspan="2"><input type="email" class="txt1"/></td>
+</tr>
+</table>
+
+</form>
+</div>
+</div>
+</body>
+</html>

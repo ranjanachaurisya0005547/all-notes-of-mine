@@ -1,0 +1,40 @@
+<html>
+   <head>
+       <style>
+	       #box{
+		      height:100px;
+			  width:100px;
+			  background:navy;
+			  animation-name:demo;
+			  animation-duration:2s;
+			  animation-iteration-count:infinite;
+			  animation-direction:alternate-reverse;
+			  animation-delay:3s;
+			  margin:4px auto;
+			  color:white;
+			  text-align:center;
+			  line-height:100px;
+			  
+			  
+		   }
+		   @keyframes demo
+		   {
+		       from{
+			      background:lightgreen;
+				   width:600px; 
+				   font-size:18px;
+				   
+			   }
+			   to{
+			       background:aqua;
+				   font-size:22px;
+				   color:red;
+			   }
+		   }
+	   </style>
+   </head>
+   <body>
+      <div id="box">Welcome </div>
+      
+   </body>
+</html>

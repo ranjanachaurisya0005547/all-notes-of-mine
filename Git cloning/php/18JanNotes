@@ -1,0 +1,506 @@
+Write a php code to take user information with following fields:
+<form action="somepage" method="get/post">
+  use name attribute to get the value
+  <input type="text" name="xyz-name"/>
+</form>
+
+How to set the value on input box:
+you can use the value attribute of the form control to set the default value .
+Like:$name="ranjana";
+If I want to put this value by default in text box.
+method 1)<input type="text" name="name" value="ranjana"/>
+method 2)<input type="text" name="name" value="<?php echo $name; ?>"/>
+Note:If any error are raised then its not visible on the page its visible when we  press (ctrl+u)
+key on the browser.
+
+MUltiple Redirection Error:
+It is a error when request send by the header becomes recursive which leads to infinite looping 
+and page don not respond such error is called redirection error.
+ERR_MUL
+
+If you have GET request and header("location:<target_path>") is called to same page at the
+GET request then such is seen.
+
+For Example:
+File name=input.php
+header("location:input.php");
+Example:
+#program
+
+============
+How to reset the form fields after from submit:
+Generally for better response you can take user redirect from current page anothe page.
+But for reseting the form fields on the same page.
+MUltiple ways
+
+1)using header-location on POST request
+Here we can use header location and pass aome message with query string and later on use 
+it as a flash-data.
+
+case 1:
+Step 1:
+include "errors.php";
+include "functions.php";
+
+step 2:
+$msg['registration-success'] = "<span style='color:green;'>&#10004;Registration Successfull...
+</span>";
+
+step 3:
+header("loaction:input.php?msg=registration-success");
+
+step 4:
+<?php show_errors(); ?>
+======================
+Case 2:
+Alert using PHP:
+echo "<script>window.alert('registration-success');
+		window.location.href='input.php';</script>";
+======================
+case 3:
+First way(Best way):
+if($i==count($_POST)){
+
+foreach($_POST as $k => $value){
+   $$k="";
+}
+echo "Registration Successfull !";
+}
+
+second way(classic way):
+$name="";
+$mobile="";
+
+=======
+Case 4:
+Using pure javascript.
+document.getElementsByClassName("class_name");
+
+create a comman class name:
+class="input-box"
+and generate script tag dynamically only when the form is submitted.
+make a varibale to do that .
+$submit=false(before submitting form)
+$submit=true(after submitting from)
+
+Write this code After body tag :
+<?php if($submit==true){?> 
+<script>
+  var classelement=document.getElementsByClassName('input-box');
+  for(var i=0; i<classelement.length; i++){
+    classelement[i].value="";
+  }
+</script>
+<?php }; ?>
+
+====================
+How to get and set the value inside the textarea:
+<textarea name="address"></textarea>
+get value:
+$address=$_POST['address'];
+
+set value:
+<textarea><?php echo $address; ?></textarea>
+Example:
+<?php 
+#save textarea.php
+?>
+<html>
+<head></head>
+<body>
+<h1>Form handling with Textarea</h1>
+<form action="textareasetvalue.php" method="post">
+<p>Address<br/><textarea name="address"></textarea></p>
+<input type="submit" name="btn">
+</form>
+</body>
+</html>
+
+<?php 
+#save textareasetvalue.php
+$address=$_POST['address'];
+?>
+<html>
+<head></head>
+<body>
+<h1>Set value in  Textarea</h1>
+<form action="" method="post">
+<p>Address<br/><textarea name="address"><?php echo $address;?></textarea></p>
+<input type="submit" name="btn">
+</form>
+</body>
+</html>
+
+===============================================================
+example:
+<?php
+#save select.php
+?>
+<html>
+<head></head>
+<body>
+<h1>Form handling with Select</h1>
+<form action="selectsetvalue.php" method="POST">
+<p>Select City:<br/>
+   <select name="city">
+      <option value="">Select</option>
+	  <option value="Noida">Noida</option>
+	  <option value="Hydrabad">Hydrabad</option>
+	  <option value="Lucknow">Lucknow</option>
+	  <option value="Gorakhpur">Gorakhpur</option>
+   </select>
+</p>
+<input type="submit" name="btn"/>
+</form>
+</body>
+</html>
+
+<?php 
+#save selectsetvalue.php
+$city=$_POST['city'];
+?>
+<html>
+<head></head>
+<body>
+<h1>set value with Select</h1>
+<form action="selectsetvalue.php" action="POST">
+<p>Select City:<br/>
+   <select name="city">
+      <option value="" <?php if($city=='Select'){echo "selected";}?>>Select</option>
+	  <option value="Noida" <?php if($city=='Noida'){echo "selected";}?>>Noida</option>
+	  <option value="Hydrabad" <?php if($city=='Hydrabad'){echo "selected";}?>>Hydrabad</option>
+	  <option value="Lucknow" <?php if($city=='Lucknow'){echo "selected";}?>>Lucknow</option>
+	  <option value="Gorakhpur" <?php if($city=='Gorakhpur'){echo "selected";}?>>Gorakhpur</option>
+   </select>
+</p>
+</form>
+</body>
+</html>
+
+
+
+========
+Dynamic Select or dropdown :
+<?php
+
+?>
+<html>
+<head></head>
+<body>
+   <h1>Form Handling with dynamic Select</h1>
+   <form action="dynamic-select-set.php" method="post">
+      <p>
+	    Select City:<br/>
+		<select name="city">
+		  <!---static--->
+		  <option value="">Select</option>
+		  <!----static->
+		  <!---dynamic--->
+		  <?php $city_arr=['Lucknow','Gorakhpur','kanpur','Jaipur'];?>
+		  <?php foreach($city_arr as $index => $cityname){?>
+		  
+		        <option value="<?php echo $cityname; ?>">
+				    <?php echo $cityname; ?>
+				</option>
+				
+		  <?php }; ?>
+		  <!---dynamic--->
+		 
+		</select>
+	  </p>
+	  <input type="submit" name="btn"/>
+   </form>
+</body>
+</html>
+
+<?php
+#save dynamic-select-set.php
+$city=$_POST['city'];
+?>
+<html>
+<head></head>
+<body>
+   <h1>Form Handling with dynamic Select</h1>
+   <form action="dynamic-select-set.php" method="post">
+      <p>
+	    Select City:<br/>
+		<select name="city">
+		  <!---static--->
+		  <option value="<?php echo $city; ?>"><?php echo $city; ?></option>
+		  <!----static->
+		  <!---dynamic--->
+		  <?php $city_arr=['Lucknow','Gorakhpur','kanpur','Jaipur'];?>
+		  <?php foreach($city_arr as $index => $cityname){?>
+		       
+			   <?php if($city!=$cityname){?>
+		        <option value="<?php echo $cityname; ?>">
+				    <?php echo $cityname; ?>
+				</option>
+			   <?php }; ?>	
+				
+		  <?php }; ?>
+		  <!---dynamic--->
+		 
+		</select>
+	  </p>
+   </form>
+</body>
+</html>
+
+===============================================================================
+date(19/01/2020):There are some values where we need them to
+be stored CSV(comma separated value).
+like:
+
+What is Primitive  datatype should be Array.But there is no such datatype in DATABASE,in such 
+case you need to keep it as varchar.  
+
+
+
+
+================
+Get and set the value of checkbox:
+<?php
+#save=checkbox.php
+?>
+<html>
+<head></head>
+<body>
+  <h1>Checkbox Handling In PHP </h1>
+  <form action="checkbox-set.php" method="POST">
+  <p>Name<input type="text" name="name"></p>
+   <fieldset>
+      <legend>Hobbies</legend>
+	  <input type="checkbox" name="hobbies_1" value="singing">Singing
+	  <input type="checkbox" name="hobbies_2" value="dancing">Dancing
+	  <input type="checkbox" name="hobbies_3" value="cooking">Cooking
+   </fieldset>
+     <input type="submit" name="btn"/>
+  </form>
+</body>
+</html>
+
+<?php
+#save=checkbox-set.php
+#general approach
+
+$hobbies[]="";
+
+$i=1;
+foreach($_POST as $key => $value){
+	if(preg_match("/hobbies_/",$key)){
+		$checkbox_keyvalue="hobbies_$i";
+		$hobbies[$i-1]=$value;
+		$i++;
+	}
+}
+
+//converts Array CSV to String CSV
+$str="";
+foreach($hobbies as $index => $hvalue){
+	$str=$str.$hvalue.",";
+}
+$myhobby=substr($str,0,-1);
+//Substr is used give a part of string  trimmed from left and right -ve sign is for 
+-negative slicing or trimming
+echo $myhobby;
+?>
+
+===========
+Note:Industrial way to get the data of the checkbox
+<?php
+#save checkbox2.php
+?>
+<html>
+<head></head>
+<body>
+  <h1>Checkbox Handling In PHP Another Method </h1>
+  <form action="checkbox2-set.php" method="POST">
+  <p>Name<input type="text" name="name"></p>
+   <fieldset>
+      <legend>Hobbies</legend>
+	  <input type="checkbox" name="hobbies[]" value="singing">Singing
+	  <input type="checkbox" name="hobbies[]" value="dancing">Dancing
+	  <input type="checkbox" name="hobbies[]" value="cooking">Cooking
+   </fieldset>
+     <input type="submit" name="btn"/>
+  </form>
+</body>
+</html>
+
+<?php
+#save =checkbox2-set.php
+
+//$name=$_POST['name'];
+//echo $name;
+$hobbies=$_POST['hobbies'];
+/*print_r($hobbies);
+output:Array ( [0] => singing [1] => dancing [2] => cooking )
+implode():its convert array to string.Its take two parameter,first parameter defines the which
+symbol u want to use to separate the elements and another is used to define which elements 
+u want to separate.
+*/
+$myhobby=implode(",",$hobbies);//convert array to string
+echo $myhobby;
+
+
+?>
+======================
+Note:Set the value of the checkbox.
+Example:
+<?php
+#save checkbox3.php
+?>
+<html>
+<head></head>
+<body>
+  <h1>Checkbox Handling In PHP Third page to set value</h1>
+  <form action="checkbox3-set.php" method="POST">
+  <p>Name<input type="text" name="name"></p>
+   <fieldset>
+      <legend>Hobbies</legend>
+	  <input type="checkbox" name="hobbies[]" value="singing">Singing
+	  <input type="checkbox" name="hobbies[]" value="dancing">Dancing
+	  <input type="checkbox" name="hobbies[]" value="cooking">Cooking
+   </fieldset>
+     <input type="submit" name="btn"/>
+  </form>
+</body>
+</html>
+====
+<?php
+#checkbox3-set.php
+$name=$_POST['name'];
+//echo $name;
+
+$hobbies=$_POST['hobbies'];
+$hobby=implode(',',$hobbies);
+//echo $hobby;
+
+$hobby_arr=explode(',',$hobby);
+/*explode():its  convert string to array .its opposite of implode function.
+in_array:return true are false if particular value is present in array.
+*/
+?>
+<html>
+<head></head>
+<body>
+  <h1>Checkbox Handling In PHP Third page to set value page</h1>
+  <form action="checkbox3-set.php" method="POST">
+  <p>Name<input type="text" name="name"value="<?php echo $name;?>"></p>
+   <fieldset>
+      <legend>Hobbies</legend>
+	  <input type="checkbox" name="hobbies[]" value="singing" 
+	      <?php 
+		  if(in_array('singing',$hobby_arr)){echo "checked";}
+		?>
+	  >Singing
+	  <input type="checkbox" name="hobbies[]" value="dancing"
+	      <?php 
+		  if(in_array('dancing',$hobby_arr)){echo "checked";}
+		?>
+	  >Dancing
+	  <input type="checkbox" name="hobbies[]" value="cooking"
+	     <?php 
+		  if(in_array('cooking',$hobby_arr)){echo "checked";}
+		?>
+	  >Cooking
+   </fieldset>
+     <input type="submit" name="btn"/>
+  </form>
+</body>
+</html>
+===============================
+Dynamic Implementation:
+#save checkbox4.php
+<fieldset>
+      <legend>Hobbies</legend>
+	  <!---Dynamic content-->
+	  <?php $hobbies=['singing','dancing','cooking','crying'];?>
+    <?php foreach($hobbies as $index => $value){?>
+         <input type="checkbox" name="hobbies[]" value="<?php echo $value; ?>"/>
+		 <?php echo $value; ?>
+    <?php }; ?>
+   </fieldset>
+   
+#save checkbox4-set.php   
+   <fieldset>
+      <legend>Hobbies</legend>
+	  <?php $hobbies_arr=['singing','dancing','cooking','crying'];?>
+      <?php foreach($hobbies_arr as $index => $value){?>
+         <input type="checkbox" name="hobbies[]" value="<?php echo $value; ?>"
+		 <?php in_array($value,$hobby_arr)?print('checked'):"";?>/>
+		 <?php echo $value; ?>
+     <?php }; ?>
+   </fieldset>
+===============
+working with sessions:
+sessions are the tracking timestamp for any event.
+when ever session is started a event timestamp is generated.
+By Default in php it exist till 1440 seconds(24 minutes).  
+
+can it be modified?
+Yes its possible.Go to 
+php.ini
+
+session_gc_maxtime = 1440
+if modify this then u can modify the time.
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

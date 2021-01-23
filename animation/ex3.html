@@ -1,0 +1,51 @@
+<html>
+   <head>
+      <style>
+	     #box{
+		    height:150px;
+			width:150px;
+			border-radius:50%;
+			background:red;
+			position:absolute;
+			animation-name:techpile;
+			animation-duration:5s;
+			transition:all ease 2s;
+		 }
+		 
+		 @keyframes techpile
+		 {
+		       0%
+			   {
+			       top:0px;	
+                    background:yellow;				   
+			   }
+			   25%
+			   {
+				   right:0px;
+				   background:purple;
+			   }
+			   50%
+			   {
+				  bottom:0px;
+				  background:pink;
+			   }
+			   75%
+			   {
+			       left:0px;
+				   background:red;
+			   }
+			   100%
+			   {
+			       top:0px;
+				   background:yellow;
+			   }
+		 }
+	  </style>
+   </head>
+   <body>
+      <div id="box"></div>
+	  <div id="box1"></div>
+	  <div id="box2"></div>
+	  <div id="box3"></div>
+   </body>
+</html>

@@ -1,0 +1,159 @@
+conditional Statement or control statement:
+-------------------------------------------
+1)conditional statement
+  i)if statement
+     1.simple if 
+	 2.if-else
+	 3.ladder if
+	 4.nested if
+  ii)switch statement
+------------------------------------------  
+2)looping or interation Statement
+  i)Entry control loop
+     1.for loop
+	 2.while loop
+  ii)Exit control loop
+     1.do-while loop
+------------------------------------------	 
+3)Branching or transfer statement
+  i)break
+  ii)continue
+  iii)goto
+------------------------------------------  
+1)Simple if statement:
+    It is used when you have only one condition,and a nmber of lines has to execute only
+	if given condition is true.
+	
+	Syntax:
+	 if(condition)
+	 {
+	    //if block;
+	 }
+-----------------------------------------------------------------------------------------
+WAP to calculate percentage of by accepting the three subject marks.
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int sub1,sub2,sub3;
+   float per;
+   printf("Enter your three subject marks:");
+   scanf("%d%d%d",&sub1,&sub2,&sub3);
+   per=((sub1+sub2+sub3)*100)/300;
+   printf("Your Percentage is=%f",per);
+   getch();
+   
+}
+-----------------------------------------------------------------------------	
+if-else statement:
+if-else statement is used when only one condition is given,but you have to execute 
+different statement when condition is true or condition is false.
+
+In if-else statement,if given condition is true then block of if will execute,
+other wise else block is execute.
+
+Syntax:
+if(condition)
+{
+   //true_statement
+}
+else
+{
+   //false_statement
+}
+-------------------------------------------------------------------------------------
+else-if ladder:
+else-if ladder statement is used to when multiple condition is given but only one condition 
+will execute at one time,then else-if ladder is used.
+
+Syntax:
+if(condition1)
+{
+   //statement
+}
+else if(condition2)
+{
+    //statement
+}
+..............
+...............
+................
+else
+{
+   //statement
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,87 @@
+<html>
+<head>
+<style>
+*{
+margin:0px;
+padding:0px;
+}
+#outer{
+ height:650px;
+ width:1010px;
+ background:linear-gradient(90deg,red,lime,red);;
+ color:white;
+}
+#hour,#minute,#second,#tzone{
+height:330px;
+width:230px;
+background:maroon;
+float:left;
+margin:115px 1px;
+box-shadow:5px 5px 6px red inset;
+border-radius:20px;
+color:white;
+font-size:99px;
+text-align:center;
+line-height:300px;
+border:10px double red;
+font-family:Times New Roman;
+}
+#tzone{
+height:330px;
+width:230px;
+float:left;
+margin:115px 0px;
+color:white;
+font-size:99px;
+text-align:center;
+line-height:300px;
+font-family:Times New Roman;
+}
+input{
+background:maroon;
+border:none;
+color:white;
+font-family:Times New Roman;;
+font-size:22px;
+height:50px;
+width:20%;
+border-radius:10px;
+margin:0px 13px;
+font-weight:bold;
+}
+input:hover{border:none;outline:none;}
+</style>
+<script>
+function demo()
+{
+var h=document.getElementById("hour");
+var m=document.getElementById("minute");
+var s=document.getElementById("second");
+var tz=document.getElementById("tzone");
+
+var date=new Date();
+h.innerHTML=date.getHours();
+m.innerHTML=date.getMinutes();
+s.innerHTML=date.getSeconds();
+if(h.innerHTML==12)
+{
+  tz.innerHTML="AM";
+}
+else
+{
+  tz.innerHTML="PM";
+}
+
+}
+setInterval(demo,1000);
+</script>
+</head>
+<body onload="demo()">
+<div id="outer">
+<div id="hour"></div>
+<div id="minute"></div>
+<div id="second"></div>
+<div id="tzone"></div>
+</div>
+</body>
+</html>

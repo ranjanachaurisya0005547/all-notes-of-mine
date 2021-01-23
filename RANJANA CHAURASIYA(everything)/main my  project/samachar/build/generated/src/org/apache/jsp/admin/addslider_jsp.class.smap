@@ -1,0 +1,28 @@
+SMAP
+addslider_jsp.java
+JSP
+*S JSP
+*F
++ 0 addslider.jsp
+admin/addslider.jsp
++ 1 adminlink.jsp
+admin/../master/adminlink.jsp
++ 2 adminheader.jsp
+admin/../master/adminheader.jsp
++ 3 adminfooter.jsp
+admin/../master/adminfooter.jsp
+*L
+5,9:53
+5#1,11:62
+13#0,24:72
+5#2,81:96
+36#0,26:176
+62,9:203
+70,2:212
+72,6:214,3
+78,2:232
+80,2:235
+81,5:237
+5#3,56:242
+85#0,6:297
+*E

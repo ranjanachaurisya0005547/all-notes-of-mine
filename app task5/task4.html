@@ -1,0 +1,63 @@
+<html>
+   <head>
+       <style>
+	        #outer{
+			   height:170px;
+			   width:300px;
+			   margin:10% auto;
+			}
+			#top{
+			    height:146px;
+				width:296px;
+				background:black;
+				border:2px solid #f1f1f1;
+				border-radius:10px;
+				font-size:80px;
+				color:red;
+				text-align:center;
+				line-height:146px;
+			}
+			#bottom{
+			    height:20px;
+				width:300px;
+				
+			}
+			#p1{
+			  height:20px;
+			  width:90px;
+			  float:left;
+			   
+			}
+			#p2{
+			   height:20px;
+			   width:120px;
+			   float:left;
+			   background:black;
+			}
+			#p3{
+			    height:20px;
+				width:90px;
+				float:right;
+			}
+	   </style>
+	   <script>
+	     function demo()
+		 {
+		    var get=document.getElementById("top");
+			var date=new Date();
+			get.innerHTML=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+		 }
+		 setInterval(demo,1000);
+	   </script>
+   </head>
+   <body onload="demo()">
+       <div id="outer">
+	        <div id="top"></div>
+			<div id="bottom">
+			   <div id="p1"></div>
+			   <div id="p2"></div>
+			   <div id="p3"></div>
+			</div>
+	   </div>
+   </body>
+</html>

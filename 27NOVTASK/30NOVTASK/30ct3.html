@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+#sp1,#sp2{
+padding:50px 80px;
+background:navy;
+border:10px solid lime;
+color:white;
+margin:10px 5px;
+font-size:16px;
+font-weight:bold;
+font-family:Segoe Print;
+}
+button{
+width:30%;
+height:40px;
+border-radius:10px;
+border:none;
+outline:none;
+color:white;
+background:green;
+font-size:17px;
+font-weight:bold;
+margin:0px 350px;
+}
+</style>
+<script>
+function changetxt()
+{
+  var txt1=document.getElementById("sp1");
+  var txt2=document.getElementById("sp2");
+  var t1=txt1.innerText;
+  var t2=txt2.innerText;
+  txt1.innerText=t2;
+  txt2.innerText=t1;
+  
+}
+</script>
+</head>
+<body>
+<br/><br/><br/><br/><br/><br/>
+<span id="sp1">Every Thing is possible,If You are focuson your goal.</span>
+<span id="sp2">Alwaya Keep smile....</span>
+<br/><br/><br/><br/><br/><br/>
+<button onclick="changetxt()">SWAP TEXT</button>
+</body>
+</html>

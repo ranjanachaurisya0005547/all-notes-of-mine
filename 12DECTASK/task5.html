@@ -1,0 +1,98 @@
+<html>
+<head>
+<style>
+*{
+margin:10px auto;
+}
+td,th{
+height:50px;
+width:240px;
+text-align:center;
+font-size:25px;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+setInterval(function(){
+var str="0123456789abcedf";
+var color1="#";
+for(i=1;i<=6;i++)
+{
+var rindex=Math.ceil(Math.random()*15);
+color1+=str[rindex];
+}
+$("tr:even").css({background:color1})
+$("tr:first").css({background:"black",color:"white"})
+},1000)
+})
+</script>
+</head>
+<body onload="demo()">
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Father Name</th>
+<th>Branch</th>
+<th>City</th>
+<th>Mobile Number</th>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+<tr>
+<td>Ranjana</td>
+<td>Hareee Prasad</td>
+<td>CS</td>
+<td>Lucknow</td>
+<td>6307972183</td>
+</tr>
+</table>
+</body>
+</html>

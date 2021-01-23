@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+ function pass()
+ {
+   var pass1=document.getElementById("pass"); 
+   var img=document.getElementById("img1");
+   
+   if(pass1.type=="password")
+   {
+	 img.src="ceyeimg.jpg";
+	 pass1.type="text";
+   }
+   else
+   {
+	img.src="eyeimage.png";
+	pass1.type="password";
+   }
+   
+ }
+</script>
+</head>
+<body>
+<input type="password" id="pass"/>
+<img src="eyeimage.png" onclick="pass()" id="img1" height="60px"/>
+</body>
+</html>

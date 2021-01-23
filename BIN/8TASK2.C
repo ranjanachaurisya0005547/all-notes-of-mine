@@ -1,0 +1,18 @@
+//WAP to find factorial of given number by using for loop
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ long int i,fact=1,num;
+ clrscr();
+ printf("Enter the number for find factorial:");
+ scanf("%ld",&num);
+
+ for(i=num;i>0;i--)
+ {
+     fact=fact*i;
+ }
+ printf("%ld Factorial=%ld",num,fact);
+
+ getch();
+}

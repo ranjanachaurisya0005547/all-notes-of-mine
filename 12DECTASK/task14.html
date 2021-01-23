@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+#box{
+min-height:100px;
+width:600px;
+padding:20px;
+border-radius:5px;
+background:#ddd;
+}
+select{
+height:45px;
+border-radius:5px;
+width:100%;
+outline:none;
+font-size:17px;
+padding:12px;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var arr=["--SELECT COURSES--","HINDI","ENGLISH","MATH","PHYSICS","CHEMISTRY","DRAWING","ECONOMICS","GEOGRAPHY"];
+var res="<select id='ddl'>";
+for(i=0;i<arr.length;i++)
+{
+res+="<option>"+arr[i]+"</option>";
+}
+res+="</select>";
+$("p").html(res);
+
+$("select").change(function(){
+var txt=$("#ddl").val();
+$("b").html(txt);
+})
+})
+</script>
+</head>
+<body>
+<div id="box">
+<p></p>
+<b></b>
+</div>
+</body>
+</html>

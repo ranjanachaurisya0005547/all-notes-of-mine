@@ -1,0 +1,136 @@
+create table student
+(
+    roll_no int primary key auto_increment,
+    name varchar(200),
+    father_name varchar(200),
+    branch_id int,
+    total_fee int
+);
+alter table student add foreign key(branch_id) references branch(branch_id);
+
+insert into student (name,father_name,branch_id,total_fee)
+values('RAM','Jitendra',1,5000),
+('Harry','Bill Gates',1,5000),
+('Anoop','Ramesh',2,6000),
+('Rachna','Kuldeep',2,6000),
+('Rekha','Rajesh',1,5000),
+('Reshama','Pawan',3,7000),
+('Princi','Hemant',3,7000),
+('Poonam','Himanshu',1,5000),
+('Abhi','Shyam',2,6000),
+('Jyoti','Shrikant',3,7000);
+---------------------------
+Question 6:
+Display records student name, father name,branch_name, total fee
+
+Query:
+select s.name,s.father_name,b.branch_name,s.total_fee
+from student s,branch b where s.branch_id=b.branch_id;
+----------------------------
+Question 7:
+display records of empid,teacher name, designation, branch_name
+
+Query:
+select t.emp_id,t.emp_name,t.designation,b.branch_name
+from teachers t,branch b where t.work_branch=b.branch_id;
+
+It's Repeat the teachers name if u not use the where condition or on:
+select t.emp_id,t.emp_name,t.designation,b.branch_name
+from teachers t,branch b;
+----------------------------------
+Question 8:
+student name, teacher_name,branch_name which teacher is related to branch of student.
+
+Query:
+select student.name,teachers.emp_name,branch.branch_name
+from student join teachers join branch where student.branch_id=branch.branch_id
+and teachers.work_branch=branch.branch_id;
+
+OR
+
+select student.name,teachers.emp_name,branch.branch_name
+from student join teachers join branch on branch.branch_id=teachers.emp_name=student.name;
+----------------------------------
+Question 9:
+display student name, total_fee , paid fee of each student
+
+Query:
+select student.roll_no,student.name,student.father_name,student.total_fee,
+sum(pfee) from student join fee 
+on student.roll_no=fee.roll_no group by name;
+---------------------------------------
+Question 10:
+ display student name, total_fee , paid fee of each student who have paid more than 4000rs. 
+
+Query:
+select student.roll_no,student.name,
+student.father_name,student.total_fee,
+sum(pfee),pfee from student inner join fee 
+on student.roll_no=fee.roll_no group by 
+name having fee.pfee>4000;
+--------------------------------------------
+Question 11:
+display student name, total_fee , paid fee of each student 
+who have paid more than 4000rs and related to CS.
+
+Query:
+select student.name,student.total_fee,
+fee.pfee from student join fee 
+on student.roll_no=fee.roll_no where 
+fee.pfee>4000 and student.branch_id=3;
+--------------------------------------------
+Question 12:
+student name, teacher_name which teacher is related to branch of student.
+
+
+Query:
+select student.name,teachers.emp_name from student
+join teachers where student.branch_id=teachers.work_branch;
+============================================================================================
+create table fee
+ (
+     sr_no int primary key auto_increment,
+     roll_no int,
+     pfee int,
+     status varchar(200),
+     foreign key(roll_no) references student(roll_no)
+ );
+
+
+insert into fee(roll_no,pfee,status)
+values(1,3000,'True'),
+(3,4000,'True'),(2,3500,'True'),(1,1000,'True'),
+(4,0,'False'),(3,1000,'True'),(7,5000,'True');
+===========================================================================================
+ create table teachers
+ (
+     emp_id int primary key auto_increment,
+     emp_name varchar(200),
+     designation varchar(200),
+     work_branch int
+ );
+ alter table teachers add foreign key(work_branch)references branch(branch_id);
+ 
+insert into teachers(emp_name,designation,work_branch)
+values('Yespal','HOD',1),
+('Varun','Lecturer',1),
+('Ajay','Lecturer',2),
+('Vikrant','HOD',2),
+('Sanjay Bharati','Lecturer',3);
+
+============================================================================================
+ create table branch
+ (
+    branch_id int primary key auto_increment,
+    branch_name varchar(200),
+    emp_id int,
+    foreign key(emp_id)references teachers(emp_id)
+ );
+ 
+insert into branch(branch_name)
+values('CS'),
+('IT'),('PGDCA');
+
+update branch set emp_id=1 where branch_id=1;
+update branch set emp_id=2 where branch_id=2;
+update branch set emp_id=3 where branch_id=3; 

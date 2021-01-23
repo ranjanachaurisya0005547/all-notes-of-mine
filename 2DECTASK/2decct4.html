@@ -1,0 +1,33 @@
+<html>
+<head>
+<style>
+*{
+margin:10px auto;
+}
+#slider{
+height:560px;
+width:900px;
+border:10px solid maroon;
+padding:20px;
+}
+</style>
+<script> 
+var arr=["p1.jpg","p2.jpg","p3.jpg","p4.jpg","p5.jpg"];
+var i=0;
+function slider()
+{
+  var img=document.getElementById("slider");
+  img.style.background="url('images/"+arr[i]+"')";
+  img.style.backgroundSize="100% 100%";
+  i++;
+  if(i==arr.length)
+  i=0;
+
+}
+window.setInterval(slider,1000);
+</script>
+</head>
+<body onload="slider()">
+<div id="slider"></div>
+</body>
+</html>

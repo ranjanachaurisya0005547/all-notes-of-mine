@@ -1,0 +1,109 @@
+How to work with GitHub or any Remote repository: 
+There are millions of online server which allow VCS(virsion contrl system) Integration.
+VCS here referes to version control system which means you have multiple developers working
+under agile agile modelor srum model or sprint model.
+
+Each(srum/model) sprint is committed by different developer as a collab and 
+each srum is a part of a branch.
+
+Git Hub is popular online server mostly use for submitting our commits.
+Is GitHub only the possibke way ?
+No,We have bit-keeper (git older srever repository),bitbucket,aws,Git Lab etc.
+=>Pagination
+=>Infinite pagination 
+
+=>GitHub Owned By Microsoft.
+=>You can create two types of repository
+1)public:Any one using internet can access.
+  clone:No permission is required in pull.
+  push:requires permission and credentials
+  collab:requires permission and credentials
+  forks:requires permission and credentials
+  
+2)private:You are owner with single access
+  clone:requires permission of the owne for pull and such type of request is called as pull 
+  request called as pull request.
+  push:requires permission and credentials
+  collab:requires permission and credentials
+  forks:requires permission and credentials
+  
+  How to create first repo:
+  1)Login your GitHub account
+  2)Access code may be asked to login into gmail and get the OTP send by GitHub.
+   [its may possible or may not possible]
+  3)create repository on the right hand side
+    Before create a repo you should have following things ready
+    i)ownership type:public or private.
+    ii)Unique url for repo (repo-name)
+    iii) ReadMe file(optional) :Its is local documentation(txt file u can read on text editor)
+    iv)	.gitignore file(optional):Which files or folder to commit or not
+	v)(optional)License
+	Tag Line and description :Information about the project.
+	
+	Now you can create the repository.
+  
+  What is putty ?
+  git diff filename(last ommitted and latest changes code)
+  
+  1)modified the code(and see the Git Gui)
+  
+  1)create a new branch(git branch ravi)
+  2)switch the branch(git checkout ravi)
+  4)now create the file like(file1.html)
+  5)send the staging(git add file1.html)
+  6)now commit 
+  7)see the git status (if u found no commits yet)
+  8)then again checkout the master branch and here you merge the branches
+  cmd>git merge branch_name
+  9)now you checkout from the branch master 
+  10)you check branches are merge not ,use this cmd 
+   cmd>git log
+   You get the Output there 
+  
+  
+  for merger two branches:
+  cmd>git merge branchname(Like git merge ravi)
+  
+ =>git remote master
+ =>git remote add origin https://url(for added to the git hub)
+ =>git remote -v (to added or not)
+ 
+ =>git push
+ =>git push origin branchname(master)
+ how to push the code to server:
+ 1)add the remote url
+ git remote add origin <url...>
+ git remote add origin <repository_url>
+ git remote add origin <https://githun.com/woner_id/repo_name/fetch> 
+ git remote add origin <https://githun.com/woner_id/repo_name/push>
+ 
+ How to push the code:
+ git push <origin> <branch_name>
+ git push <https://githun.com/woner_id/repo_name/master
+ 
+ You have Any other branch:
+ git push https://githun.com/woner_id/repo_name/ravi
+ git push <origin> ravi
+ 
+ origin is variable name:
+ git remote add url https://githun.com/woner_id/repo_name/
+ 
+ Push in the url:
+ git push url master 
+ git ask for the credential and Push the entire with the branch.
+ 
+ How to clone the project:
+ git clone <public-repo>
+ git clone <private-repo><ssh-key neccesory>
+ 
+ How to setup a New branch and Switch to it:
+ git branch master Existed
+ 
+ Now create the New Branch:
+ cmd>git checkout -b <branch_name>
+ o/p>creating a new branch a switching the that branch directly
+ 
+ 
+ 
+ for immidiate switch to the branch:
+ cmd>git checkout -b branch_name;

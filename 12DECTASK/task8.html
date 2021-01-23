@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+*{
+margin:20px auto;
+font-size:22px;
+}
+#box{
+height:200px;
+width:1300px;
+background:#ddd;
+border:5px solid orange;
+border-radius:5px;
+font-size:45px;
+text-align:center;
+line-height:200px;
+text-shadow:3px 7px 4px orange;
+font-weight:bold;
+font-family:Stencil;
+word-spacing:10;
+}
+#box:first-letter{font-size:100px;}
+#box1{
+height:70px;
+width:200px;
+text-align:center;
+line-height:70px;
+font-size:22px;
+background:#ddd;
+font-weight:bold;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+function demo(){
+var str="0123456789abcdef";
+var color1="#";
+for(i=0;i<6;i++)
+{
+var rindex=Math.ceil(Math.random()*15);
+color1+=str[rindex];
+}
+$("#box").text("WELCOME TO TECHPILE TECHNOLOGY PVT. LTD.").css("color",color1);
+$("#box1").text(color1);
+$("center").css("color",color1);
+}
+setInterval(demo,2000);
+</script>
+</head>
+<body>
+<div id="box"></div>
+<center>Color Value:</center>
+<div id="box1"></div>
+</body>
+</html>

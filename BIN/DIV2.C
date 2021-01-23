@@ -1,0 +1,21 @@
+//WAp to print square of al numbers that is divisible by 3 within given range
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+   int s,l,i;
+   clrscr();
+   printf("Enter the starting and ending point:");
+   scanf("%d%d",&s,&l);
+   i=s;
+   while(i<=l)
+   {
+       if(i%3==0)
+       {
+	  printf("%d\t",(i*i));
+       }
+       i++;
+   }
+   getch();
+}

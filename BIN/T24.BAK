@@ -1,0 +1,12 @@
+//Ex4
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  char n;
+  N=12;
+  clrscr();
+  printf("%d",n);
+
+  getch();
+}

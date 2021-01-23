@@ -1,0 +1,93 @@
+sratch and maintanance project:
+Important Question:
+What is diff b/w git clone and git init ?
+Ans:clone means making changes in existing project  then we need to clone it.
+
+clone:public repo
+clone:private repo(ssh keys:RSA Key Cipher Code)
+clone is performed to make changes like maintanance ,deploying new functionality or testing.
+
+How clone url looks:
+https://github/unique_Id/folder_Name/filename.git
+https://git_url/Author_Id/url_project/.git repo
+
+types of repo:
+1)public repo:url it is globally accessible
+2)private repo:only can accessed by loginned user and another having ssh key can accessed.
+
+Git init is used when we want to start the project scratch .
+When we run the init cmd on the git cmd the the git repo is created and by default
+master branch is also 
+created.
+
+what is git repo ?
+Ans:Any project having .git folder initialized becomes a repository.
+
+How to auto add and commit ?
+
+How to manage tracking of all files  other than few files?
+cmd>git add --all or git add -A
+cmd>git add .
+
+remove the file which u want to untracked :
+cmd>git rm --cached filename -f
+
+what is .gitignore  file:
+it is special file which trackes untracked files and do not add them.
+
+best way is:
+to use .gitignore file to untracked a particular file.
+cmd>touch .gitignore
+Note:git do not tracke any files registered inside .gitignore file .
+if you want .gitignore file itself not be tracked you can add .gtignore insede the .gtignore
+file but .gtignore file will not be added in staging area  then next time when you want to clone
+the project you would not able to know which files to working under tracking and which file
+to ignore.
+
+.gitlock (when all the file committed then its created automatically)
+*.html(Its called git labeling)
+. files called special files its hidden file for operating system.
+
+git diff cmd:
+used to find out the diff b/w last committted code with the latest modified code.
+cmd>git diff filename
+diff means:(diffrence)
+
+how to checkout last code from a file:
+git checkout <filename>
+
+how to checkout the lastcode deleted from a deleted file:
+file name missing
+checkout the branch 
+cmd>git checkout <filename>
+cmd>git checkout master
+You will get the deleted file 
+steps:
+1)git status(find file_name)
+2)git checkout file_name -f(now you get your deleted file)
+
+1)git status
+2)git checkout index.html(reverse back the code)
+3)git status
+
+1)git status
+2)git commit -a -m "message" (add and commit both together)
+3)git status
+
+=>If file was deleted then first check the git status then checkout and now your deleted file 
+is automatically built
+
+if changes inside the pre defined code then run git diff
+
+git checkout filename
+now u get the previous committed code
+
+How to checkout from full project:
+cmd>git checkout -f
+here -f flag will revert back all the changes from the project of current branch 
+
+Q1:A empty folder can not be trapped
+Ans:Minimum one file must exist.
+Q2:checkout cannot be performed at one condition:
+Ans:in case of git init 
+since there is no commit file checkout cannot be until and unless initial commit.

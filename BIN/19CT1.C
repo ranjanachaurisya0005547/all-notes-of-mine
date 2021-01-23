@@ -1,0 +1,24 @@
+//WAP to enter your name and count total times 'a' in yor name
+#include<stdio.h>
+#include<conio.h>
+#include<String.h>
+void main()
+{
+  char name[50];
+  int i,count=0;
+  clrscr();
+
+  printf("Enter Your Name:");
+  gets(name);
+   //gets is Specially used for input a string and
+  // puts is used for printf the string on the console
+
+  printf("Your Name is %s",name);
+  for(i=0;name[i]!='\0';i++)
+  {
+     if(name[i]=='a'||name[i]=='A')
+      count++;
+  }
+  printf("\nTotal Times of A in your name =%d",count);
+  getch();
+}

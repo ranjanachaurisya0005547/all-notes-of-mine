@@ -1,0 +1,12 @@
+//ex9
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int num=10;
+  clrscr();
+  num/=num/10;
+  printf("%d",num);
+
+  getch();
+}

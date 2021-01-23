@@ -1,0 +1,75 @@
+<html>
+<head>
+<style></style>
+<script>
+function Delete(tr1)
+{
+   
+   if(tr1.style.display=="block")
+    tr1.style.display="none";
+   else
+    tr1.style.display="block";
+}
+</script>
+</head>
+<body>
+<table cellpadding="10">
+<tr>
+<th>NAME</th>
+<th>FATHER NAME</th>
+<th>DATE OF BIRTH</th>
+<th>EMAIL ID</th>
+<th>MOBILE NUMBER</th>
+<th>DELETE</th>
+</tr>
+<tr id="tr1">
+<td>RANJANA</td>
+<td>HAREE PRASAD</td>
+<td>12-12-2000</td>
+<td>ranjanachaurisya0005547@gmail.com</td>
+<td>6307972183</td>
+<td><input type="button" onclick="Delete(document.getElementById('tr1'))" value="DELETE"></td>
+</tr>
+<tr id="tr2">
+<td>SONAM</td>
+<td>JAI PRAKASH</td>
+<td>12-12-2000</td>
+<td>ranjanachaurisya0005547@gmail.com</td>
+<td>6307972183</td>
+<td><input type="button" onclick="Delete(document.getElementById('tr2'))" value="DELETE"></td>
+</tr>
+<tr id="tr3">
+<td>SAROJ</td>
+<td>SANJAY</td>
+<td>12-12-2000</td>
+<td>ranjanachaurisya0005547@gmail.com</td>
+<td>6307972183</td>
+<td><input type="button" onclick="Delete(document.getElementById('tr3'))" value="DELETE"></td>
+</tr>
+<tr id="tr4">
+<td>SWATI</td>
+<td>PANKAJ</td>
+<td>12-12-2000</td>
+<td>ranjanachaurisya0005547@gmail.com</td>
+<td>6307972183</td>
+<td><input type="button" onclick="Delete(document.getElementById('tr4'))" value="DELETE"></td>
+</tr>
+<tr id="tr5">
+<td>MANISHA</td>
+<td>JAI JAI NATH</td>
+<td>12-12-2000</td>
+<td>ranjanachaurisya0005547@gmail.com</td>
+<td>6307972183</td>
+<td><input type="button" onclick="Delete(document.getElementById('tr5'))" value="DELETE"></td>
+</tr>
+<tr id="tr6">
+<td>PRINCI</td>
+<td>GAURAV</td>
+<td>12-12-2000</td>
+<td>ranjanachaurisya0005547@gmail.com</td>
+<td>6307972183</td>
+<td><input type="button" onclick="Delete(document.getElementById('tr6'))" value="DELETE"></td>
+</tr>
+</table>
+</body>
+</html>

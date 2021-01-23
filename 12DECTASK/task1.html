@@ -1,0 +1,52 @@
+<html>
+<head>
+<style>
+#box{
+height:300px;
+width:1200px;
+background:#ddd;
+margin:20px auto;
+border:5px solid red;
+}
+input,select{
+height:40px;
+border:2px solid gray;
+outline:none;
+width:40%;
+margin-top:20px;
+padding-left:10px;
+font-size:19px;
+}
+input:focus{border:2px solid red;}
+button{height:36px;width:25%;}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var arr=["--SELECT COURSES--"];
+var res="<select>"
+for(i=0;i<arr.length;i++)
+{
+res+="<option>"+arr[i]+"</option>";
+}
+res+="</select>";
+$("p").html(res);
+$("button").click(function(){
+var txtv=$("#txt").val();
+$("select").append("<option>"+txtv+"</option>");
+})
+})
+</script>
+</head>
+<body>
+<div id="box">
+<center>
+<input type="text" id="txt"/>
+<br/>
+<p></p>
+<br/><br/><br/><br/>
+<button>ADD COURSES</button>
+</center>
+</div>
+</body>
+</html>

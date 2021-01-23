@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+ img{
+   height:550px;
+   width:990px;
+   border:10px double green;
+   border-radius:20px;
+ }
+ button{
+    background:green;
+	border:none;
+	border-radius:20px;
+	height:45px;
+	width:40%;
+	color:white;
+ }
+ button:hover{background:orange;}
+</style>
+<script>
+  function changeimg()
+  {
+     var img=document.getElementById("img1");
+	 if(img.style.display!="block")
+	 {
+	     img.style.display="block";
+	 }
+	 else
+	 {
+	    img.style.display="none";
+	 }
+	 
+  }	
+</script>
+</head>
+<body>
+<img src="images/p1.jpg" id="img1"/><br/><br/>
+<center><button onclick="changeimg()">CHANGE IMAGE</button></center>
+</body>
+</html>

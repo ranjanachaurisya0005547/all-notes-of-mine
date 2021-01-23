@@ -1,0 +1,16 @@
+//ex20
+#include<stdio.h>
+#include<.conio.h>
+void main()
+{
+  int x=10,y=20;
+  clrscr();
+  printf("%d\n",x<y);
+  printf("%d\n",x==y);
+  printf("%d\n",x!=y);
+  printf("%d\n",x>y);
+  printf("%d\n",x>=y);
+  printf("%d\n",x<=y);
+
+  getch();
+}

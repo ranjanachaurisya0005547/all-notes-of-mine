@@ -1,0 +1,22 @@
+<html>
+<head>
+<style></style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var fname=window.prompt("Enter The Fruits Name:");
+var str="0123456789";
+var rindex=Math.ceil(Math.random()*10);
+
+var res="<ol type='1' start='"+rindex+"'>";
+res+="<li>"+fname+"</li>";
+res+="</ol>";
+
+$("p").html(res);
+})
+</script>
+</head>
+<body>
+<p></p>
+</body>
+</html>

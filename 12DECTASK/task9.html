@@ -1,0 +1,144 @@
+<html>
+<head>
+<style>
+*{margin:0px auto;
+padding:0px;
+}
+.box1{
+height:430px;
+width:230px;
+background:#ddd;
+padding:10px;
+float:left;
+margin:6px 9px;
+}
+img{
+height:230px;
+width:230px;
+}
+button{
+height:40px;
+width:47%;
+font-size:16px;
+margin:100px 0px;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#btn1").click(function(){
+$("#img1").hide(3000);
+})
+$("#btn2").click(function(){
+$("#img1").show(3000);
+})
+
+$("#btnn1").click(function(){
+$("#imgn1").show("slow");
+})
+$("#btnn2").click(function(){
+$("#imgn1").hide("slow");
+})
+
+$("#btn3").click(function(){
+$("#img3").toggle(3000);
+})
+
+$("#btn4").click(function(){
+$("#img4").slideUp();
+})
+$("#btnn5").click(function(){
+$("#img4").slideDown();
+})
+
+$("#btn5").click(function(){
+$("#img5").slideDown(3000);
+})
+$("#btnn4").click(function(){
+$("#img5").slideUp("slow");
+})
+
+$("#btn6").click(function(){
+$("#img6").slideToggle(3000);
+})
+
+$("#btn7").click(function(){
+$("#img7").fadeIn(3000);
+})
+$("#btnn7").click(function(){
+$("#img7").fadeOut(3000);
+})
+
+$("#btn8").click(function(){
+$("#img8").fadeOut(4000);
+})
+$("#btnn8").click(function(){
+$("#img8").fadeIn("fast");
+})
+
+$("#btn9").click(function(){
+$("#img9").fadeToggle(3000);
+})
+
+$("#btn10").click(function(){
+$("#img10").fadeTo(3000,.3);
+})
+})
+</script>
+</head>
+<body>
+<div class="box1">
+<img src="images/p1.jpg" id="img1">
+<button id="btn1">HIDE</button>
+<button id="btn2">SHOW</button>
+</div>
+<div class="box1">
+<img src="images/p7.jpg" id="imgn1">
+<button id="btnn1">SHOW</button>
+<button id="btnn2">HIDE</button>
+</div>
+
+<div class="box1">
+<img src="images/p3.jpg" id="img3">
+<button id="btn3">HIDE/SHOW</button>
+</div>
+
+<div class="box1">
+<img src="images/p4.jpg" id="img4">
+<button id="btn4">SLIDE UP</button>
+<button id="btnn5">SLIDE DOWN</button>
+</div>
+
+<div class="box1">
+<img src="images/p5.jpg" id="img5">
+<button id="btn5">SLIDE DOWN</button>
+<button id="btnn4">SLIDE UP</button>
+</div>
+
+<div class="box1">
+<img src="images/p4.jpg" id="img6">
+<button id="btn6">SLIDE TOGGLE</button>
+</div>
+
+<div class="box1">
+<img src="images/p5.jpg" id="img7">
+<button id="btn7">FADE IN</button>
+<button id="btnn7">FADE OUT</button>
+</div> 
+
+<div class="box1">
+<img src="images/p4.jpg" id="img8">
+<button id="btn8">FADE OUT</button>
+<button id="btnn8">FADE IN</button>
+</div>
+
+<div class="box1">
+<img src="images/p5.jpg" id="img9">
+<button id="btn9">FADE TOGGLE</button>
+</div>
+<div class="box1">
+<img src="images/p4.jpg" id="img10">
+<button id="btn10" >FADE TO</button>
+</div>
+</body>
+</html>

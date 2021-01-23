@@ -1,0 +1,43 @@
+/*
+ WAP to enter your email id and date of birth(dd/mm/yy) and make a
+ new string by concatenating chrecterof
+ email-id befor '@' and all value of date of birth excluding
+ emial:ram@gmail.com
+ DOB:12/06/2000
+ find:ram12062000
+ */
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  char eml[100],dob[100],ed[100];
+  int i,index=0;
+  clrscr();
+
+  printf("Enter Your Email Id:");
+  gets(eml);
+  printf("Enter Your Date Of Birth:");
+  gets(dob);
+
+  for(i=0;eml[i]!='\0';i++)
+  {
+    if(eml[i]!='@')
+    {
+     ed[index]=eml[i];
+     index++;
+    }
+    else if(eml[i]=='@')
+    break;
+  }
+  for(i=0;dob[i]!='\0';i++)
+  {
+    if(dob[i]!=92)
+    {
+     ed[index]=dob[i];
+     index++;
+    }
+  }
+  ed[index]='\0';
+  printf("Sort Is=%s",ed);
+  getch();
+}

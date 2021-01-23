@@ -1,0 +1,21 @@
+//WAP to find sum of all numbers that is divisible by 3 within 1 to given range
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int i=1,range,sum=0;
+   clrscr();
+   printf("Enter the ending point:");
+   scanf("%d",&range);
+   while(i<=range)
+   {
+      if(i%3==0)
+      {
+	  sum+=i;
+      }
+      i++;
+   }
+   printf("Sum =%d",sum);
+
+   getch();
+}

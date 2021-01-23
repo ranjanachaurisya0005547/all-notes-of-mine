@@ -1,0 +1,62 @@
+<html>
+   <head>
+       <style>
+	       .outer{
+		      height:800px;
+			  width:1000px;
+			  border:1px solid black;
+			  margin:auto;
+			  background:linear-gradient(#95e8a8,white,#e0ee8e);
+			  color:white;
+			  font-family:calibri;
+			  font-size:19px;
+		   }
+		   .form1{
+		      height:480px;
+			  width:320px;
+			  margin:100px 300px;
+			  background:rgba(0,0,0,.3);
+			  padding:60px 40px;
+		   }
+		   
+		   .a1{
+		      width:100%;
+			  height:60px;
+			  border:none;
+			  border:2px solid #f1f1f1;
+			  border-radius:5px;
+			  
+		   }
+		   .a1:focus{
+		     border:2px solid #cae241;
+			 outline:none;
+			 font-size:20px;
+		   }
+		   input[type=submit]{
+		      border:none;
+			  outline:none;
+			  height:44px;
+			  width:24%;
+			  border-radius:6px;
+			  color:white;
+			  background:blue;
+		   }
+		   
+	   </style>
+   </head>
+   <body>
+       <div class="outer">
+	       <div class="form1">
+		       <form>
+			      Name<br/>
+				  <input type="text" class="a1"/><br/><br/><br/>
+				  Email<br/><input type="email" class="a1"/><br/><br/><br/>
+				  Password<br/><input type="email" class="a1"/><br/><br/><br/>
+				  <input type="checkbox" />Remember me later
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <input type="submit" value="LOGIN"/>
+			   </form>
+		   </div>
+	   </div>
+   </body>
+</html>

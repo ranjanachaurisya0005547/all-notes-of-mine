@@ -1,0 +1,12 @@
+//ex5
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int a,b;
+  a=5;b=2;
+  printf("%d",a==b);
+  printf("%d",a=b);
+
+  getch();
+}

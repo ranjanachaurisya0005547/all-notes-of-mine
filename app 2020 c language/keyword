@@ -1,0 +1,47 @@
+Keywords:keyword are some resev words that is used to perform any specific task.
+Toatal 32 keywords are pre-defined in c language.
+like:
+int,float,doble,char,do while,if,else etc. 
+ ---------------------------------------- 
+Variables:
+Variable is a temporary storage area
+---------------------------
+1.declaration of variable
+2:initialization of variable
+  a:Direct Input
+  b:user input
+--------------------------------------------
+//WAP to add two numbers
+1:input
+2:Process/Execution 
+3:Output
+------------------------
+Input Fuction:
+scanf() Fuction:
+
+Syntax:
+scanf("Formate_specifier",variable_name_with_&);
+datatype     formate_specifier
+int             %d
+long int        %ld
+float           %f
+double          %lf
+long double     %Lf
+string          %s
+char            %c
+---------------------
+Example:
+int a;
+scanf("%d",&a);
+------------------------------------
+Output Function: 
+prinf("formate_specifier",variable_name_which_u_want_to_print);
+ 
+
+
+
+
+
+
+
+

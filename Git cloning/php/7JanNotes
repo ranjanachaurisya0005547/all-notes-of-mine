@@ -1,0 +1,297 @@
+$_POST :
+Save=7Jantask1.html
+
+<html>
+<head></head>
+<body>
+<form action="7Jantask2.php" method="post">
+Enter Your Name:<br/>
+<input type="text" name="uname"/><br/><br/> //input ranjana
+<input type="submit" value="SUBMIT"/>
+</form>
+</body>
+</html>
+
+Save=7Jantask2.php
+<?php
+//print_r($_POST);
+$name=$_POST['uname'];
+echo "Your Name is {$name}";
+?>
+
+Output:
+Your Name is ranjana
+=============================================================================================================
+$_REQUEST:
+
+Variable is independent of the request Type or it can handle both the request GET and POST
+$_REQUEST= $_GET + $_POST
+           ?[n>=1] + ?[n=0]
+		   
+If ?n=1 get request key=1 $_GET = $_REQUEST
+If ?n=0 Post request key=1 $_POST = $_REQUEST
+
+
+====================
+condtion 1)when ?n>=1 then generates Get request
+
+save=7Javtask3.html
+<html>
+<head></head>
+<body>
+<form action="7Jantask4.php" method="get">
+Enter Your Name:<br/>
+<input type="text" name="uname"/><br/><br/>
+<input type="submit" value="SUBMIT" name="btn"/>
+</form>
+</body>
+</html>	
+
+save=7Jantask4.php
+<?php
+echo "REQUEST TYPE IS ",$_SERVER['REQUEST_METHOD'];
+echo "<br/>QUERY STRING is ",$_SERVER['QUERY_STRING'];
+echo '<br/> $_GET Keys ';
+print_r($_GET);
+echo '<br/>$_REQUEST Keys ';
+print_r($_REQUEST);
+
+?>
+
+Output:
+REQUEST TYPE IS GET
+QUERY STRING is uname=ravi&btn=SUBMIT
+$_GET Keys Array ( [uname] => ravi [btn] => SUBMIT )
+$_REQUEST Keys Array ( [uname] => ravi [btn] => SUBMIT )
+============================================================================================
+condtion 2)when ?n=1 then generates POST request
+
+save=7Javtask5.html
+<html>
+<head></head>
+<body>
+<form action="7Jantask6.php" method="post">
+Enter Your Name:<br/>
+<input type="text" name="uname"/><br/><br/>
+<input type="submit" value="SUBMIT" name="btn"/>
+</form>
+</body>
+</html>	
+
+save=7Jantask6.php
+<?php
+echo "REQUEST TYPE IS ",$_SERVER['REQUEST_METHOD'],"<br/>";
+echo "QUERY STRING is ",$_SERVER['QUERY_STRING'],"<br/>";
+echo ' $_POST Keys ';
+print_r($_POST);
+echo '<br/>$_REQUEST Keys ';
+print_r($_REQUEST);
+
+?>						   
+Output:
+REQUEST TYPE IS POST
+QUERY STRING is
+Notice: Undefined index: QUERY_STRING in E:\php-progs\super_global\7Jantask6.php on line 3
+
+$_POST Keys Array ( [uname] => ranjana [btn] => SUBMIT )
+$_REQUEST Keys Array ( [uname] => ranjana [btn] => SUBMIT )
+==================================================================================================================
+How to send both request :PATCH(update single data )Request and PUT(update multiple data)request
+action = "update.php?id=10"
+update<tablename> set name = '$name' where id='$id';[PATCH]
+                                |	            |GET
+                               POST
+update <tablename> set name="$name",class="$class",mobile="$mobile" where id="$id";[PUT]
+
+How to generate PATCH request and PUT request:
+we know that if we want to update the data in the database then we have to send either PUT request or 
+PATCH request.
+For Fully Updation=Use PUT Request
+For Partially Updation=Use PATCH Request
+
+Query For PUT Request:
+---------------------------------
+DATABASE SCHEMA:
+---------------------------------
+Table:Student
+---------------------------------
+ id | Name   |  Class   |  Marks|
+ 1  | Ravi   |  12      |  99   | 
+ 2  | Chavi  |  10      |  89   |
+---------------------------------
+
+update Student set marks='100' where id='1';[Its the PATCH Request]
+
+fully update = fully changed in value of auxillary Columns set.
+auxillary Columns Set=total columns - (numbers of key or composite key):
+which columns is called auxillary columns where is the no primary key or composite key available.
+if n<=3 Then its the PUT request
+
+if n<3 then its the PATCH request
+Here n=number of columns
+===========
+In Order o sent both the request use ? query String and method  is post,
+? query String keyname = which is unique and will not be changed .
+?id=1111
+
+post= whose value can be changed name,class,marks.
+
+==========================
+<!-- PATCH REQUEST When request is post-->
+#save=7Jantask7.php
+<html>
+<head>
+<?php
+$id=1111;
+echo "<h1>Current Page Request <i>",$_SERVER['REQUEST_METHOD'],"</i></h1>";
+?>
+</head>
+<body>
+<h1>$_REQUEST as super Globals PUT/PATCH REQUEST</h1>
+<form action="7Jantask8.php?id=<?php echo $id; ?>" method="post">
+Enter Your Name:<br/>
+<input type="text" name="uname"/><br/><br/>
+<input type="submit" value="SUBMIT" name="btn"/>
+</form>
+</body>
+</html>	
+
+<?php
+#save=7Jantask8.php
+
+print_r($_REQUEST);
+?>
+
+Output:
+Array ( [id] => 1111 [uname] => ranjana [btn] => SUBMIT )
+
+===========================================================================================================
+<!-- PATCH REQUEST when request is get -->
+<html>
+<head>
+<?php
+$id=1111;
+echo "<h1>Current Page Request <i>",$_SERVER['REQUEST_METHOD'],"</i></h1>";
+?>
+</head>
+<body>
+<h1>$_REQUEST as super Globals PUT/PATCH REQUEST</h1>
+<form action="7Jantask8.php?id=<?php echo $id; ?>" method="post">
+Enter Your Name:<br/>
+<input type="text" name="uname"/><br/><br/>
+<input type="submit" value="SUBMIT" name="btn"/>
+</form>
+</body>
+</html>	
+
+<?php
+#save=7Jantask8.php
+
+print_r($_REQUEST);
+?>
+
+Output:
+Array ( [uname] => ranjana [btn] => SUBMIT )
+
+====================================================================
+$_SERVER :
+It is the super global variable used to get the server configuration and server signature .
+Like hostname,host agent, server variables ,query string ,methods,type of the request ,types of headers ,
+etc. 
+
+How to print multi dimensional Array ?
+echo "<pre>";
+print_r($_SERVER);
+echo "</pre>";
+exit;
+
+Output:
+Array
+(
+    [DOCUMENT_ROOT] => E:\php-progs\super_global
+    [REMOTE_ADDR] => ::1
+    [REMOTE_PORT] => 49279
+    [SERVER_SOFTWARE] => PHP 5.6.15 Development Server
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [SERVER_NAME] => localhost
+    [SERVER_PORT] => 8888
+    [REQUEST_URI] => /7Jantask9.php
+    [REQUEST_METHOD] => GET
+    [SCRIPT_NAME] => /7Jantask9.php
+    [SCRIPT_FILENAME] => E:\php-progs\super_global\7Jantask9.php
+    [PHP_SELF] => /7Jantask9.php
+    [HTTP_HOST] => localhost:8888
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_CACHE_CONTROL] => max-age=0
+    [HTTP_UPGRADE_INSECURE_REQUESTS] => 1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+    [HTTP_SEC_FETCH_SITE] => none
+    [HTTP_SEC_FETCH_MODE] => navigate
+    [HTTP_SEC_FETCH_USER] => ?1
+    [HTTP_SEC_FETCH_DEST] => document
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, br
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [REQUEST_TIME_FLOAT] => 1609993100.279
+    [REQUEST_TIME] => 1609993100
+)
+
+Who buy the js ?
+mozila corporation buy the javascrpt.
+
+=>ctrl+u is used to open the source code of the program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+//WAP to display the even number between the given range by using for loop
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  long int i,start,end;
+  clrscr();
+  printf("Enter the starting and ending point:");
+  scanf("%ld%ld",&start,&end);
+  if(start<end)
+  {
+     for(i=start;i<=end;i++)
+    {
+      if(i%2==0)
+	printf("%ld\t",i);
+    }
+  }
+  else
+  {
+     for(i=start;i>=end;i--)
+    {
+      if(i%2==0)
+	printf("%ld\t",i);
+    }
+  }
+
+  getch();
+}

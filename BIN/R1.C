@@ -1,0 +1,28 @@
+//WAp to to find total amount by acceptiong quantity and rate
+//Give 5% discount on ttal amount
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+
+   float q,rate,tprice,dis;
+   clrscr();
+   printf("Enter the quantity of your product:");
+   scanf("%f",&q);
+   printf("Enter the rate of product:");
+   scanf("%f",&rate);
+   tprice=q*rate;
+   printf("\nTotal price is=%.2f",tprice);
+   if(tprice>2000)
+   {
+      dis=(tprice*5)/100;
+      tprice=tprice-dis;
+      printf("\nDiscount is=%.2f",dis);
+      printf("\nAfter Discount Your Total price is=%.2f",tprice);
+
+   }
+
+   getch();
+
+
+}

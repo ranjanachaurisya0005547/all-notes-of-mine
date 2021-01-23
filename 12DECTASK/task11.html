@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+setInterval(function(){
+var res="",color1="#";
+var str="0123456789abcdef"; 
+for(i=0;i<6;i++)
+{
+var rindex=Math.ceil(Math.random()*15);
+color1+=str[rindex];
+}
+for(i=1;i<=10;i++)
+{
+res+="<b style='color:"+color1+";'>"+(i*i)+"</b><br/>";
+}
+$("h2").html(res);
+},2000)
+})
+</script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

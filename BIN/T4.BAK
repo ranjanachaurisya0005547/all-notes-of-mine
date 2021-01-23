@@ -1,0 +1,19 @@
+//Electric bill Payment Program
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int unit;
+   float tcharge;
+   clrscr();
+   printf("Enter the Consume Unit=");
+   scanf("%d",&unit);
+   if(unit==199)
+   {
+      tcharge=unit*1.20;
+   }
+
+   printf("Total Amount=%f",tcharge);
+
+   getch();
+}

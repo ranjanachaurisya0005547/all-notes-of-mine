@@ -1,0 +1,20 @@
+//WAP to print a reverse of given number
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  long int num,rem,i,sum=0,temp;
+  clrscr();
+  printf("Enter A Integer Value:");
+  scanf("%ld",&num);
+  temp=num;
+
+  for(i=num;num>0;num=num/10)
+  {
+     rem=num%10;
+     sum=sum*10+rem;
+  }
+  printf("%ld reverse is =%ld",temp,sum);
+
+  getch();
+}

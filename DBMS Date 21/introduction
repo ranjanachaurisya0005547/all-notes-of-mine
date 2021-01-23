@@ -1,0 +1,308 @@
+DATABASE:
+
+Project:
+Designing(front-end)
+Coding:(Back-end)
+Database:mysql,mssql,oracle etc.
+
+SQL(Structured Query Language):
+Structured Query Language Provides a proper syntax to create and mainupulate data in database.
+
+Database:
+database is a collection of logically related data.It is the collection of multiple tables.
+
+Table:
+Table is the Collection of rows and columns.Rows are known as taples and columns are knows as 
+records/fields in database.
+Table is divided into two parts...
+1)Schema/Structure of table
+2)Record of table
+-----------------------------------------------------------------------------------------------
+Based on the working of commands,SQL quaries are divided into four different part:
+1)DDL(Data Definition Language):
+ Quaries that performs operation on the schema of the table,are DDL queries.
+ 
+ a)create:
+ It is used to create new datadase or tables.
+ syntax:
+ for create database:
+ create database database_name;
+ 
+ for create table:
+ create table table_name
+ (
+   column_name1 datatype(size),
+   column_name2 datatype(size),
+   ---------------------------,
+   ---------------------------,
+   ---------------------------,
+   column_nameN datatype(size)   
+ );
+ 
+ Exmaple:create table student
+  (
+    roll_no int,
+    name varchar(200),
+    email varchar(200),
+    joining_date DATE,
+    salary int
+   );
+---------------------------------------------------------------------------------------------
+ b)alter:
+ alter command is used to modify definition of columns.That means if you want to change in 
+ schema of existing table ,you can use alter command.
+ 1)add a new column:
+  syntax:
+  alter table table_name add column_name definition(mens datatype and size of the column);
+  ----
+  Exmaple:
+  alter table student add address varchar(100);
+  ----
+  To insert a pariticular place,we can use a (after first and before) keyword for do that.
+  By default it's added the last in the table.
+  alter table student add amount varchar(100) after salary;
+  
+ 2)delete a existing table:
+   syntax:
+   alter table table_name drop column_name(thats u want to remove);
+   Example:  
+   alter table student drop amount;
+   
+ 3)to change/modify a existing column:
+   syntax:
+   alter table table_name alter old_col_name new_col_name;
+   
+  to make change in definition of a existing column.Then use modify keyword:
+  syntax:
+  alter table table_name modify colum_nname definition;
+  example:alter table student modify amount varchar(300);
+  
+  to make change in name and definition of a existing column.Then we use change keyword:
+  syntax:
+  alter table table_name change old_column_name new_column_name definition;
+  Example:
+  alter table student change amount price varchar(300);
+  
+  For insert a foreign key or primary key:
+  alter table table_name add foreign key(coloumn_name) references table_name_take_references(column_name);
+  alter table table_name add primary key(column_name);
+.......................................................................................     
+ c)truncate:
+   It is used to remove records of a table,but it saves the schema of the table.
+   Syntax:
+   truncate table table_name;
+....................................................................................... 
+ d)drop:
+ It is used to remove table from database.
+ Syntax:
+ drop table table_name;
+-------------------------------------------------------------------------------------------- 
+2)DML(Data Mainupulation Language)
+  a)insert
+    It is used to create a new record in a table or add a new record in the table.
+	Syntax:
+	insert into table_name (column_name1,column_name2,.......,column_nameN) values(value1,value2,...,valueN); 
+	OR
+	insert into table_name values(value1,value2,.........,valueN);
+	
+	Example:
+	insert into student values(1,'Ranjana','ranjana@gmail.com','2000-12-21',2000,'3000','Lucknow');
+
+     To insert the value at the specific position:
+	 insert into student 
+(roll_no,name,email,joining_date,salary) values(2,'Rooma','rooma@gmail.com',01/02/2000,3000),
+(3,'Rachna','rachna@gmail.com',2/12/2000,4000);
+.............................................................................................	
+  b)select:
+   Select command is used to retrieve data saved in the database,you can select data in different 
+   from by using select command.
+
+   Syntax:
+   select * from table_name where <condition> ;
+   OR
+   select column_name1,column_name2,....,column_nameN from table_name <condition>;
+   
+  It is uesd for make conditions: 
+   >,<,>=,<=,<>(not equal to),=,
+   and:where salary>60000 and salary<75000;
+   or:where emp_id>100 or emp_id<106;
+   in:where salary in(250000,71000,65000);
+   not in:where salary not in(250000,71000,65000);
+   between:emp_id between 100 and 105;
+   is null:where super_id is null;
+   is not null: where super_id not null;
+   Like:select * from employee where first_name like '%or%';
+   OR
+   select * from employee where first_name like 'cor%';
+   
+   Using Underscore:
+   select * from employee where birth_date like '____-02-__'; 
+   select * from employee where birth_date like '____-02%'; 
+   
+   (here 02 represent the month of the date of birth)
+   One underscore represent the one charecter;
+.............................................................................................   
+  c)update
+    It is used to update the pre-inserted record of the table:
+	Syntax:
+	update table_name set column_name1=value1,column_name2=value2 where<condition>;
+   
+  d)delete
+  it is used to remove a record from table.
+  Syntax:
+  delete from table_name where<condition>;
+-------------------------------------------------------------------------------------------  
+3)DCL(Data Control Language)
+  a)grant:
+    Grant is used to provide permission for different database activity to a new 
+	database user.
+	
+  b)revoke:
+  Revoke is used to take back to any provided permissions to a database user.
+  
+  c)rename:
+  Rename is used to rename the name of the table.
+  
+  Syntax:
+  rename table old_table_name to new_table_name;
+-------------------------------------------------------------------------------------------  
+4)TCL(Transaction Control Language)
+  a)commit:
+    commit is used to save database transactions permanentaly.
+	
+	syntax:
+	commit;
+	
+  b)rollback:
+    rollback is used to undo recent transaction of database.
+  
+    Syntax:
+    rollback;
+  
+  c)savepoint:
+    savepoint is used to transfer database control one query to another query written on 
+	linux prompt.
+=======================================================================================
+Stored Procedure:
+
+1)Trigger:
+Trigger is a important concept of SQL.t is used to define some operations that you want 
+to perform in database automatic before/after any query execute.
+
+Semicolon(;):It is used to separate different statement of database ,but a stored  procedure
+collection can have more than one queries ended with semicolon.So we have to change  use of 
+semicolon by using delimiter.
+
+step 1:First Enter that symbol which u want to make delimiter.
+create your delimiter,u can use this symbol to create your delimiter($$,//)
+
+Syntax:delimiter_symbol
+delemiter delimiter_symbol
+
+Exmaple:$$
+delimiter $$
+(now your delimiter is created.)
+
+step 2:create trigger:
+Synatx:
+create trigger trigger_name before/after operation name on table_name for each row begin;
+insert into table_name values();
+delete from table_name ;
+-----------------------;
+-----------------------;
+-----------------------;
+end delimiter_name;
+
+step 3:Again change delimiter to semicolon 
+Syntax:
+delimeter ;
+ 
+==========================================================================================
+For Delete a trigger u can use this syntax:
+step 4:drop trigger trigger_name;
+
+==========================================================================================
+
+Example:
+delimiter $$;
+create trigger tr1 before insert on employee 
+for each row begin
+if new.sex='M' then
+insert into newtable values('A Male Employee is Added !');
+elseif new.sex='F' then
+insert into newtable values('A Female employee is Added !');
+else 
+insert into newtable values('An Other Employee is Added !');
+endif
+end $$;
+delimiter ;
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+String:String is a collection of charecters.String datatype does not directly supported by
+in c language.You have to declare array of charecters whenever you need to store a string type
+value.
+
+Syntax:
+char string_name[size];
+--------------------------------------------------------------------------------------------
+First charecter of a string is always strored on 0th point and the last charecter of the string
+is end with null charecter that('\0') that represent the ending point of the string.
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

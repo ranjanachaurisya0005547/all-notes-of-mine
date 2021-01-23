@@ -1,0 +1,84 @@
+<html>
+   <head>
+      <style> 
+	      .outer{
+		   height:200px;
+		   width:900px;
+		   background:red;
+		  }
+		  .left{
+		     height:100px;
+			 width:100px;
+			 background:yellow;
+			 float:left;
+			 border-top:50px solid maroon;
+			 border-right:50px solid maroon;
+			 border-bottom:50px solid blue;
+			 border-left:50px solid blue;
+		  }
+		  .inner1{
+		     height:0px;
+			 width:0px;
+			 border-top:50px solid lightgreen;
+			 border-left:50px solid lightgreen;
+			 border-right:50px solid yellow;
+			 border-bottom:50px solid yellow;
+			 
+		  }
+		  .middle{
+		     height:200px;
+			 width:500px;
+			 background:lime;
+			 float:left;
+			 
+		  }
+		  .p1{
+		     height:100px;
+			 width:500px;
+			 
+		  }
+		  .left1{
+		     height:100px;
+			 width:100px;
+			 float:left;
+			 background:red;
+		  }
+		  .right1{
+		      height:100px;
+			  width:400px;
+			  float:left;
+			  background:purple;
+		  }
+		  .right{
+		     height:0px;
+			 width:0px;
+			 background:cyan;
+			 float:left;
+			 border-left:100px solid red;
+             border-bottom:100px solid red;
+			 border-top:100px solid pink;
+			 border-right:100px solid pink;
+			 
+		  }
+		  
+	  </style>
+   </head>
+   <body>
+       <div class="outer">
+	       <div class="left">
+		       <div class="inner1"></div>
+		   </div>
+		   <div class="middle">
+		        <div class="p1">
+				   <div class="left1"></div>
+				   <div class="right1"></div>
+				</div>
+				<div class="p1">
+				   <div class="right1" style="background:yellow;"></div>
+				   <div class="left1" style="background:blue;"></div>
+				</div>
+		   </div>
+		   <div class="right"></div>
+	   </div>
+   </body>
+</html>

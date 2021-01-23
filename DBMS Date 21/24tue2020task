@@ -1,0 +1,22 @@
+5)
+select employee.emp_id,employee.first_name,employee.last_name,employee.birth_date,
+employee.sex,employee.salary,branch.branch_name
+from employee left join branch on employee.emp_id=branch.mgr_id;
+
+4)
+select client.client_id,client.client_name,works_with.total_sales
+from client right join works_with on client.client_id=works_with.client_id
+where total_sales > 20000;
+
+3)
+select client.client_id,client.client_name,works_with.total_sales
+from client right join works_with on client.client_id=works_with.client_id
+where total_sales > 20000;
+
+2)
+select e.emp_id,e.first_name,e.last_name,e.birth_date,e.sex,e.salary,b.branch_name
+from employee e,branch b where salary>25000;
+
+1)
+select branch.branch_name,branch_supplier.supplier_name,branch_supplier.supply_type
+from branch right join branch_supplier on branch.branch_id=branch_supplier.branch_id;

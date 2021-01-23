@@ -1,0 +1,72 @@
+<html>
+    <head>
+	    <style>
+		    form{
+			   background-color:#b9b900;
+			   width:40%;
+			   margin:2% 20%;
+			   padding:2% 4%;
+			   border-radius:10px;
+			}
+			::placeholder{font-style:italic;padding:2px 7px;}
+			textarea,input{border:none;border-radius:6px;height:28px;}
+			fieldset{background:rgba(255,255,255,.7);border:2px solid white;margin:2% 0%;border-radius:6px;}
+			input[type=submit]{
+			   background:#2b2b00;border-radius:20px;border:none;outline:none;width:40%;font-weight:bold;padding:20px 22px;color:white;
+			   margin:0% 26%;
+			}
+		</style>
+	</head>
+	<body>
+	   <form>
+	   <b>Step 1:Your Details</b><br/><br/>
+	    <fieldset>
+		   Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   <input type="text" placeholder="first and last name"/>
+		</fieldset>
+		<fieldset>
+		   Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   <input type="email" placeholder="example@gmail.com"/>
+		</fieldset>
+		<fieldset>
+		    Phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			<input type="number" placeholder="Eg:+44750000000"/>
+		</fieldset>
+		<br/><b>Step 2:Delivery Address</b><br/><br/>
+		<fieldset>
+		    Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<textarea></textarea>
+		</fieldset>
+		<fieldset>
+		    Post Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="number"/>
+		</fieldset>
+		<fieldset>
+		    Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text"/>
+		</fieldset>
+		<br/><b>Step 3:Card Details</b><br/><br/>
+		<fieldset>
+		    Card Type<br/>
+			<input type="radio" name="card"/>
+			<img src="images/visa.jpg" height="20px" width="22px">&nbsp;VISA
+			<input type="radio" name="card"/><img src="images/amex.jpg" height="20px" width="22px">&nbsp;AmEx
+			<input type="radio" name="card"/>
+			<img src="images/mscard.jpg" height="20px" width="22px">&nbsp;Mastercard
+		</fieldset>
+		<fieldset>
+		   Card Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   <input type="number"/>
+		</fieldset>
+		<fieldset>
+		   Security Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   <input type="number"/>
+		</fieldset>
+		<fieldset>
+		    Name on Card&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" placeholder="Exact nameas on the card">
+		</fieldset>
+		<input type="submit" value="BUY IT !">
+		</form>
+	</body>
+</html>

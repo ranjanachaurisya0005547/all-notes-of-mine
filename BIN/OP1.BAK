@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int a=20;
+    float b=3.5;
+    clrscr();
+    printf("%d",(a%b));
+}

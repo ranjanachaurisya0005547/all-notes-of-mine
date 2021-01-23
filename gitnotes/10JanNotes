@@ -1,0 +1,238 @@
+Assembly Lines:
+DevOps:It is not a technology but a culture in IT for software modeling and production according to SDLC.
+SDLC:software Development Life Cycle.
+In SDLC there were sveral models which was proposed by different engineer and IT experts 
+1)Waterfall Model:
+Requirement Gathering   
+---------------------|Requirement Analysis or Study
+                     -------------------------------|Design
+                                                    --------|Coding
+                                                            ----------|Testing
+                                                                     --------------|Maintanance
+                                                                                      --------------| Delivery
+                                                                                                   ---------------|        
+Each phase must be complete with 100% Acurrance why bcs undo is not possible.                 
+  
+2)Prototype Model:
+We prepare a prototype
+requirement full and final
+Design Full Complete
+Time Line is every good
+
+3)Spiral Model:
+each loop represent modularity
+and project is highly flexible work load distributed
+
+4)Evolution Model:
+spiral+ waterfall=mashup
+
+5)Scrum Model (AGILE MODEL):
+Its follows WBS(work break down structure) structure
+Team Work:
+1)Coding team(collabs 5) copies=5 branches(Dev Enviroment)
+Designer:5
+coding:5
+Testing:5
+
+2)operational team:(collabs 2):
+sales:2
+installing:2
+Delivery:2
+client Handling:2
+
+===================================
+If you are working in a distributed system there should be some central server where every developer can submit
+there project or code such type of mechanism is version control mechanism.
+small small of code source or module is called srcum.
+such type of mechenisum or culture is running in IT Company is DevOps. 
+
+(version control machenism)
+Tools available in the market is called version control software 
+Example:SVN (sub version)
+
+GIT:
+SVN Diagram:
+Git Diagram:
+Stages of Git:
+All these stages are at local system
+1)untracked
+2)unmodified
+3)modified
+4)git(staging)
+Your project is backuped at three levels 
+1)cache(staging)
+2).git folder
+3)remote server
+Diagram:
+add,staging
+commit
+modified
+staging
+
+Working git terminal:
+ls:list out all the files
+pwd:print working directory
+ls -lart:show hidden files list
+git --help: to get all the cmd of git
+
+ctrl+(font up)
+ctrl -(font small)
+Arrow keys command history
+clear is used to clear the screen.
+ 
+Important command for working with .git repo:
+1)How to create or setup global signature ?
+git config --global signature
+cmd>git config --global user.name ""
+cmd>git config --global user.email ""
+
+2)crea te or initialize .git repo
+cmd>git init
+
+3)How to cross ckeck
+ls -lart
+
+4)How to create resource
+touch <filename.ext>
+example:
+touch index.html
+touch about.html
+touch contact.html
+Practical:
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ touch index.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ ls
+index.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ touch contact.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ ls
+contact.html  index.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ touch about.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ ls
+about.html  contact.html  index.html
+
+
+5)How to make folder ?
+mkdir foldername
+Practical: 
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ mkdir assest
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ ls
+about.html  assest/  contact.html  index.html
+
+6)
+git status 
+
+7)git status -s
+
+8)How to track level of your project ?
+git status -s:For short description
+git status:Long Description
+
+Diff  b/w git status -s and git status:
+git status -s:It should tracking activity of files
+git status:
+i)Branch name
+ii)Last Commits
+iii)Tracking Levels of all files
+
+?? means i dont know about that files
+
+How to add files to staging ?
+single file:
+git add <filename>
+git -A
+git --all
+
+If you want to track complete current directory.
+git add .(dot)
+
+Practical:
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git add index.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        contact.html
+
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status -s
+A  index.html(A means appendent or added)
+?? about.html
+?? contact.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status -s
+AM index.html
+?? about.html
+?? contact.html
+
+How to disable tracking :
+remove the file from staging you need to clear cache 
+git rm --cached <filename>
+rm(remove)
+-f(forcefully)
+filename(index.html)
+---
+Note:
+Each tracking must be committed other wise cached will conflict then you to force fully remove the file
+You can raise flag -f forcefully.
+git --cached <filename> -f
+
+commit story:40 char bit:commit key
+Every file must be commited 
+git commit -m "Message Any Vailid !"
+
+Gives u entire log for the committed changes:
+git log
+committed file is created by unique id of 40 random charecter bits
+
+How to get back last committed result ?
+git chechout filename(index.html)
+
+How to know the current branch ?
+git branch(* means master origin)
+
+How to create the new branch ?
+git branch <branchname>
+Example:git branch ravi
+
+How to switch branch ?
+git checkout branchname
+
+
+Terminilogy:
+1)git repo:any project having .git folder will called as git repo.
+2)master : It is the main branch of your project (main developer).
+
+
+
+
+
+
+
+
+

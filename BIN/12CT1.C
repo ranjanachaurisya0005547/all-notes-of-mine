@@ -1,0 +1,22 @@
+//WAP to enter 10 elements of array and find largest elemnt in array
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int a[10],i,temp;
+ clrscr();
+
+ printf("Enter 10 element:");
+ for(i=0;i<10;i++)
+  scanf("%d",&a[i]);
+  temp=a[0];
+ for(i=1;i<10;i++)
+ {
+    if(temp<a[i])
+    {
+      temp=a[i];
+    }
+ }
+ printf("%d",temp);
+ getch();
+}

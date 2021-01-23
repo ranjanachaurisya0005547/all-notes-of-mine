@@ -1,0 +1,216 @@
+Using QueryString for Notification:
+Single Query String: ?keyname = value
+multiple QueryString : ? keyname1 = value1 & keyname2 = value2 & keyname3 = value3 .......
+
+Whenever you work with queryString there are multiple cache related problems like autofilling.
+
+autocomplete = "off"
+Tag level :<input type="text" name="name" autocomplete="off"/>
+
+
+
+======================================================
+.htaccess filename:
+IndexIgnore filename1,filename2,...
+
+
+How to hide folder or file from indexing in Apache:
+By default out of security concern few files and folder in Apache is redirected to appear 
+in indexing .
+such files header.php and public_html...etc in server configuration.
+
+such configuration can be modified using .htaccess
+indexIgnore *
+where * is a wild card charecter for disabling all indexing .
+
+Note:Its write the .htaccess file then its working
+Ignoring any folder or files :
+IndexIgnore folder_name or files_name
+indexIgnore *.php
+Example:
+IndexIgnore file-uploading
+
+How to protect directory access:
+options -Indexes:To disable indexing
+options +Indexes:To enable indexing
+
+(inside the vhost.conf)
+
+How to modify server configuration without using .htaccess:
+We have to use server confoguration using virtual host.
+goto c://xampp/apache/conf/extra/https.vhosts
+
+<virtualhost *:port_number>
+DocumentRoot "path/to/your/files"
+<Directory 'path_of_particular_file_or_folder(or absolutepath)'>
+  Deny from all(to hide the particular file which u donot want to show the user)
+</Directory>
+</virtualhost>
+
+How to disable a folder from accessing but allow for indexing:
+<virtualhost *:port_number>
+DocumentRoot "path/to/your/files"
+<Directory 'path_of_particular_file_or_folder(or absolutepath)'>
+  optiona -Indexes(to hide the functionnality of a particular file which u donot want
+  to show the user)
+</Directory>
+</virtualhost>
+
+Example:
+<VirtualHost *:8000>
+    DocumentRoot "C:/xampp/htdocs"
+	<Directory "C:\xampp\htdocs\php-class">
+	   Deny from all
+	</Directory>
+
+</VirtualHost>
+===============================================================================
+Regex(regular expression) in PHP:
+We can use pregmatch function to check the vailidity of regex in php.
+Syntax:
+pregmatch(<expression_of_regex>,<subject>){
+  //if matched
+}else{
+   //if not matched
+}
+
+Example:
+Implement Form vailidation using regex and using server vailidation on target page
+<?php
+include "errors1.php";
+?>
+<html>
+<head></head>
+<body>
+<form action="vailidate2.php?/=<?php echo basename($_SERVER['PHP_SELF']) ;?>" method="post">
+<p>
+Enter First Name<br/>
+<input type="text" name="fname"/>
+<?php validate('fname');?>
+</p>
+<p>
+Enter Last Name<br/>
+<input type="text" name="lname"/>
+<?php validate('lname');?>
+</p>
+<p>
+Enter Mobile<br/>
+<input type="text" name="mobile"/>
+<?php validate('mobile');?>
+</p>
+<p>
+<input type="submit" name="btn">
+</p>
+</form>
+</body>
+</html>
+=================
+Sanitisation:
+----
+Xss filtering:Preventing user or hacker from injecting any other script such that it donot 
+enables php to execute.
+XSS Means cross site scripting.
+remove tag:
+strip_tags();
+remove executuion of tags:
+htmlspecialchars()
+remove html entities:(&copy is a entity)
+htmlentities()
+html_entities_decode()
+                               
+Sometimes you may required tags and may not required tags:
+Example:
+<h1>Hello</h1>from text box when submitted heading tag with hello.
+
+in such case we need to remove tags:
+strip_tags() remove the tag.
+
+In some case charecters are not required then form remove the entities use below function:
+htmlentities() prevents from generating html entities.
+
+if you want to generate it:
+html_entity_decode();
+
+in some cases you may require tag for generate presentation use htmlspecialchars() which 
+automatically converts tags to special charecters set such that all the code is printed
+in raw formate.
+
+Make a user defined function to perform XSS Filtering:
+function sanitise($arg){
+$arg=strip_tags($arg);
+$arg=htmlentities($arg);
+$arg=htmlspecialchars($arg);
+$arg=trim($arg);
+return $arg;
+}
+
+
+WAP for small blog application where user can post its php codes based on topics.
+<?php 
+
+?>
+<html>
+<head></head>
+<body>
+<h1>PHP Blogs:</h1>
+<form action="" method="post">
+Title:<br/><input type="text" name="title"/><br/>
+Description:<textarea name="content"></textarea><br/><br/>
+<input type="submit" name="btn">
+</form>
+</body>
+</html>
+
+<?php
+$title=strip_tags($_POST['title']);
+$content=$_POST['content'];
+
+
+echo "<h1>".htmlentities(trim($title))."</h1>";
+echo "<hr/>";
+echo htmlspecialchars($content);
+
+
+?>
+
+Write a php code to take user information with following fields:
+1)name
+2)mobile
+3)email
+4)gender
+5)address
+6)country
+display two buttons 
+btn1) show preview 
+btn2)edit
+#program
+
+print_r(get_included_files)
+Global Auto Loading:
+sometimes you may requires few files to be automatically loaded in a such a case it becomes
+very hactic in that case why not to make your own autoloader and let autoloader include
+all the files anywhere.
+
+make a file init.php
+<?php
+$autoload=['errors','functions'];
+
+foreach($autoload as $index => $value){
+   include "{$value}.php";
+}
+
+?>
+
+In Root Folder place .htaccess file:
+RewriteEngine on
+php_value auto_prepend_file 'init.php'
+
+Note:init.php must exists
+Filename can be anything Anywhere.
+
+
+
+
+
+
+

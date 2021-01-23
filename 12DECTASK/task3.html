@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+*{
+margin:10px auto;
+}
+#box1{
+min-height:300px;
+width:240px;
+background:linear-gradient(45deg,skyblue,#ddd,skyblue);
+padding:30px 70px;
+}
+input{
+height:34px;
+width:100%;
+border:2px solid skyblue;
+border-radius:3px;
+outline:none;
+background:white;
+font-size:17px;
+padding-left:12px;
+}
+input:focus{border:2px solid #ddd;}
+#btn{
+height:40px;
+width:60%;
+border:none;
+outline:none;
+background:skyblue;
+color:white;
+font-weight:bold;
+border-radius:3px;
+font-size:17px;
+}
+#btn:hover{background:#ddd;color:black;}
+#box2{
+min-height:200px;
+width:310px;
+background:#ddd;
+float:left;
+margin-left:15px;
+padding:10px;
+}
+#im{
+height:200px;
+width:300px;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#btn").click(function(){
+var pname=$("#pname").val();
+var price=$("#price").val();
+var path=$("#img1").val();
+
+for(i=0;i<arr.length;i++)
+{
+ alert(arr[i])
+}
+$("#pn").append(pname);
+$("#pr").append(price);
+$("#im").append("<img src='"+path+"'/>");
+})
+})
+</script>
+</head>
+<body>
+<div id="box1">
+Product Name<br/>
+<input type="text" id="pname"/><br/><br/>
+Price<br/>
+<input type="number" id="price"/><br/><br/>
+Image<br/>
+<input type="file" id="img1"/><br/><br/><br/><br/>
+<button id="btn">Add Product</button>
+</div>
+<div id="box2">
+<span id="im"></span><br/>
+<center><b id="pn"></b></center><br/>
+<b style="padding-left:60px;" id="pr"></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Add Chart</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/*
+  0
+  0 1
+  0 2 4
+  0 3 6 9
+  0 4 8 12 16
+
+*/
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int i,j,k=0;
+ clrscr();
+
+ for(i=1;i<=5;i++)
+ {
+    for(j=0;j<i;j++)
+    {
+       printf("%d ",j*k);
+    }
+    k++;
+    printf("\n");
+ }
+ getch();
+}

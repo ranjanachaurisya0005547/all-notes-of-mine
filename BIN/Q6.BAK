@@ -1,0 +1,14 @@
+//WAP to convert a centigrate to fahrenheit
+#inclde<stdio.h>
+#include<conio.h>
+void main()
+{
+   int c,f;
+   clrsrc();
+   printf("Enter the value of tempreture in centigrate:");
+   scanf("%d",&c);
+   f=(c*1.8)+32;
+   printf("Tempreture in Fahrenheit=%d",f);
+   getch();
+
+}

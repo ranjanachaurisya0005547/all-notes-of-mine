@@ -1,0 +1,31 @@
+//Co-ordinate program
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int x,y;
+   clrscr();
+   printf("Enter the any two integer value:");
+   scanf("%d%d",&x,&y);
+   if(x==0&&y==0)
+   {
+      printf("x=%d,y=%d is on origin !",x,y);
+   }
+   else if(x>=0&&y>0||x>0&&y>=0)
+   {
+       printf("x=%d,y=%d is XY co-ordinate !",x,y);
+   }
+   else if(x<0&&y>=0)
+   {
+       printf("x=%d,y=%d is X'Y co-ordinate !",x,y);
+   }
+   else if(x<=0&&y<0||x<0&&y<=0)
+   {
+       printf("x=%d,y=%d is X'Y' co-ordinate !",x,y);
+   }
+   else if(x>=0&&y<0||x>0&&y<=0)
+   {
+       printf("x=%d,y=%d is XY' co-ordinate !",x,y);
+   }
+   getch();
+}

@@ -1,0 +1,90 @@
+<html>
+<head>
+<style>
+#outer{
+min-height:600px;
+width:1350px;
+}
+#rform{
+min-height:500px;
+width:760px;
+background:#e9ecef;
+padding:40px 70px;
+margin:10px 250px;
+font-size:19px;
+border-radius:5px;
+}
+.txt1{
+height:43px;
+width:90%;
+border:2px solid gray;
+border-radius:5px;
+outline:none;
+padding:10px;
+font-size:16px;
+margin-top:6px;
+
+}
+.txt2{
+height:75px;
+width:90%;
+border:2px solid gray;
+border-radius:5px;
+outline:none;
+padding:10px;
+font-size:16px;
+margin-top:8px;
+
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("#rform").hide(10);
+$("#btn1").click(function(){
+$("#rform").show("slow");
+$(".sh").hide(10);
+})
+
+$("#btn2").click(function(){
+$("#rform").show("slow");
+$("#rform").css({background:"#bbbb77",color:"white"});
+$(".th").hide(10);
+})
+})
+</script>
+</head>
+<body>
+<div id="outer">
+<button id="btn1">Teachers Registration</button>
+<button id="btn2">Student Registration</button>
+<div id="rform">
+<h2>Registration Form</h2>
+<form>
+Name<br/>
+<input type="text" class="txt1"/><br/>
+Email Id<br/>
+<input type="email" class="txt1"/><br/>
+Mobile No<br/>
+<input type="number" class="txt1"/><br/><br/>
+<span class="sh">Registration No</span><br/>
+<input type="text" class="txt1 sh"><br/>
+<span class="sh">Course</span><br/>
+<select class="txt1 sh">
+<option>Select Your Course</option>
+<option>Diploma</option>
+<option>BTech</option>
+<option>BCA</option>
+<option>MTech</option>
+</select><br/>
+<span class="th">Teacher's Certificate Number</span><br/>
+<input type="text" class="txt1 th"/><br/>
+<span class="th">Teaching Subject</span><br/>
+<input type="text" class="txt1 th"/><br/>
+Address<br/>
+<textarea class="txt2"></textarea>
+</form>
+</div>
+</div>
+</body>
+</html>

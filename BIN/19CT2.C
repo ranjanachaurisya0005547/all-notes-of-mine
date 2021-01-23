@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  char name[50];
+  int i,count=0;
+  clrscr();
+  
+  printf("Enter Your Name:");
+  gets(name);
+  printf("Your Name is ");
+  puts(name);
+  for(i=0;name[i]!='\0';i++)
+  {
+     if(name[i]!=' ')
+	 count++;
+  }
+   printf("Total Charecter In Your Name is=%d",count);
+ 
+ getch();
+}

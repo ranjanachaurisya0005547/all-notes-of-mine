@@ -1,0 +1,144 @@
+CSRF:prevention has to be done in case post request only not recommended incase Ajax request.
+
+You can send the data on the server in the form of:
+1)form 2)encoded 3)raw
+
+After Login A Secure website,that's thing is nesseccery to match:
+1)domain request(ip address)
+2)data
+3)timestamp
+4)csrf
+
+=>CSRF Diagram:
+
+====================================
+pascal case:in the pascal case Always be the first letter is uppercase.
+input type button,reset, and submit always be written in the pascal case.
+
+=====================================================
+Request Handling in PHP:
+Here we respond according to the legal response only and request can be found using 
+$_SERVER['REQUEST_METHOD'];(request are get/post u found by this syntax)
+
+===========================================================
+on The client side who tell the method type?
+method tells the method type
+
+Whose tell the method type on the server side?
+Answer is $_SERVER tells about it.
+
+How many types of request?
+That's the http request methods...
+GET
+POST
+PUT 
+patch
+delete
+options
+lock
+head
+------
+-----
+Most Widely used request are ....
+Get :show the record/response
+post:You want to post or add some data
+put: changing complete  data of updating fully 
+patch: Partially update patch Ex:change password 
+delete:Destroies(delete) the record/response
+=======================================================
+Http request with database:
+CRUD(create read/retrieve update the data delete the data)
+C:create (insert)
+R:read/retrieve(select)
+U:update the data(update)
+D:delete the data(delete)
+
+Note:
+http protocol version:
+http/1.1 version
+http/2.1 version
+
+===================
+create=> http/1.1 POST 200 ok
+Read=>http/1.1 GET 200 ok
+Update=>http/1.1 Put 200 ok
+      =>http/1.1 PATCH 201  created
+Delete=>http/1.1 Delete 200 ok
+After that if try to retrieve data then generate this error
+read=>http/1.1 GET 404 Not Found	  
+	  
+==============================================
+who will decide the send method is get/post on the client side ?
+its not decided by the form tag or method attribute of form tag.
+
+=>Ascept post u can supply any thing inside the method attribute of the form tag its always return get .
+
+
+id is used at client side but name attribute of the form control is used at the server side
+
+==========================
+Its is for multiple form contro
+function_name($_POST)//function calling print_r($_POST)
+function function_name($data)//function definition and here $data is a variable
+{
+$name=$data['uname'];
+echo $name;
+}
+
+===========
+Simplest Approach to get the data from the form control when the method is post
+$name=$_POST['uname'];
+echo $name;
+
+============
+=>Its the another way to find the data from the form tag
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+   $name = $_POST['uname'];
+   echo $name;
+}
+else
+{
+  header("location:input.html");
+}
+===================
+Todays Task:
+1)Area of the circle according to given radius
+2)Perimeter of the triangle for side a b and c (a+b+c)/2
+3)calculator according to the button [+],[-],[/],[*]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

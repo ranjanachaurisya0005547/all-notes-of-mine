@@ -1,0 +1,20 @@
+//String function strcpy
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ char str1[50],str2[50];
+ clrscr();
+
+ printf("Enter A String Value:");
+ gets(str1);
+
+ printf("Before Enter Any VAlue of String 2:%s",str2);
+
+ strcpy(str2,str1);
+
+ printf("\nAfter Copy the Value of 1 String to 2 String:%s",str2);
+
+
+ getch();
+}

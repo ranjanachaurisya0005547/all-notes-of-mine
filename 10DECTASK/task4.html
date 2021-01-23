@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("#pin").keypress(function(){
+var v=$(this).val();
+if(v.length==5)
+{
+$("h1").text("Vailid Pincode !");
+$(this).css({border:"2px solid green"});
+$("h1").css({color:"green"});
+}
+else
+{
+$("h1").text("Invailid Pincode !");
+$(this).css({border:"2px solid red"});
+$("h1").css({color:"red"});
+}
+})
+})
+</script>
+</head>
+<body>
+Enter Your Pin:<br/>
+<input type="number" id="pin"/>
+<h1></h1>
+</body>
+</html>

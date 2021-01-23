@@ -1,0 +1,127 @@
+3.After client side data vailidated 
+    a)How to the data to the server on clicking submit button
+    b)How to send the data without submit the data
+    (if input type not submit the use Ajax to the data on the server and may be type is button)
+4.Considering submit from submit button 
+    a)Identify the method type by default method is get Type
+    <form action="output.php" onsubmit="return vailidate()">
+    By default method is get
+    otherwise you can make it post
+
+===========================================
+Difference b/w get and post method:
+g.1)get is bydefault value of the method attribute of the form tag
+p.1)Post is the script value of the method attribute of the form tag
+----
+g.2)Get is a insecure method 
+p.2)post is the secure method 
+
+----
+g.3)get result in the generation of Querystring
+p.3)post doesnot generates QueryString hence the data is sent in encoded standard and data remain hidden
+Ex:
+Any String in url followed by "?" as key and value pair separated by "&" is called QueryString or quotetion String.
+in GET request:? =1
+Rather in Post ? =0
+Multiple Query String are used in the framework.
+
+filename:output.php
+email:___________
+name:_____
+gender:______
+url:
+output.php?email:ranjana@gmail.com&name:ranjana&gender:female
+          | key |      value      |(&)separator
+		  |
+	 Query Mark
+          |---------------QueryString-----------------------|
+
+===============================================================================
+g.4)In GET request only limited amount data can be send to the server
+p.4)But in post request more than 1024 charecter can be supplied 
+
+g.5)In get Request file can not be uploaded
+p.5)In Post request any file can be uploaded infact a movie of 5GB 
+    But Server must allow in apache Server Max_upload_limit=2MB
+	=>You can change the max_upload_limit for the file upload inside the php.ini file
+	enctype=multipart/form-data is important to be used with post method in case of file uploading.
+	(enctype=xwww-urlencode/data2.1) Its used before html 5.0 versions.
+	(enctype->encryption type,multipart->multi partition,form-data->that means data come from the form)
+	
+	Explanation:Whenever a data is send to the server three things send to the server
+	1)url
+	2)header
+	     content-type:application/json
+		 https_client:off
+		 ssl_peer_verify:true
+		 -------------------
+		 -------------------
+		 -------------------
+		 cache-expiry:100Ms
+		 pragma:
+		 
+        We modify the header for downloading the image
+        Its write the header of the file to change the behaviour of the some operations.
+        header("Content-Type:application/Raw-data");
+	3)body
+	   |formdata
+	   |formencoded data
+	   |raw data /json data
+	
+	   How to send data in json format:
+	   data:json
+	   content-type:application/json
+	   Encoding:UTF-8
+	   {
+	      "name":"ranjana",
+		  "gender":"female",
+		  "file"="asbcjdshdnxcbvbfhsdshhghhbcnbnahsjhnasbcjdshdnxcbvbfhsdshhghhbcnbnahsjhnasbcjdshdnxcbvbfhsd
+		        asbcjdshdnxcbvbfhsdshhghhbcnbnahsjhnasbcjdshdnxcbvbfhsdshhghhbcnbnahsjhnasbcjdshdnxcbvb
+				fhsdshhghhbcnbnahsjhnasbcjdshdnxcbvbfhsdshhghhbcnbnahsjhnasbcjdshdnxcbvbfhsdshhghhbcnbnahsjhn";
+	   }
+============================================================================
+g.6)Get request is cachable
+p.6)Post request is not cachable
+
+g.7)Get request can be Bookmarked
+p.7)Post Request can not be Bookmarked
+
+API Level Diff b/w Get & post
+g.8)Get request do not have any additional security can be publically accessible
+p.8)Post reguest some token have to supplied and this token is called 
+CSRF(cross site request forgery) security.
+============================================================================
+Question:
+what the maximum size of the file when we upload using the mathod value of post.
+Answer:1KB(1024 byte)
+
+
+cache-memory minimum size is 64Kb
+
+
+How many Types of storage are there in your browser
+1)session storage
+2)cache storage
+3)Local storage
+4)Web storage
+
+ctrl+shift+I => Application Layer
+ctrl+shift+I => Right Click on reload Empty cache only For chrome
+
+<link href="mycss.css?version:1.1">
+<link href="mycss.css?version:<?php echo time(); ?>">
+
+=>?version:1.1:it is used where done daily development is continuide.
+=>get reguest is chache able bcs its generate the queryString.
+
+=>ctrl+d(for bookmark on the browser)
+
+=>Home work read this topic properly CSRF
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,9 @@
+//WAP to check a given number is even or odd
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int num;
+   clrscr();
+   printf("");
+}

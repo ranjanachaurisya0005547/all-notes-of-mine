@@ -1,0 +1,22 @@
+<html>
+<head>
+<script>
+function findfact()
+{
+ var num=document.getElementById("txt").value;
+ var sp=document.getElementById("sp1");
+ var fact=1,i;
+ for(i=1;i<=num;i++)
+ {
+    fact=fact*i;
+ }
+ document.write(sp.innerText=fact);
+}
+</script>
+</head>
+<body>
+<input type="text" id="txt"/><br/>
+<span id="sp1"></span><br/><br/>
+<button onclick="findfact()">FACTORIAL</button>
+</body>
+</html>

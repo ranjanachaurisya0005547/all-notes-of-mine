@@ -1,0 +1,34 @@
+//WAP to print all numbers within a given range which remainder is three
+//when it is divisible by 8
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   long int start,end;
+   clrscr();
+   printf("Enter the Starting point And Ending Point:");
+   scanf("%ld%ld",&start,&end);
+   if(start<end)
+   {
+   while(start<=end)
+   {
+       if(start%8==3)
+       {
+	   printf("%ld\t",start);
+       }
+       start++;
+   }
+   }
+   else
+   {
+	while(start>=end)
+   {
+       if(start%8==3)
+       {
+	   printf("%ld\t",start);
+       }
+       start--;
+   }
+   }
+   getch();
+}

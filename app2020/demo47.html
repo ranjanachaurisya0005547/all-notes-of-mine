@@ -1,0 +1,77 @@
+<html>
+   <head>
+      <style>
+	     .outer{
+		    min-height:300px;
+			width:400px;
+			background:linear-gradient(#1ca6f1,#08f3ae);
+			transform:translateY(-456px);
+			transition:all ease 1s;
+			margin:0px auto;
+		 }
+		 .outer:hover{
+		    transform:translateY(0);
+			transition:all ease 1s;
+			box-shadow:0px 10px 1px black;
+			background:black;
+			font-size:22px;
+			color:white;
+		    
+		 }
+		 .top{
+		    min-height:250px;
+			width:350px;
+			padding:25px;
+			
+		 }
+		 .bottom{
+		    height:50px;
+			width:400px;
+			background:#1ca6f1;
+			text-align:center;
+			font-family:impact;
+			font-weight:bold; 
+			line-height:50px;
+			color:white;
+			letter-spacing:5;
+		 }
+		 .txt{
+		    height:45px;
+			width:100%;
+			margin-bottom:12px;
+			border:none;
+			padding:10px;
+			outline:none;
+		 }
+		 .txta{
+		    height:80px;
+			width:100%;
+			margin-top:12px;
+		 }
+		 .btn{
+		    height:45px;
+			width:100%;
+			color:white;
+			border:none;
+			background:blue;
+			font-size:22px;
+			
+		 }
+		 .btn:hover{
+		    background:linear-gradient(#1ca6f1 50%,#08f3ae 50%);
+		 }
+	  </style>
+   </head>
+   <body>
+       <div class="outer">
+	        <div class="top">
+			    Name<br/><input type="text" class="txt"/><br/>
+				Email<br/><input type="text" class="txt"/><br/>
+				Mobile<br/><input type="text" class="txt"/><br/>
+				Message<br/><textarea class="txta"></textarea><br/>
+				<br/><input type="submit" class="btn"/><br/>
+			</div>
+			<div class="bottom">Enquery Form</div>
+	   </div>
+   </body>
+</html>

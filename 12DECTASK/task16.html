@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+span{
+padding:30px 70px;
+background:maroon;
+color:white;
+font-size:19px;
+text-align:center;
+text-transform:uppercase;
+border-radius:5px;
+}
+select{
+height:38px;
+width:420px;
+border-radius:7px;
+padding-left:20px;
+font-size:19px;
+border:2px solid maroon;
+outline:none;
+text-transform:uppercase;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var arr=["--SELECT THE FRUITS NAME--","mango","banana","grapes","guvava","stroberry","pineapple"];
+var res="<select>";
+for(i=0;i<arr.length;i++)
+{
+  res+="<option>"+arr[i]+"</option>";
+}
+res+="</select>";
+$("p").html(res);
+var fname="";
+$("select").change(function(){
+fname+=$(this).val()+"&nbsp;&nbsp;&nbsp;&nbsp;";
+if(fname!="--SELECT THE FRUITS NAME--")
+$("span").html(fname);
+})
+})
+</script>
+</head>
+<body>
+<p></p>
+<br/><br/>
+<span></span>
+</body>
+</html>

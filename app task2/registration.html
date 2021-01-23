@@ -1,0 +1,155 @@
+<html>
+   <head>
+   <style>
+       form{
+	      background-color:blue;
+		  text-transform:uppercase;
+		  width:52%;
+		  margin:2% 24%;
+		  padding:3% 2%;
+	   }
+	    form tr td{color:white;font-family:calibri;}
+		.nesttable tr td{text-align:center;}
+		
+	 </style>  
+   </head>
+   <body>
+       <center><h1><u style="margin-top:8%;text-transform:uppercase;color:blue;font-family:verdana;">student registration form</u></h1></center>
+       <form>
+       <table cellspacing="20">
+	
+	       <tr>
+		      <td>FIRST NAME</td>
+			  <td><input type="text"/></td>
+		   </tr>
+		   <tr>
+		      <td>LAST NAME</td>
+			  <td><input type="text"/></td>
+		   </tr>
+		   <tr>
+		       <td>DATE OF BIRTH</td>
+			   <td>
+			       <select>
+				       <option>Day</option>
+					   <option>1</option>
+					   <option>2</option>
+					   <option>4</option>
+					   <option>5</option>
+				   </select>
+				   <select>
+				        <option>Month</option>
+						<option>January</option>
+						<option>February</option>
+						<option>March</option>
+				   </select>
+				   <select>
+				         <option>Year</option>
+						 <option>2000</option>
+						 <option>2001</option>
+						 <option>2002</option>
+				   </select>
+			   </td>
+		   </tr>
+		   <tr>
+		      <td>Email id</td>
+			  <td><input type="email"/></td>
+		   </tr>
+		   <tr>
+		      <td>mobile number</td>
+			  <td><input type="number"/></td>
+		   </tr>
+		   <tr>
+		       <td>gender</td>
+			   <td>male<input type="radio" name="gender"/>female<input type="radio" name="gender"/></td>
+		   </tr>
+		   <tr>
+		       <td>Address</td>
+			   <td><textarea cols="30" rows="6"></textarea></td>
+		   </tr>
+		   <tr>
+		      <td>city</td>
+			  <td><input type="text"/></td>
+		   </tr>
+		   <tr>
+		      <td>pin code</td>
+			  <td><input type="number"/></td>
+			</tr> 
+			<tr>
+			    <td>state</td>
+				<td><input type="text"/></td>
+			</tr>
+			<tr>
+			    <td>country</td>
+				<td><input type="text"/></td>
+			</tr>
+			<tr>
+			   <td>hobbies</td>
+			   <td style="text-transform:capitalize;">
+			     drawing <input type="checkbox"/>
+				 Singing<input type="checkbox"/>
+				 dancing<input type="checkbox"/>
+				 sketching<input type="checkbox"/><br/>others<input type="text"/>
+			   </td>
+			</tr>
+			<tr>
+			    <td>qualification</td>
+				<td>
+				    <table cellspacing="0" class="nesttable" style="text-transform:capitalize;">
+					     <tr>
+						     <td>Sr.number</td>
+							 <td>examination</td>
+							 <td>board</td>
+							 <td>percentage</td>
+							 <td>year of passing</td>
+						 </tr>
+						 <tr>
+						     <td>1</td>
+							 <td>class x</td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+						 </tr>
+						 <tr>
+						     <td>2</td>
+							 <td>class xii</td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+						 </tr>
+						 <tr>
+						     <td>3</td>
+							 <td>graducation</td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+						 </tr>
+						 <tr>
+						     <td>4</td>
+							 <td>master</td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+							 <td><input type="text"/></td>
+						 </tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+			    <td>courses applied for</td>
+				<td>
+				    bca<input type="radio" name="sub"/>
+					b.com<input type="radio" name="sub"/>
+					b.sc.<input type="radio" name="sub"/>
+					b.a.<input type="radio" name="sub"/>
+				</td>
+			</tr>
+			<tr>
+			   <td></td>
+			   <td style="padding:0 20%;">
+			       <input type="submit" value="SUBMIT"/>
+				   <input type="reset" value="RESET"/>
+			   </td>
+			</tr>
+	   </table>
+	  </form>
+   </body>
+</html>

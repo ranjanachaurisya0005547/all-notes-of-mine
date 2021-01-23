@@ -1,0 +1,25 @@
+<html>
+<head>
+<style></style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var mon=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+$("#date1").change(function(){
+var txt=$("#date1").val();
+var arr=txt.split('-');
+var m=[arr[1]-1];
+var a=mon[arr[1]-1]
+$("span").html(arr[0]+" "+a+" "+arr[2])
+
+})
+})
+</script>
+</head>
+<body>
+Select Date:<br/>
+<input type="date" id="date1"/>
+<br/><br/>
+<span></span>
+</body>
+</html>

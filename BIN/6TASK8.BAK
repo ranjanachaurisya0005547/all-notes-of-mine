@@ -1,0 +1,18 @@
+//WAP to find sum of 10 given numbers by using while loop
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int num,sum=0,i=1;
+  clrscr();
+
+  while(i<=10)
+  {
+    printf("Enter a number:");
+    scanf("%d",&num);
+    sum=sum+num;
+    i++;
+  }
+
+  getch();
+}

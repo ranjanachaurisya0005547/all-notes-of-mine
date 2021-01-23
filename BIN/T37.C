@@ -1,0 +1,22 @@
+//ex16
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  float amount,dis;
+  clrscr();
+  printf("Enter The Amount:");
+  scanf("%f",&amount);
+  if(amount>=5000)
+  {
+     dis=10;
+  }
+  else
+  {
+     dis=5;
+  }
+  amount=amount-((amount*dis)/100);
+  printf("Pay Amount is=%.2f",amount);
+
+  getch();
+}

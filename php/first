@@ -1,0 +1,161 @@
+Why does the port get block ?
+it is bcs your system generally(windows) has a default server installed on its enviroment(IIS Server)
+This is used by .NET technology.By default all the request from browser to the filesystem resouses is forward
+using port no 80.
+
+ if you write http://localhost:80 this will convert to http://localhost
+ but if you write  http://localhost:70 or 786.or any thing else it leads to error until and unless you configure
+ a [port] to listen apache.
+ 
+=>kenthompson(unix os,A,B & go language written by him) 
+=>apache is runs on the Linux os
+=>bsd,mit
+=>alen turing
+=>Email regex
+=>wmic path softwarelicensingservice get OA3xOriginalProductKey(this cmd is used to ckeck your window are genvine or not)
+ 
+=>Unix is used 100% of the system resourses and the Linux is used near about 98% of the system resourses.
+=>param(parallem machine) 
+
+--------------------------------------------
+three types of License  used for software
+1)GPS(general purpose source or general public license)/GNU()
+2)BSD(Berkeley Software Distributuion)
+3)MIT (massachusetts institute of technology)
+==========================================================================================================
+
+=>gcc(gnu compiler collection)(search about gnu)
+=>what is id2020 ?
+=>
+
+
+Introduction to xampp:
+xampp is BST(backend software/services technology) stack software.
+x-cross palteform(plateform)
+a-apache
+(a,m,p,p)that's called ampstock
+====================
+wamp full form:
+w-windows
+
+==========================
+lamp full form:
+
+lamp is installed in the unix.
+=========================
+mamp full form:
+
+=========================================================================================
+You can download
+http.apache.org(apache.zip)
+php.org(php.zip)
+mysql.org(mysql.zip)
+====================================================================================================
+Aceesers:
+1.apache(tomcat)
+its provide the resourses b/w local system and server.
+2.mysql:
+it is database.
+3.filezilla:
+it is used to provide  live resourses.
+  A)putty
+  B)Cyber Duck
+  C)SSH(Secure Shell) Terminal
+4.mercurry:
+it's provide resourses for send mail.
+
+==============================================
+Local directory system of xampp:
+resourses file
+{
+1)cgi.bin
+2)apache
+3)mysql
+4)php 
+5)php myadmin
+6)tmp
+all above are resoure oriented folders.
+}
+7)htdocs:{
+it is a project level folders
+ and all the project saved here.
+}
+============================================================
+=>How to request htdocs:
+internally apache is configured to access htdocs with url 
+c://xampp/htdocs
+This url is replaced by localhost.
+=======================================================
+=>Accessing resoures from browser:
+1)using file as protocol
+Question:
+I created a project name xyz_project inside xampp
+how to request the project from url using apache
+
+http://localhost:80/xyz_project/p1.php
+since 80 is default the port number
+
+http://localhost/xyz_project/p1.php
+http://localhost/xyz_project/p1.php
+
+
+
+2)using http as protocol
+
+
+
+
+===============================================================================================================
+
+
+
+
+p1.php------>index.php|index.html|default.html|default.php
+http://localhost:80/xyz_project/
+http://localhost:80/xyz_project/index.php
+But this behavior can be modified using specila file
+
+.htaccess:
+It contains set of rewrite rules
+1)RewriteEngine on
+DirectoryIndex xyz.html p1.html [index.html|index.php]
+
+xyz.html
+http://localhost/xyxz_project/
+http://localhost/xyz_project/xyz.html
+
+Internal Server Error 500
+8299502081
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

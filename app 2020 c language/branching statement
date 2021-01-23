@@ -1,0 +1,166 @@
+Branching Statement:
+Branching statement is used to transfer the control from one statement to another statement
+according to the condition of program.
+Three types of branching statement:
+1)break(use only loop and switch)
+2)continue(use only loop)
+3)goto
+-----------------------------------------------------------------------------------------
+1)break:
+break statement can be used with switch and in the block of any loop.
+break keyword stops the iteration of loop and transfer control out of loop.
+
+Syntax:
+break;
+------------------------------------------------------------------------------------------
+continue:
+continue statement is also used in the block of loop.When continue statement is executed then 
+it stops the current iteration and continue loop from next iteration.
+
+Syntax:
+continue;
+
+Example:
+for(i=1;i<=5;i++)
+{
+   printf("Befor the continue statement !");//executed all the times means 5 times
+   if(i>=3)
+      continue;
+   printf("After the continue statement !");//executed 2 times for 1 and 2	  
+} 
+Example 2:
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int num,i,p=0;
+  clrscr();
+  printf("Enter any five values:")
+  for(i=1;i<=5;i++)
+  {
+     scanf("%d",&num);
+	 if(num<0)
+	   continue;
+	 p=p+1;  
+  }
+   printf("Total positive values=%d",p);
+   getch();
+}
+
+output:
+Enter any five values:-20 1 20 -45 0
+Total positive values=3
+
+--------------------------------------------------------------------------------------------
+goto statement:
+goto statement is a keyword that is used to transfer the control one statement to
+another statement of the program.
+ Where the control will transfer itis defined by label defined with goto.
+ 
+ Syntax:
+ 
+ label:
+ 
+ //statement;
+ 
+ goto label;
+ 
+ 
+ Example:
+ #include<stdio.h>
+ #include<conio.h>
+ void main()
+ {
+    int amt,op,wamt,camt;
+	char opt;
+	clrscr();
+	printf("Enter total amount in your bank:");
+	scanf("%d",&amt);
+	start:
+	printf("Enter 1 for withdraw and 2 for credit:");
+	scanf("%d",&op);
+	if(op==1)
+	{
+	   printf("Enter your withdrawal Amout:");
+	   scanf("%d",&wamt);
+	   amt=amt-wamt;
+	   printf("After Withdrawl Your Avilable Balance = %d",amt);
+	}
+	else if(op==2)
+	{
+	   printf("Enter your Credit Amount:");
+	   scanf("%d",&camt);
+	   amt=amt+camt;
+	   printf("After credit your Total Balance = %d",amt);
+	}
+	else{
+	   printf("Please Enter A Vailid Option 1 or 2 !");
+	}
+	
+	fflush(stdin);
+	printf("Enter y for continue and n for exit:");
+	scanf("%c",&opt);
+	if(opt=='y')
+	  goto start;
+	else if(opt=='n')
+     	goto end;
+    end:
+    getch();
+ }
+-----------------------------------------------------------------------------------------
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

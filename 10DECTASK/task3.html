@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+input{
+height:45px;
+width:50%;
+padding-left:10px;
+font-size:20px;
+}
+img{
+height:32px;
+position:absolute;
+left:47%;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("img").click(function(){
+var t=$("#pass").val();
+var tp=$("#pass").attr("type");
+
+if(t!="")
+{
+if(tp=="password")
+ $("#pass").attr("type","text");
+else
+$("#pass").attr("type","password");
+}
+else
+{
+alert("Please Enter The Password !");
+}
+})
+})
+</script>
+</head>
+<body>
+<div id="outer">
+<input type="text" id="txt"/><br/>
+<input type="password" id="pass"/>
+<img src="images/hide.png">
+</div>
+</body>
+</html>

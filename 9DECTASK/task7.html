@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("textarea").focus(function(){
+$(this).css({backgroundColor:"lime",border:"15px",borderStyle:"solid",borderColor:"hotpink",borderRadius:"10px"});
+})
+
+$("textarea").blur(function(){
+$(this).css({backgroundColor:"white",border:"1px",borderStyle:"solid",borderColor:"none",borderRadius:"0px"});
+
+})
+})
+</script>
+</head>
+<body>
+Enter Your Message:<br/>
+<textarea></textarea><br/><br/>
+</body>
+</html>

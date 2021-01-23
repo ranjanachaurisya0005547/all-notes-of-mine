@@ -1,0 +1,22 @@
+//WAP to a function to replace space with '||' of inputed string
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ char str[100];
+ int i;
+ clrscr();
+ printf("Enter Any String of Multi Word:");
+ gets(str);
+
+ for(i=0;str[i]!='\0';i++)
+ {
+    if(str[i]==' ')
+    {
+       str[i]='\||';
+    }
+ }
+ printf("%s",str);
+
+ getch();
+}

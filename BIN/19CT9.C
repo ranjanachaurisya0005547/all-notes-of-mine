@@ -1,0 +1,62 @@
+//WAP to find square of number by using all four type of function
+#include<stdio.h>
+#include<conio.h>
+int sqr1(int num);
+int sqr2();
+void sqr3(int num);
+void sqr4();
+void main()
+{
+ int num,r1,r2;
+ clrscr();
+
+ printf("Calculated By Return Type With Passing Parameter !");
+ printf("\nEnter A Number:");
+ scanf("%d",&num);
+ r1=sqr1(num);
+ printf("Square of %d= %d",num,r1);
+
+ printf("\n\nCalculated By Return Type With No Passing Parameter !");
+ r2=sqr2();
+ printf("Square=%d",r2);
+
+ printf("\n\nCalculated By No Return Type With Passing Parameter !");
+ printf("\nEnter A number for find Square:");
+ scanf("%d",&num);
+ sqr3(num);
+
+ printf("\n\nCalculated By No Return Type With No Passing Parameter !");
+ sqr4();
+
+ getch();
+}
+int sqr1(int num)
+{
+  return num*num;
+}
+int sqr2()
+{
+   int num;
+   printf("\nEnter A Number for find square:");
+   scanf("%d",&num);
+   return num*num;
+}
+void sqr3(int num)
+{
+   printf("Square of %d=%d",num,num*num);
+}
+
+void sqr4()
+{
+   int num;
+   printf("\nEnter A number for find square:");
+   scanf("%d",&num);
+
+   printf("Square of %d=%d",num,num*num);
+}
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#btn").click(function(){
+var t1=$("#txta1").val();
+var t2=$("#txta2").val();
+$("#txt1").text(t1);
+$("#txt1").css({height:"100px",border:"2px solid red",lineHeight:"100px",textAlign:"center"});
+$("#txt2").text(t2);
+$("#txt2").css({height:"100px",border:"2px solid red",lineHeight:"100px",textAlign:"center"});
+
+})
+})
+</script>
+</head>
+<body>
+<textarea id="txta1"></textarea>
+<textarea id="txta2"></textarea>
+<br/>
+<h2 id="txt1"></h2>
+<h2 id="txt2"></h2>
+<br/><br/><br/>
+<input type="button" id="btn" value="SET BORDER"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

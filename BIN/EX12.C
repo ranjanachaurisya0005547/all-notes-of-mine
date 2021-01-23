@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   float a,b;
+   int c;
+   a=5;
+   b=2;
+   c=a/b;
+   printf("%d",c);
+   getch();
+}

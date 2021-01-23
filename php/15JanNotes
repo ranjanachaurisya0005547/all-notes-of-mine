@@ -1,0 +1,179 @@
+Login form vailidation with server side :
+#program save=serverform.php
+<?php
+#QueryString in php
+include 'errorlipform.php';
+?>
+<html>
+<head></head>
+<body>
+<?php validate();?>
+<h1>Use Of Query String:</h1>
+<form action="serverformvail.php?/=<?php echo basename($_SERVER['PHP_SELF']);?>" method="post">
+  <p>
+  Enter Your Email:<br/>
+  <input type="text" name="email"/>
+  <?php validate('email');?>
+  </p>
+  
+  <p>
+  Enter Your Password:<br/>
+  <input type="password" name="password"/>
+  <?php validate('password');?>
+  </p>
+  <input type="submit" name="btn" value="LOGIN"/>
+</form>
+</body>
+</html>
+
+#Program save=serverformvail.php
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+	if(isset($_POST['btn']) and !empty($_POST['btn'])){
+		
+		$email=isset($_POST['email'])?$_POST['email']:NULL;
+		$password=isset($_POST['password'])?$_POST['password']:NULL;
+		if(is_null($email) or empty($email)){
+			header("location:{$_REQUEST['/']}?action=email&msg=blank-email");
+			
+		}else if(is_null($password) or empty($password)){
+			
+			header("location:{$_REQUEST['/']}?action=password&msg=blank-password");
+		}else{
+			if($email=='ranjana@gmail.com' and $password=='123')
+			{
+				echo 'Welcome to the dashbord !';
+			}else{
+				header("location:{$_REQUEST['/']}?msg=login-faild");
+			}
+		}
+	}else{
+		header("location:{$_REQUEST['/']}?msg=invailid-btn");
+	}
+}else{
+header("location:{$_REQUEST['/']}?msg=auth-failed");
+}
+	
+?>
+
+#Program save=errorlipform.php
+<?php
+$msg['auth-failed']="* You send a Illegal request !";
+$msg['invailid-btn']="* Please Submit on the submit button !";
+$msg['blank-email']="* Email can not be empty !";
+$msg['blank-password']="* Password can not be empty !";
+$msg['login-faild']="* Invailid email or password !";
+
+function validate($action='')
+{
+	global $msg;
+	$keyname=@$_REQUEST['msg'];
+	$error=@$msg[$keyname];
+	$request_action=@$_REQUEST['action'];
+	    echo "<script>";
+	echo "setTimeout(function(){
+		document.getElementById('spn-error').style='display:none';
+		
+	},3000);";
+	echo "</script>";
+
+	if($action==$request_action and !empty($action))
+	{
+	   echo "<span style='color:red;'>{$error}</span>"	;
+	   
+	}
+	if($action=='' and $request_action==NULL){
+	   echo "<span style='color:red;'>{$error}</span>";
+	}
+}
+?>
+=============================================================================================
+Redirection in PHP:php provides inbuilt function header("location:<url or target>") which can be 
+used to redirect the user from one place to another place.
+
+Example:
+header("location:dashbord.php");
+
+Maintaining the state in Query String:
+You can use question mark(?) query String within header location to maintain state.
+
+example:
+header("location:dashbord.php?payment_id=1234567");
+OR
+header('location:dashbord.php?payment_id=1234567');
+==================================================================
+Redirection After few second:
+header("refresh:time_delay_inseconds;url:path_of_page");
+
+============
+Js Scripting:
+Since php is server side you can use php to generate Dynamic javascript or vice versa.
+
+
+Js using php:
+JS works on the basis script tag and you can use <script> tag that anywhere
+
+==========
+String Concatnation Operator:
+dot(.) operator in php is used to concatenate String.
+$name='ranjana';
+$last="chaurasiya";
+echo $name.$last;//output=ranjanachaurasiya
+echo $name.' '.$last//output=ranjana chaurasiya
+echo $name." ".$last//output=ranjana chaurasiya
+
+$name=ranjana;
+echo "<script>";
+echo "var msg=' is good boy !';";
+echo "window.alert(".'"'.$name.'"'." +msg);";//echo "window.alert(\"$name\"+msg);";
+//echo "window.alert('$name'+msg);";
+echo "</script>";
+
+========================
+How to redirect if JS code is used:
+using Js function:
+window.location.href="<any url name>";
+=========
+Note:When using window.location.href no print statement must be used.
+
+Flash Data in php:
+It is the msg which remains for single request and disapears after a given time.
+For that we are going to use setTimeout:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

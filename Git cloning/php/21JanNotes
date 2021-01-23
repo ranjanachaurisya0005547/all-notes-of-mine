@@ -1,0 +1,116 @@
+session integrity
+session hijacking
+click jacking
+Form handling:
+what is the diff b/w session_unset(),session_destroy() and unset($_SESSION).
+
+Teacher => Timestamp teacher PHPSSID
+Student => Timestamp student PHPSSID
+
+session_destroy:PHPSSID t1
+or Teacher_ID t2
+or Student_ID t3
+
+when you use session_destroy destroy all the token with timestamp will be destroyed.
+
+session_unset:
+Teacher_Id t1 at a time same timestamp destroyed
+Student_id t2 at a time same timestamp destriyed
+
+current token with current timestamp is destroyed
+
+unset:Its only destroyes session current token not the timestamp.
+Its only kill the token not the timestamp.
+
+when session_destroy and session_unset both are works same:
+when both functions  token(Like Default token of apache PHPSSID) are 
+same then both are working same. 
+
+Hot Topics of sessions:
+1)session_token:
+name of the token which shared among browser and server.It is name of the cookie.
+c-client,c-cookie
+s-server,s-session
+session token name is the same as the cookie name wich is stored in browser.
+in server:
+session_token=PHPSSID
+In Browser or client:
+cookie_name=PHPSSID
+
+2)session_timestamp:
+by default the session time out for given timestamp is 1440sec.
+But since timestamp is not sent to browser
+cookie will never expired rather replace same token name.
+
+How to expire cookie:
+since timestamp is independent unit and time can not be less than zero hence timestamp
+can not be destroy.
+Then how to clear the cookie or expire the cookie:
+
+How to set the cookie:
+syntax:
+setCookie('user','name',timestamp);
+or
+setCookie('user','name',time());
+This logic will be useful in case of remember me.
+
+How to replace the existing cookie:
+setCookie('user','new_value',time()-time()/60);
+
+How to expire the cookie:
+setCookie('user','',time()-time()/60);
+---
+3)session_save_type:
+
+1)where server will store the file.
+1)in file system:90% security(user tracking 0%)
+c:/xampp/tmp/
+2)database:10% security(user tracking 100%)
+tbl_session:
+ID|token_name|created_on|expired_on|session_id|IP_Address
+
+combination of file system + database =100%
+4)session_path:
+By default session where stored in c:/xampp/tmp/
+One File is created with name
+sess_<session_id>
+
+#How to trace this file or change the path of the file:
+Make your own tmp file where u can store your sessions:(changes:lgcode.php)
+1)xampp(folder)
+2)php(open php.ini get session.save_path(copy this))
+3)inside the lgcode.php before the session start
+echo ini_get('session.save_path');// see the path or get the path
+ini_set('session.save_path','c:/xampp/mysession');//set the path
+
+
+5)session_id:
+it is a encrypted hash key with alphanumeric id given to a user everytime new timestamp created.
+
+
+for get the session id:(use after the initialize the session in lgcode.php)
+echo session_id();
+for make a session file:
+echo "sess_".session_id();
+after creating the session file you see it inside the tmp folder of xampp.
+
+For re-generating session_id:
+echo "sess".session_regenerate_id();//
+
+but If hacker can get your session id then they can perform session hijacking or 
+session fixation.
+
+How to prevent it:
+After few times regenerate the session_id by using below functon.
+session_regenerate_id()
+
+what is session hijacking?
+Trying to imitate as a original user even without knowing credentials and fooling server by
+showing session_id to remain un_caught.
+make diagram:
+=============
+Check on console:
+localStorage.setItem('name','value');
+localStroge.getItem('name');
+
+

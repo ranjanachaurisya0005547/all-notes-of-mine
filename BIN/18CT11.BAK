@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<conio.h>
+double getgst(double p);
+void main()
+{
+ long int price;
+ double r1,r2,r3,total;
+ clrscr();
+ printf("Enter the first price:");
+ scanf("%ld",&price);
+ r1=getgst(price);
+
+ printf("Enter the second price:");
+ scanf("%ld",&price);
+ r2=getgst(price);
+
+ printf("Enter the third price:");
+ scanf("%ld",&price);
+ r3=getgst(price);
+
+ total=r1+r2+r3;
+
+ printf("Total Price=%lf",total);
+ getch();
+}
+double getgst(long int p)
+{
+  double gst;
+  if(p>=1&&p<=1000)
+  {
+     gst=(p*5)/100;
+  }
+  else if(p>=1001&&p<=5000)
+  {
+     gst=(p*10)/100;
+  }
+  else if(p>=5001)
+  {
+    gst=(p*15)/100;
+  }
+  p=p+gst;
+  return p;
+}
+
+
+

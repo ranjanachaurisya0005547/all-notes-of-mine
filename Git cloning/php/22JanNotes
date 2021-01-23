@@ -1,0 +1,34 @@
+open awnishmmg
+click first link and go to website
+click awnishmmg/Zwave-RestHelper-Framework
+now change the branch main to master and copy the url from code button 
+after copy the link make a folder inside the htdocs(like my projects)
+after made the folder go inside the folder and open the git bash
+after open the git bash write below cmd to clone the url
+git clone copied_url
+1)git status
+2)git branch
+3)git checkout master
+4)exit
+========
+1)open phpmyadmin(localhost:8000/phpmyadmin)
+2)create database(like blog_db)
+============
+config(inside dbenv.php)
+$db_config['hostname']='localhost:3306';
+
+$db_config['username']='root';
+$db_config['password']='';
+
+open blog-application /config(inside api-routes.php)
+$config['api-dir']='demo'
+
+config/dbenv.php
+define('allow_multiple_db',false,1);(make true to false)
+
+config/database.php/($dnname=DBEnv('blog_db');)
+
+
+
+
+php apache pahpmyadmin

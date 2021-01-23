@@ -1,0 +1,20 @@
+//check the given number is less than 10 or not
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int num;
+   clrscr();
+   printf("Enter Any Integer Number:");
+   scanf("%d",&num);
+   if(num<10)
+   {
+       printf("%d is less than 10 !",num);
+   }
+   else
+   {
+      printf("%d is not less than 10 !");
+   }
+
+   getch();
+}

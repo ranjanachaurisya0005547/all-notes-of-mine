@@ -1,0 +1,106 @@
+<html>
+<head>
+<style>
+*{
+padding:0px;
+margin:10px auto;
+}
+#box{
+min-height:500px;
+width:600px;
+background:#ddd;
+border:5px solid gray;
+border-radius:10px;
+box-shadow:0px 0px 5px 6px black;
+padding:30px 0px;
+}
+form{
+font-size:19px;
+margin-left:16%;
+}
+input{
+height:32px;
+width:80%;
+border:1px solid gray;
+border-radius:5px;
+outline:none;
+font-size:16px;
+padding-left:10px;
+}
+button{
+height:35px;
+width:40%;
+}
+#box1{
+min-height:200px;
+width:1330px;
+margin:0px;
+}
+td,th{
+height:40px;
+width:160px;
+font-size:19px;
+text-align:center;
+}
+</style>
+
+</head>
+<body>
+<div id="box">
+<form>
+NAME<br/>
+<input type="text" id="name"/><br/>
+DATE OF BIRTH<br/>
+<input type="text" id="dob"/><br/>
+FATHER NAME<br/>
+<input type="text" id="fname"/><br/>
+COURSES<br/>
+<input type="text" id="co"/><br/>
+YEAR<br/>
+<input type="text" id="y"/><br/>
+MOBILE NUMBER<br/>
+<input type="number" id="mob"/><br/>
+EMAIL ID<br/>
+<input type="text" id="em"/><br/>
+<input id="btn" type="button" value="add"/>
+</form>
+</div>
+<div id="box1">
+<table border="1">
+<tr>
+<th>NAME</th>
+<th>DATE OF BIRTH</th>
+<th>FATHER NAME</th>
+<th>COURSES</th>
+<th>YEAR</th>
+<th>MOBILE NUMBER</th>
+<th>EMAIL ID</th>
+<th>DELETE</th>
+</tr>
+</table>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#btn").click(function(){
+var name=$("#name").val();
+var dob=$("#dob").val();
+var fname=$("#fname").val()
+var course=$("#co").val();
+var year=$("#y").val();
+var mob=$("#mob").val();
+var eml=$("#em").val();
+var res="<tr><td>"+name+"</td><td>"+dob+"</td><td>"+fname+"</td><td>"+course+"</td><td>"+year+"</td><td>"+mob+"</td><td>"+eml+"</td><td class='del'>DELETE</td></tr>";
+$("table").append(res);
+$(".del").click(function(){
+var msg=confirm("Are U Sure !");
+if(msg==true)
+{
+ $("td").parent().hide(2000);
+}
+})
+})
+})
+</script>
+</body>
+</html>

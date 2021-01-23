@@ -1,0 +1,46 @@
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var arr=["Hindi","English","Math","Physics","Chemistry","Drowing","Economics"];
+var res="";
+$("#d").change(function(){
+  res="<select>";
+  for(i=0;i<arr.length;i++)
+  {
+  res+="<option>"+arr[i]+"</option>";
+  }
+  res+="</select>";
+  $("h3").html(res);
+})
+
+$("#ul").change(function(){
+  res="<ul>";
+  for(i=0;i<arr.length;i++)
+  {
+    res+="<li>"+arr[i]+"</li>";
+  }
+  res+="</ul>";
+  $("h3").html(res); 
+})
+
+$("#ol").change(function(){
+  res="<ol>";
+  for(i=0;i<arr.length;i++)
+  {
+    res+="<li>"+arr[i]+"</li>";
+  }
+  res+="</ol>";
+  $("h3").html(res); 
+})
+})
+</script>
+</head>
+<body>
+<input type="radio" name="r1" value="dropdown" id="d"/>Dropdown<br/>
+<input type="radio" name="r1" value="ulist" id="ul">Unorderd List<br/>
+<input type="radio" name="r1" value="olist" id="ol">Ordered List<br/>
+<h3></h3>
+</body>
+</html>

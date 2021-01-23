@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+function pass()
+{
+ var pass=document.getElementById("pass");
+ var cpass=document.getElementById("cpass");
+ 
+ if(pass.value==cpass.value)
+ {
+    pass.style.border="2px solid green";
+	cpass.style.border="2px solid green";
+ }
+ else
+ {
+   pass.style.border="2px solid red";
+   cpass.style.border="2px solid red";
+   alert("Password and confirm Password not matched !");
+ }
+}
+</script>
+</head>
+<body>
+Password:<br/>
+<input type="password" id="pass"/><br/>
+Confirm Password:<br/>
+<input type="password" id="cpass"/><br/><br/>
+<input type="button" onclick="pass()" value="CHECK"/>
+<body>
+</html>

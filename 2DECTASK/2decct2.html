@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+#sp1{
+padding:50px 100px;
+color:white;
+text-align:center;
+border:10px solid lime;
+background:purple;
+}
+</style>
+<script>
+  var res1="";
+  var farr=["--SELECT FRUITS--","APPLE","GUAVA","GRAPES"];
+  var i=0,res="<select id='ddl' onchange='demo1()'>";
+  for(i=0;i<farr.length;i++)
+  {
+     res+="<option>"+farr[i]+"</option>";
+  }
+  res+="</select>";
+  document.write(res);
+function demo1()
+{
+  var arr=["p1.jpg","p2.jpg","p3.jpg"];
+  var f1=document.getElementById("ddl");
+  if(farr.value!="--SELECT FRUITS--")
+  {
+   res1+="&nbsp;&nbsp;&nbsp;"+f1.value;
+  document.getElementById("sp1").innerHTML=res1;
+  }
+}
+</script>
+</head>
+<body><br/><br/><br/><br/><br/>
+<span id="sp1"></span>
+</body>
+</html>

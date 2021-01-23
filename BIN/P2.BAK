@@ -1,0 +1,12 @@
+//WAP to enter age in years and print total days of your age
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int age;
+   clrscr();
+   printf("Enter Your Age=");
+   scanf("%d",&age);
+   printf("Ttaldays in your age is=",(age*365)) ;
+   getch();
+}

@@ -1,0 +1,20 @@
+//WAP to input 10 numbers and print sum of all numbers if number if greater tha zero
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int num,i=1,sum=0;
+  clrscr();
+   while(i<=10)
+   {
+      printf("Enter %d number:",i);
+      scanf("%d",&num);
+      if(num>0)
+      {
+	 sum=sum+num;
+      }
+      i++;
+   }
+   printf("Total Sum=%d",sum);
+  getch();
+}

@@ -1,0 +1,22 @@
+//WAP to read 5 numbers and counts the numbers of positive numbers and
+//negative numbers
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int num,pst=0,neg=0,i;
+  clrscr();
+  printf("Enter any 5 positive and negative numbers:");
+  for(i=1;i<=5;i++)
+  {
+     scanf("%d",&num);
+     if(num>0)
+       pst++;
+     else if(num<0)
+       neg++;
+
+  }
+  printf("Total Positive Number=%d\nTotal Negative Numbers=%d",pst,neg);
+
+  getch();
+}

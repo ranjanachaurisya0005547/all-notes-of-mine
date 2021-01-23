@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+*{
+margin:0px auto;
+padding:0;
+}
+.outer{
+height:300px;
+width:300px;
+background:#ddd;
+font-size:22px;
+padding:60px 60px;
+float:left;
+margin:0px 20px;
+}
+.outer1{
+height:300px;
+width:300px;
+background:#ddd;
+font-size:22px;
+padding:60px 60px;
+float:left;
+margin:0px 20px;
+}
+.outer1 select{
+height:40px;
+width:100%;
+border-radius:6px;
+font-size:19px;
+border:2px solid gray;
+outline:none;
+padding-left:20px;
+}
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+var res="<select>";
+for(i=0;i<6;i++)
+{
+res+="<option>"+$("li").eq(i).text()+"</option>";
+}
+res+="</select>";
+$(".outer1").html(res);
+})
+</script>
+</head>
+<body>
+<div class="outer">
+<ul>
+<li>JAVA</li>
+<li>PHP</li>
+<li>Android</li>
+<li>JAVASCRIPT</li>
+<li>HTML</li>
+<li>CSS</li>
+</ul>
+</div>
+<div class="outer1"></div>
+</body>
+</html>

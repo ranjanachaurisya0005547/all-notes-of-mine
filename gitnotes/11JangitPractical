@@ -1,0 +1,175 @@
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git add -A
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   about.html
+        new file:   contact.html
+        new file:   gallery.html
+        new file:   log.txt
+
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   about.html
+        new file:   contact.html
+        new file:   gallery.html
+        new file:   log.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+------
+After Add log.txt on the .gitignore file:
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git rm --cached log.txt
+rm 'log.txt'
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   about.html
+        new file:   contact.html
+        new file:   gallery.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+----
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ cd assets
+
+user@user-PC MINGW32 ~/Desktop/project/assets (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ../.gitignore
+        new file:   ../about.html
+        new file:   ../contact.html
+        new file:   ../gallery.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+--------------
+user@user-PC MINGW32 ~/Desktop/project/assets (master)
+$ touch myfiles.html
+
+user@user-PC MINGW32 ~/Desktop/project/assets (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ../.gitignore
+        new file:   ../about.html
+        new file:   ../contact.html
+        new file:   ../gallery.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+
+user@user-PC MINGW32 ~/Desktop/project/assets (master)
+$ cd ..
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   about.html
+        new file:   contact.html
+        new file:   gallery.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        assets/
+
+----------
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git add assets
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   about.html
+        new file:   assets/myfiles.html6
+        new file:   contact.html
+        new file:   gallery.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+-----------
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   assets/myfiles.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        about.html
+        contact.html
+        gallery.html
+
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status -s
+A  assets/myfiles.html
+?? .gitignore
+?? about.html
+?? contact.html
+?? gallery.html
+-----------
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git add -A
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   about.html
+        new file:   assets/myfiles.html
+        new file:   contact.html
+        new file:   gallery.html
+

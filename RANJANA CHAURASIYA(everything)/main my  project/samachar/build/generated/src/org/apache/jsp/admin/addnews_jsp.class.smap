@@ -1,0 +1,36 @@
+SMAP
+addnews_jsp.java
+JSP
+*S JSP
+*F
++ 0 addnews.jsp
+admin/addnews.jsp
++ 1 adminlink.jsp
+admin/../master/adminlink.jsp
++ 2 adminheader.jsp
+admin/../master/adminheader.jsp
++ 3 adminfooter.jsp
+admin/../master/adminfooter.jsp
+*L
+5:53
+6:54,2
+7,7:56
+5#1,11:63
+13#0,45:73
+5#2,81:118
+57#0,14:198
+71,4:213
+74:217
+75:218,3
+76:221
+77,2:223
+78,25:225
+104,8:252
+111,2:260
+113,7:262,3
+120,2:283
+122,2:286
+123,8:288
+5#3,56:296
+130#0,6:351
+*E

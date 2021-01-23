@@ -1,0 +1,223 @@
+<html>
+<head>
+    <style>
+	   *{
+	   margin:0px;
+	   padding:0px;
+	   }
+       #outer{
+	     min-height:600px;
+		 width:1000px; 
+		 margin:0px auto;
+		 border:1px solid black;
+		 background:#cae1ef;
+	   }
+	   	#inner{
+	      height:600px;
+		  width:800px;
+		  background:#4587db;
+		  margin:50px 100px;
+		  border-radius:20px;
+		  box-shadow:2px 2px 5px rgba(0,0,0,.5);
+	   }
+	   .left{
+	      height:600px;
+		  width:400px;
+		  float:left;
+	   }
+	   #toptxt{
+	      height:30px;
+		  width:400px;
+		  color:gray;
+		  text-align:center;
+		  font-size:18px;
+		  padding:10px;
+		  margin-top:15px;
+	   }
+	   hr{
+	     width:86%;
+		 margin:0px 30px;
+	   }
+	   .t1{
+	       height:140px;
+		   width:380px;	
+		   margin:0px 20px;
+	   }
+	   .l1{
+	       height:140px;
+		   width:80px;
+		   float:left;
+		   background:url('image/img1.jpg');
+		   background-size:100% 100%;
+	   }
+	   .r1{
+	       height:80px;
+		   width:220px;
+		   float:left;
+		   padding:30px 40px;
+	   }
+	   .r1 span{
+	      color:gray;
+          font-size:19px;
+          margin:0px 180px;
+         color:blue;		  
+	   }
+	   .btxt{
+	      height:30px;
+		  width:400px;
+	   }
+	   .btxt1{
+	      height:30px;
+		  width:176px;
+		  float:left;
+		  font-size:20px;
+		  font-weight:bold;
+		  text-transform:capitalize;
+		  margin-left:24px;		  
+		  margin-top:10px;
+	   }
+	   .left{
+	      height:600px;
+		  width:400px;
+		  float:left;
+	   }
+	   .card{
+	      height:40px;
+		  width:360px;
+		  color:white;
+		  margin:15px 20px;
+	   }
+	   .card select{
+	     background:rgba(255,255,255,.5);
+		 width:40%;
+		 padding:3px 20px;
+		 border:none;
+		 border-radius:5px;
+		 color:white;
+	   }
+	   .card select:hover{border:none;outline:none;}
+	   .cimg{
+	      height:60px;
+		  width:360px;
+		  margin-left:40px;
+	   }
+	   .form{
+	     height:330px;
+         width:300px;
+         color:white;
+         text-transform:capitalize;
+         font-size:16px;
+         padding:80px 50px;		 
+	   }
+	   .input1{
+	      background:rgba(255,255,255,.5);
+		  width:100%;
+		  height:35px;
+		  border:none;
+		  outline:none;
+		  border-radius:5px;
+	   }
+	   .btn{
+	     border:none;
+		 outline:none;
+		 background:#1fb978;
+		 border-radius:5px;
+		 width:100%;
+		 height:35px;
+		 color:white;
+	   }
+    </style>
+</head>
+<body>
+  <div id="outer">
+    <div id="inner">
+     <div class="left" style="background:white;border-radius:18px 0px 0px 18px;">
+	      <div id="toptxt">
+		     Order Summery
+			 <hr/>
+		  </div>
+	     <div class="t1">
+		     <div class="l1"></div>
+			 <div class="r1">
+			  <b>Nike<br/>
+			  Free Run 3.0 Women<br/></b>
+			  Color:Gray/Orange,Size:10.5
+			  <span>$99.95</span>
+			 </div>
+		 </div>
+		 <hr/>
+		 <div class="t1">
+		     <div class="l1"style="background:url('image/img2.jpg');background-size:100% 100%;"></div>
+			 <div class="r1">
+			  <b>Fjallraven<br/>
+			  Vintage Backpack<br/></b>
+			  Color:Olive,Size:20L
+			  <span>$235.95</span>
+			 </div>
+		 </div>
+		 <hr/>
+		 <div class="t1">
+		     <div class="l1" style="background:url('image/img3.jpg');background-size:100% 100%;"></div>
+			 <div class="r1">
+			  <b>Monobento<br/>
+			  Double Lunchbox<br/></b>
+			  Color:Pink,Size:Medium
+			  <span>$25.95</span>
+			 </div>
+		 </div>
+		 <hr/>
+		 <div class="btxt">
+		    <div class="btxt1">
+			   vat 19%<br/>
+			   Delivery<br/>
+			   TOTAL
+			   
+			</div>
+			<div class="btxt1">
+			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$68.75<br/>
+			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$4.95<br/>
+			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$435.55
+			   
+			</div>
+		 </div>
+	 </div>
+	 <div class="left">
+	    <div class="card">
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please Select Your Card:
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   <select>
+		     <option>Visa</option>
+			 <option>ATM</option>
+		   </select>
+		</div>
+		<div class="cimg">
+		   <img src="image/img4.jpg" width="300px" height="60px"/>
+		</div>
+		<div class="form">
+		    <form>
+			   <br/>Card number<br/>
+			   <input class="input1" type="number"/><br/>
+			   <br/>card holder<br/>
+			   <input class="input1" type="text"/><br/>
+			   <br/>
+			   <table>
+			     <tr>
+				   <td style="color:white;font-size:16px;">Expires</td>
+				   <td style="color:white;font-size:16px;">CVC</td>
+				 </tr>
+				 <tr>
+				   <td><input class="input1" type="text"/><br/></td>
+				   <td><input class="input1" type="text"/><br/></td>
+				 </tr>
+			   </table>
+			   <br/><br/><br/><br/><br/><br/>
+			   <input type="submit" class="btn" value="Checkout"/>
+			</form>
+		</div>
+	 </div>
+    </div>	 
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<style>
+#img1{
+height:500px;
+width:1150px;
+padding:20px;
+border:5px solid maroon;
+box-shadow:0px 0px 5px 6px black inset;
+border-radius:5px;
+margin:10px 50px;
+}
+button{
+height:40px;
+width:200px;
+font-size:20px;
+font-weight:bold;
+margin:0px 10px;
+}
+.txt{
+position:absolute;
+top:35%;
+left:43%;
+font-size:50px;
+color:white;
+text-shadow:5px 5px 4px orange;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+var arr=["p1.jpg","p2.jpg","p3.jpg","p4.jpg","p5.jpg","p6.jpg","p7.jpg"];
+var cb=["5px solid lime","5px solid purple","5px solid orange","5px solid navy","5px solid hotpink","5px solid yellow"];
+var txta=["Hii","Ranjana","Chaurasiya","Welcome","To The World of","Javascript !","Awesome...."];
+var i=0;
+$("#btn1").click(function(){
+id=setInterval(function(){
+$("#img1").attr("src","images/"+arr[i]).css({border:cb[i]});
+$(".txt").html(txta[i]);
+i++;
+if(i==arr.length)
+i=0;
+},2000)
+})
+$("#btn2").click(function(){
+clearInterval(id);
+})
+})
+</script>
+</head>
+<body>
+<span class="txt"></span>
+<img src="images/p1.jpg" id="img1"><br/><br/><br/>
+<center><button id="btn1">Start Slide</button>
+<button id="btn2">Stop Slide</button></center>
+</body>
+</html>

@@ -1,0 +1,272 @@
+
+
+How to get the querystring from the server ?
+$_SERVER['QUERY_STRING']:its is used to get the query string.
+
+How to get the remote ip address of the client ?
+$_SERVER['REMOTE_ADDR']:It is used to get the ip addres.
+
+How to get the Complete URI ?
+$_SERVER['REQUEST_URI'];
+
+How to get current file name ?
+$_SERVER['SCRIPT_NAME'];
+
+How to get the request method type ?
+$_SERVER["REQUEST_METHOD"];
+
+How to get the server protocol ?
+$_SERVER["SERVER_PROTOCOL"];
+
+How to get the server host ?
+$_SERVER["HTTP_HOST"]
+
+How ti get the port  number ?
+$_SERVER["SERVER_PORT"];
+
+How to get the root of the project ?
+$_SERVER["DOCUMENT_ROOT"];
+
+
+What is the Activity tracking in server ?
+1)generally there are two types of resources 
+   i)serverfull
+  ii)serverless
+   
+serverfull resources acquires complete tracking of user and they response
+over the server few or more resources can not be shared in if resources is accessed from server 
+protocol medium.
+Ex:PHP(its compulsory to intract with the server)
+Tracking:Enable or disable
+1=Enable its can be tracked =enable 0
+0=Disable do not track =disable 1
+[HTTP_DNT]=>DNT=Donot track
+
+Serverless resources acquires incomplete tracking of the user and they can response over the server without 
+direct intraction of the server .
+They are not tracked by any server in this case in serverless resources can access any type of the data from 
+any source.
+EX:HTML(it is not compulsory to intract with the server)
+Tracking:Disable
+
+=====================================
+Working with the session super global variable.
+$_SESSION:It is a super global variable which can be accessed.....
+
+============================================
+$_FILES:
+This super global variable is used to handle file uploading in server.
+It is a two dimensional Array.
+Files can be any type..
+1)Bninary
+Example of Binary:
+Media files mp3,mp4,pdf,zipped or any other mime type.
+
+2)Non-Binary Files:
+Example:
+All text formate files are non binary files..
+.tmp 
+.log
+.txt
+.dat
+.doc
+.csv
+.html its the non binary files
+.xml its also the non binary files
+
+====
+Uploading means:
+Read one source and write on another source.
+Read one Destination and write to the another destination
+
+====
+copy and move:
+copy:First create the File
+     Read from the one file
+	 Write to the the another file
+	 Memory release of the file pointer
+	
+Move:First create the File
+     Read from the one file
+	 Write to the the another file
+	 Memory release of the second file pointer
+	 fseek(-1)	 
+	 
+	 
+	 Like In c Language:
+	 char ch;
+	 File* fp1;
+	 File* fp2;
+	 fp1=&File;
+	 fp2=&File;
+	 fp1=fopen("c:/something.txt",r);
+	 fp2=fopen("d:/something.txt",w);
+	 
+	 while(ch==fread(fb1)!=EOL)
+	 {
+	    fwrite(fp2,ch);
+	 }
+	 fclose(fp1);
+	 fclose(fp2);
+===============================================
+Steps how to upload files on the server:
+Internal Working:
+When ever we try to upload any file  a upload request is generated and file pointer is initialized.
+
+Who initialized to the file pointer ?
+inbuit server are responsible to the initialized the file pointer.
+1)Apache
+2)PHP CLI Server
+
+By default file pointer has source address of the temp folder location in the server folder of the any server.
+Apache:tmp root
+PHP Inbuilt Server :PHP tmp folder
+
+What is this tmp folder ?
+it is default folder where every file handling is performed by server
+Like Storing file based session by file name sess_......
+2)using any file with .tmp extension
+
+=>such file defined inside the php.ini file
+
+Now the file which is to be uploaded from browser required key parameters 
+1)file_upload=on  in ini setting of the server
+2)Path should be available to tmp folder 
+  upload_tmp_dir=...
+  define the path
+  
+Note: in the ini files  ; means disabled to enable directive remove ; 
+in http.conf # means disable to enable remove #
+
+3)File uploading is now ready 
+Steps for code:
+---------------
+<form action="#" method="post" enctype="multipart">
+<input type="file" name="xyz"/>
+<input type="submit"/>
+</form>
+
+Srever Side Code:
+print_r($_FILES);
+//Its generate the two dimensional array.
+name Key=file name
+tmp_name=file address of tmp folder.
+error:Its show the error if happend during upload.
+size:it gives the total memory reserved by the tmp folder.
+
+file Uploading:
+#save =file.php
+<html>
+<head></head>
+<body>
+<h1>$_FILES in PHP</h1>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<p>
+<input type="file" name="files"/>
+</p><br>
+<input type="submit"/>
+</form>
+</body>
+</html>
+
+#save=upload.php
+<?php
+
+//print_r($_FILES);
+/*
+Output:
+
+Array ( [files] => Array ( [name] => task1.html [type] => text/html [tmp_name] =>
+ C:\xampp\tmp\php3D41.tmp [error] => 0 [size] => 1890 ) )
+*/
+
+$up_files=$_FILES['files'];
+$filename=$up_files['name'];
+$type=$up_files['type'];
+$tmpname=$up_files['tmp_name'];
+$error=$up_files['error'];
+$size=$up_files['size'];
+
+
+echo "Filename = {$filename} <br/>";
+echo "Type = {$type} <br/>";
+echo "tmpname = {$tmpname} <br/>";
+echo "Error = {$error} <br/>";
+echo "FILE SIZE = {$size}<br/> ";
+
+?>
+
+Output:
+
+Filename = modal.html
+Type = text/html
+tmpname = C:\xampp\tmp\php8405.tmp
+Error = 0
+FILE SIZE = 1401
+=================
+tmp folder:It is the that folder where the all the file handling process store here.
+its create the tmp file for the normal request otherwise its create the sess before the session related files.
+php.ini server is production server/Live server.
+production server/Live server:
+Its always be in the public domain
+
+cli server is a development server/testing server/staging server
+development server/testing server/staging server:
+Its always be in the private domain 
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

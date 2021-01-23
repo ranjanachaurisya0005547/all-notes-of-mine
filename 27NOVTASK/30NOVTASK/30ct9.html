@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function concat()
+{
+ var t1=document.getElementById("txt1");
+ var t2=document.getElementById("txt2");
+ var t3=document.getElementById("txt3");
+ 
+ t3.value=t1.value+" "+t2.value;
+ 
+}
+</script>
+</head>
+<body>
+First String:<br/>
+<input type="text" id="txt1"/><br/>
+Second String:<br/>
+<input type="text" id="txt2"/><br/>
+Concat String:<br/>
+<input type="text" id="txt3"/><br/><br/><br/>
+<input type="button" onclick="concat()" value="CONCAT STRING">
+</body>
+</html>

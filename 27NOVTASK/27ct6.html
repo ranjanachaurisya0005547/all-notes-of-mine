@@ -1,0 +1,18 @@
+<html>
+<head>
+<script>
+  var bprice=prompt("Enter The Biryani per Plate Price:");
+  var cprice=prompt("Enter The Coffee per Cup Price:");
+  var gst=prompt("Enter The GST Price:");
+  
+  var totalp=3*parseInt(bprice)+3*parseInt(cprice);
+  var cgst=(totalp*parseInt(gst))/100;
+  document.write("Total Price="+(totalp+cgst));
+  
+  var eprice=totalp/3;
+  document.write("<br/>Each Friend Price ="+eprice);
+  
+</script>
+</head>
+<body></body>
+</html>

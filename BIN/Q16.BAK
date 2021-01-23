@@ -1,0 +1,15 @@
+//WAP to find out the square root of given number
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+   int num,sqr;
+   clrscr();
+   printf("Enter a number:");
+   scanf("%d",&num);
+   sqr=sqrt(num);
+   printf("%d Square Root=%d",num,sqr);
+   getch();
+
+}

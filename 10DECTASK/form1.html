@@ -1,0 +1,148 @@
+<html>
+<head>
+<style>
+#outer{
+height:600px;
+width:1350px;
+background:#f7f7f7;
+}
+#top{
+height:130px;
+width:1350px;
+}
+#bottom{
+height:470px;
+width:550px;
+padding:0px 400px;
+}
+.st1{
+width:100%;
+height:35px;
+border:2px solid gray;
+border-radius:3px;
+padding-left:10px;
+outline:none;
+font-size:16px;
+}
+table tr td{
+width:65%;
+}
+#btn{
+height:41px;
+color:white;
+background:orange;
+width:200px;
+font-size:19px;
+border:none;
+outline:none;
+border-radius:3px;
+}
+.tdc{
+height:30px;
+font-size:19px;
+font-family:calibri;
+}
+
+</style>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("#stn").change(function(){
+var tv=$(this).val().toUpperCase();
+if(tv=="SUMMER TRAINING"||tv=="OTHER")
+$("#feep").val(500);
+if(tv=="APPRENTICESHIP TRAINING"||tv=="VOCATIONAL TRAINING")
+$("#feep").val(1000);
+if(tv=="SYLLABUS TRAINING(WITH PROJECT)")
+$("#feep").val(2000);
+})
+})
+</script>
+</head>
+<body>
+<div id="outer">
+<!---------------------Top Part--------------->
+<div id="top">
+<center>
+<h1>Reg<span style="border-bottom:2px solid orange;">istration 
+<b style="color:orange;">Wi</span>th Us</b></h1>
+<p style="font-family:regular;font-size:17px;">
+You are just one step behind to join the Techpile. 
+I promise you to give my best if you will ll be<br/> a part of Techpile.
+</p>
+</center>
+</div>
+<!-----------------------Bottom Part---------------------->
+<div id="bottom">
+<form>
+<table cellspacing="5">
+<tr>
+<td class="tdc">Enroll No</td>
+<td class="tdc">Today Is</td>
+</tr>
+<tr>
+<td><input type="text" class="st1" style="background:#e9ecef;"></td>
+<td id="td1"><input type="text" class="st1" style="background:#e9ecef;"></td>
+</tr>
+<tr>
+<td class="tdc">Name</td>
+<td class="tdc">Apply For</td>
+</tr>
+<tr>
+<td><input type="text" placeholder="Username" class="st1"></td>
+<td class="d1">
+<select class="st1" id="stn">
+<option>Select Training Name</option>
+<option>Summer Training</option>
+<option>Apprenticeship Training</option>
+<option>Vocational Traning</option>
+<option>Syllabus Training(With Project)</option>
+<option>Other</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="tdc">College Name</td>
+<td class="tdc">Courses</td>
+</tr>
+<tr>
+<td><input type="text" class="st1"/></td>
+<td>
+<select class="st1">
+<option>Select Your Course</option>
+<option>Diploma</option>
+<option>Btech</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="tdc">Year</td>
+<td class="tdc">Contact No</td>
+</tr>
+<tr>
+<td>
+<select class="st1">
+<option>Your Pursing Year</option>
+<option>First</option>
+<option>Second</option>
+<option>Third</option>
+<option>Fourth</option>
+</select>
+</td>
+<td><input type="number" placeholder="Mobile No" class="st1"/></td>
+</tr>
+<tr>
+<td class="tdc">Email Id</td>
+<td class="tdc">Amount TO Pay</td>
+</tr>
+<tr>
+<td><input type="emial" placeholder="Email" class="st1"></td>
+<td><input type="text" class="st1" id="feep" style="background:#e9ecef;"></td>
+</tr>
+</table>
+</form>
+<input type="button" id="btn" value="Register Now"/>
+</div>
+</div>
+</body>
+</html>

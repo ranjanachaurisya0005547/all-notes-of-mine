@@ -1,0 +1,109 @@
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git branch mergebranch
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git checkout mergebranch
+Switched to branch 'mergebranch'
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git status
+On branch mergebranch
+nothing to commit, working tree clean
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ touch file1.html
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git status
+On branch mergebranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git add file1.html
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git status
+On branch mergebranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.html
+
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git commit -m "first committ in mergebranch"
+[mergebranch 9c749f9] first committ in mergebranch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.html
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git status
+On branch mergebranch
+nothing to commit, working tree clean
+
+user@user-PC MINGW32 ~/Desktop/project (mergebranch)
+$ git checkout master
+Switched to branch 'master'
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git merge mergebranch
+Updating 581f15d..9c749f9
+Fast-forward
+ file1.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.html
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$ git log
+commit 9c749f962e51b4727ff127cd7cdbad761aea52de (HEAD -> master, mergebranch)
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Tue Jan 12 13:24:26 2021 +0530
+
+    first committ in mergebranch
+
+commit 581f15d0d4e12e0e0db5520102f2db58bdcf6ea5
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Tue Jan 12 09:20:51 2021 +0530
+
+    My committed file
+
+commit 687e86945d4a1e76d701ce22b86a0425f03ac984 (ankit)
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Mon Jan 11 15:58:31 2021 +0530
+
+    This is my add and commit cmd together again
+
+commit 8653037fad34f7d400ad0d67a3f0f4342f15f3c7
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Mon Jan 11 15:42:18 2021 +0530
+
+    This is my add and commit both together opertion
+
+commit 33f827bde0a747e82506a3549ccbf8454a2e5826
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Mon Jan 11 14:10:07 2021 +0530
+
+    ok that's my commiteed file
+
+commit af6ccbc4456b40c267dcee8a5835fa89c3756980
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Mon Jan 11 09:15:35 2021 +0530
+
+    Initial Commit
+
+commit 2162d2c3759b9d0d1066c208ba17a38c4217c4d7
+Author: ranjana chaurasiya <ranjanachaurisya0005547@gmail.com>
+Date:   Sun Jan 10 11:32:58 2021 +0530
+
+    This is my first commit
+
+user@user-PC MINGW32 ~/Desktop/project (master)
+$

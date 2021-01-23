@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+ img{
+   height:550px;
+   width:400px;
+   border:10px double green;
+   border-radius:20px;
+   margin:0px 30px;
+ }
+ button{
+    background:green;
+	border:none;
+	border-radius:20px;
+	height:45px;
+	width:40%;
+	color:white;
+ }
+ button:hover{background:orange;}
+</style>
+<script>
+  function changeimg()
+  {
+     var img1=document.getElementById("img1");
+	 var img2=document.getElementById("img2");
+	 var img3=document.getElementById("img3");
+	 var img4=document.getElementById("img4");
+	 var img5=document.getElementById("img5");
+	 
+	 var path1=img1.src;
+	 var path2=img2.src;
+	 img1.src=path2;
+	 img2.src=path1;
+	 
+	 var path3=img3.src;
+	 var path4=img4.src;
+	 img3.src=path4;
+	 img4.src=path3;
+	 
+  }	
+  window.setInterval(changeimg,2000);
+</script>
+</head>
+<body onload="changeimg()">
+<img src="images/p1.jpg" id="img1"/>
+<img src="images/p2.jpg" id="img2"/>
+<img src="images/p3.jpg" id="img3"/>
+<img src="images/p4.jpg" id="img4"/>
+<img src="images/p5.jpg" id="img5"/>
+</body>
+</html>

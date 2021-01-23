@@ -1,0 +1,288 @@
+Looping statement:
+Looping statement is used when we have to execute a number of lines multiple times.
+Till when,the given loop is executed depends on the given condition.
+Interation of the loop is controlled in two way.
+1>Entry control
+  i)for loop
+  ii)while loop
+2>Exit control 
+  i)do-while loop
+--------------------------------------------------------------------------------
+Every loop has mainly three parts:
+1)initialization:Starting Point
+2)condition:Ending point
+3)updation:Increment/decrement /steps in each iteration 
+--------------------------------------------------------------------------------
+ while loop:
+It is entry control loop.That means given condition with loop is checked before block of while
+execute.if given condition is  true then block of while is execute otherwise not.
+
+Syntax:
+initialization;
+while(condition)
+{
+   //statement
+   
+   updation;
+} 
+-------------------------------------------------------------------------------------
+Example:
+void main()
+{
+   int i=1;          //initialization
+   
+   while(i<=5)       //condition   true true true true true false
+   {
+      printf("ok");   //statement  ok ok ok ok ok 
+	  i++;            //updation    2  3  4  5  6
+   }
+   printf("%d",i);    // Now i=6
+}
+------------------------------------------------------------------------------------
+for loop:
+for loop is also an entry centrol loop,that means condition given within the loop
+is checked first and if the given condition is true then the block of loop will be executed.
+For Loop is easy to use.
+Syntax:
+for(initialization;condition;updation)
+{
+
+   //statement
+   
+}
+---------------------------------------------------------------------------------------
+Example:
+//WAP to print numbers from 1 to 20.
+
+#include<stdio.h>
+void main()
+{
+ int i;
+ 
+ for(i=1;i<=20;i++)
+ {
+    printf("%d\t",i);
+ }
+ getch();
+}
+Example2:
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int num,i,digit;
+  clrscr();
+  printf("Enter a number:");
+  scanf("%d",&num);
+  for(i=num;i>0;i=i/10)
+  {
+    digit=i%10;
+    printf("%d\t",(digit*digit));	
+  }
+  getch();
+}
+----------------------------------------------------------------------------------------
+do-while Loop:
+it is a exit control loop,in do-while loop given condition within the loop is checked after 
+the execution of block of loop.
+So,either the given condition is true or false,loop will be executed at least one time.
+   
+Syntax:
+do
+{
+//statement
+
+updation;   
+}while(condition);   
+-------------------------------------------------------------------------------------------
+Example:
+#include<stdio.h>
+void main()
+{
+   int i=1;
+   clrscr();
+   do
+   {
+      printf("It Executed at least One time !");
+	  i++;
+   }
+   while(i>=20);
+   getch();
+}
+output:
+It is Executed at least one time !
+-----------------------------------------------------------------------------------------
+Nested loop:
+Nested loop a structure of a program when any of the loop is difined within the 
+block of another loop.
+
+Syntax:
+
+for(initialization;condition;updation) //outer loop
+{
+
+     //statement
+    for(initializaion;condition;updation) //inner loop
+	{
+	   //statment
+	}
+    
+	//statement
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

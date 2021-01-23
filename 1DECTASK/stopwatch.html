@@ -1,0 +1,93 @@
+<html>
+<head>
+<style>
+*{
+margin:0px;
+padding:0px;
+}
+#outer{
+ height:650px;
+ width:1010px;
+ background:linear-gradient(45deg,skyblue,pink,skyblue);;
+ color:white;
+}
+#hour,#minute,#second{
+height:330px;
+width:230px;
+background:maroon;
+float:left;
+margin:109px 39px;
+box-shadow:5px 5px 6px red inset;
+border-radius:10px;
+color:white;
+font-size:105px;
+text-align:center;
+line-height:300px;
+border:10px double red;
+font-family:Times New Roman;
+}
+input{
+background:maroon;
+border:none;
+color:white;
+font-family:Times New Roman;;
+font-size:22px;
+height:50px;
+width:20%;
+border-radius:10px;
+margin:0px 13px;
+font-weight:bold;
+}
+input:hover{border:none;outline:none;}
+</style>
+<script>
+var h=0,m=0,s=0;
+function demo()
+{
+   var h1=document.getElementById("hour");
+   var m1=document.getElementById("minute");
+   var s1=document.getElementById("second");
+   s++;
+   if(s==60)
+   {
+     m++;
+	 s=0;
+   if(m==60)
+   {
+     h++;
+	 m=0;
+   }
+   }
+   h1.innerHTML=h;
+   m1.innerHTML=m;
+   s1.innerHTML=s;
+   
+}
+function start()
+{
+x=setInterval(demo,1000);
+}
+function stop()
+{
+clearInterval(x);
+}
+function refresh()
+{
+window.location.href="stopwatch.html";
+}
+</script>
+</head>
+<body>
+<div id="outer">
+<div id="hour">HH</div>
+<div id="minute">MM</div>
+<div id="second">SS</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" onclick="start()" value="START"/>
+<input type="button" onclick="stop()" value="STOP"/>
+<input type="button" onclick="refresh()" value="REFERESH"/>
+</div>
+</body>
+</html>

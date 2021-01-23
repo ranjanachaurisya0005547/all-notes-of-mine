@@ -1,0 +1,17 @@
+//WAP to calculate the simple intrest
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int pr;
+   float rate,time,si;
+   printf("Enter The principal amount:");
+   scanf("%d\n",&pr);
+   printf("Enter the rate:");
+   scanf("%f\n",&rate);
+   printf("Enter The Time:");
+   scanf("%f\n",&time);
+   si=(pr*rate*time)/100;
+   printf("Simple Intrest is=%f",si);
+   getch();
+}

@@ -1,0 +1,54 @@
+Order by:
+select * from employee order by first_name desc;
+select * from employee order by first_name asc;
+
+limit:
+
+select * from employee order by employee limit 3;
+
+select * from employee order by salary desc limit 0,3;
+
+select * from employee order by salary desc limit 3,3;
+
+=============================================================================================
+For Find Unique Record:
+For find unique record u can use disticnt keyword.
+------------------------------------------
+select distinct first_name from employee;
+------------------------------------------
+select distinct sex,super_id from employee;
+============================================================================================
+Aggregate Function:
+Aggregate function provides a single by after  calculation/operation on large size of data.
+sum():select sum(salary) from employee;
+avg():select avg(salary) from employee where sex='F';
+count():select count(emp_id) from employee;
+min():select min(salary) from employee;
+max():select max(salary) from employee;
+
+=============================================================================================
+Group By:
+group by is used to combine data in groups from large size of data.
+
+
+having:to apply condition on selected data by group by clause,having is used.
+
+Example:
+Select count(sex),sex from employee group by sex having sex is not null;
+----
+select sum(pfee),name,status from student group by name having status='True';
+
+==============================================================================================
+INNER QUERY:
+select * from branch where branch_id in
+(
+ select distinct branch_id from employee where branch_id is not null
+);
+
+
+
+
+
+
+
+

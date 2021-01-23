@@ -1,0 +1,29 @@
+<html>
+<head>
+<style></style>
+<script>
+function demo()
+{
+  var arr=[10,20,30,40,50];
+  var count=0;
+  var check=prompt("Enter The Search Element:");
+  for(i=0;i<arr.length;i++)
+  {
+    if(parseInt(check)==arr[i])
+	count=1;
+  }
+  if(count!=0)
+    alert(check+" is present in array !");
+  else
+    alert(check+" is not present in array !");
+}
+</script>
+</head>
+<body>
+<h1>This program is used to find an inputed element is present in array or not.
+If the array element is 10,20 30,40,50 then its returns the number is present in array 
+otherwise its returns the element is not present in array.
+</h1>
+<button onclick="demo()">CLICK HERE</button>
+</body>
+</html>

@@ -1,0 +1,109 @@
+Company Database:
+
+=================================================================
+1)branch:
+create table branch
+(
+    branch_id int primary key auto_increment,
+    branch_name varchar(200),
+    mgr_start_date date
+);
+---------------------------------------------------------------------------
+insert into branch(branch_name,mgr_start_date)
+values('corporate','2006-02-09'),('Scranton','1992-04-06'),('stamford','1998-02-13');
+=================================================================
+2)client:
+create table client
+(
+    client_id int primary key auto_increment,
+    client_name varchar(200),
+    branch_id int,
+    foreign key(branch_id) references branch(branch_id) on delete set null
+);
+-----------------------------------------------------------------
+insert into client(client_name,branch_id)
+values('Dunmore',2),('Lackwana Country',2),('FedEx',3),('John Daly Law,LLC',3),
+('Scranton Whitepages',2),('Times Newspaper',3),('FedEx',2);
+
+
+===================================================================
+3)branch_supplier:
+create table branch_supplier
+(
+    super_id int primary key auto_increment,
+    branch_id int,
+    supplier_name varchar(200),
+    supply_type varchar(200),
+    foreign key(branch_id) references branch(branch_id)
+);
+---------------------------------------------------------------------
+insert into branch_supplier(branch_id,supplier_name,supply_type)
+values(2,'Hammer Mill','Paper'),(2,'Uni-ball','Writing Utensils'),(3,'Patriot Paper','Pper'),
+(2,'J.T. Forms & Labels','Custom Form'),(3,'Uni-ball','Writing Utensils'),(3,'Hammer Mill','Paper'),
+(3,'Stanford Labels','Custom Forms');
+=================================================================================
+4)employee:
+create table employee
+(
+    emp_id int primary key auto_increment,
+    first_name varchar(200),
+    last_name varchar(200),
+    birth_date date,
+    sex varchar(100),
+    salary int,
+    super_id int,
+    branch_id int,
+    foreign key(super_id) references branch_supplier(super_id),
+    foreign key(branch_id) references branch(branch_id)
+);
+-----------------------------------------------------------------
+insert into employee(first_name,last_name,birth_date,sex,salary,branch_id)
+values('David','Wallace','1967-05-11','M',250000,1);
+
+insert into employee(first_name,last_name,birth_date,sex,salary,super_id,branch_id)
+values('Jan','Levision','1961-05-11','F',110000,1,1),
+('Michel','Scott','1964-03-15','M',75000,1,1),
+('Angela','Martin','1971-06-25','F',63000,3,2),
+('kelly','kapoor','1980-02-05','F',55000,3,2),
+('Stanley','Hudson','1958-02-19','M',69000,3,2),
+('Josh','Porter','1969-09-05','M',78000,1,3),
+('Andy','Bernard','1973-07-22','M',65000,7,3),
+('Jim','Halpert','1978-10-01','M',71000,7,3);
+
+================================================================
+5)works_with:
+create table works_with
+(
+    emp_id int,
+    client_id int,
+    total_sales int,
+    foreign key(emp_id) references employee(emp_id),
+    foreign key(client_id) references client(client_id)
+);
+------------------------------------------------------------------
+insert into works_with(emp_id,client_id,total_sales) 
+values(6,1,55000),
+(3,2,267000),(9,3,22500),(8,4,5000),(9,4,12000),(6,5,33000),
+(8,6,26000),(3,7,15000),(6,7,13000);
+=============================================================================
+For See the inputed data use this query:
+
+select * from employee;
+select * from branch;
+select * from client;
+select * from branch_supplier;
+select * from works_with;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

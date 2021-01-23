@@ -1,0 +1,18 @@
+//ex19
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int i=1,j=2;
+   clrscr();
+   switch(3)
+   {
+      case 1:printf("Sun !");
+      break;
+      case 2:printf("Mon !");
+      break;
+      default:printf("Tue !");
+   }
+
+   getch();
+}

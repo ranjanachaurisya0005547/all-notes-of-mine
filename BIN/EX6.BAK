@@ -1,0 +1,12 @@
+//Ex6
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   char a,b,c;
+   A='A';
+   B='B';
+   C=a+b;
+   printf("%d",c);
+   getch();
+}

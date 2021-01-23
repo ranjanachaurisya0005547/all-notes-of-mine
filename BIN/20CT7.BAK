@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ char str1[50],str2[50];
+ int l1,l2,rem;
+ clrscr();
+ printf("Enter The First String:");
+ gets(str1);
+ printf("Enter The Second String:");
+ gets(str2);
+
+ l1=strlen(str1);
+ l2=strlen(str2);
+
+ if(l1>l2)
+ {
+    printf("%s is greatest !",str1);
+    rem=l1-l2;
+ }
+ else
+ {
+    printf("%s is greatest !",str2);
+    rem=l2-l1;
+ }
+ printf("\nExtra Charecter is=%d",rem);
+
+ getch();
+}

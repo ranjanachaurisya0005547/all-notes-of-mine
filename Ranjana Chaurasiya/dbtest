@@ -1,0 +1,70 @@
+1)Customer Table:
+
+create table customer
+(
+    customerid int primary key auto_increment,
+    firstname varchar(200),
+    lastname varchar(200),
+    city varchar(200),
+    state varchar(200)
+);
+insert into customer
+values(10101,'John','Gray','Lynden','Washington'),
+(10298,'Leroy','Browwn','PineTop','Arizona'),
+(10299,'Elroy','Keller','Snoqualmie','Washigton'),
+(10315,'Lisa','Jones','Oshkosk','Wlsconsin'),
+(10325,'Ginger','Schultz','Pocatello','Idaho');
+======================================================================
+2)Price Table:
+
+create table price
+(
+    customerid int,
+    order_date varchar(200),
+    item varchar(200),
+    quantity int,
+    price int
+);
+
+insert into price 
+values(10330,'30-Jun-1999','Pogo stick',1,28),
+(10101,'30-Jun-1999','Raft',1,58),
+(10298,'01-Jul-1999','Skateboard',1,33),
+(10101,'01-Jul-1999','Life Vest',4,125),
+(10299,'06-Jul-1999','Parachute',1,1250);
+
+==============================================================================
+Question 1 Query:
+select customerid,firstname from customer
+where customerid=10101;
+
+=============================================================================
+Question 2 Query:
+select max(price) from price;
+
+=============================================================================
+Question 3 Query:
+select firstname,order_date,item,quantity,price
+from customer join price where customer.customerid=price.customerid;
+
+OR
+select customer.firstname,price.order_date,price.item,price.quantity,price.price
+from customer join price where customer.customerid=price.customerid;
+
+==============================================================================
+Question 4 Query:
+select item from price where order_date like '%Jun%';
+OR
+select item from price where order_date like '__-Jun-____';
+
+===============================================================================
+Question 5 Query:
+select sum(quantity) from price;
+
+
+
+
+
+
+
+

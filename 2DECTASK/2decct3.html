@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+#dv{
+height:370px;
+width:960px;
+border:20px groove red;
+border-radius:10px;
+box-shadow:6px 6px 6px 10px black inset;
+display:none;
+}
+</style>
+<script>
+function demo1()
+{
+var fname=["--SELECT FRUITS--","APPLE","BLACK BERRY","BANANA","PINEAPPLE","STROBERRY","ORANGE"];
+var fimg=[" ","im1.jpg","im2.jpg","im3.jpg","im4.jpg","im5.jpg","im6.jpg"];
+var res="<select id='ddl' onchange='demo()'>";
+for(i=0;i<fname.length;i++)
+{
+ res+="<option value='"+fimg[i]+"'>"+fname[i]+"</option>";
+}
+res+="</select>";
+document.getElementById("p1").innerHTML=res;
+}
+function demo()
+{
+ var d=document.getElementById("ddl").value;
+ var div1=document.getElementById("dv");
+ if(d.value!="--SELECT FRUITS--")
+ {
+ div1.style.background="url('images/"+d+"')";
+ div1.style.display="block";
+ div1.style.backgroundSize="100% 100%";
+ }
+ 
+}
+</script>
+</head>
+<body onload="demo1()">
+<p id="p1"></p>
+<div id="dv"></div>
+</body>
+</html>

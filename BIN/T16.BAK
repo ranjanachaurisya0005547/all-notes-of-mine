@@ -1,0 +1,24 @@
+//WAP to check a given number positive,negative or zero
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int num;
+   clrscr();
+   printf("Enter Any Integer Value:");
+   scanf("%d",&num);
+   if(num==0)
+   {
+      printf("Given Number Is zero !");
+   }
+   else if(num>0)
+   {
+       printf("Given Number is Positive !");
+   }
+   else
+   {
+       printf("Given Number is Zero !");
+   }
+
+   getch();
+}

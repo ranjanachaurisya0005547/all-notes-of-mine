@@ -1,0 +1,12 @@
+//WAP TO FIND THE CUBE OF GIVEN NUMBER
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int num;
+   clrscr();
+   printf("Enter a number:");
+   scanf("%d",&num);
+   printf("Cube of %d:%d",num,(num*num*num));
+   getch();
+}

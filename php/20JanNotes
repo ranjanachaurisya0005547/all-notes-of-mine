@@ -1,0 +1,168 @@
+WAP in php for session based applocation:
+#program save=login.php
+<?php
+include "errors.php";
+include "functions.php";
+?>
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+<h1>Welcome to the session based Login Form.....</h1>
+<?php show_errors(); ?>
+<form action="lgcode.php?/=<?php echo basename($_SERVER['PHP_SELF']);?>" method="Post">
+<p>Email:<input type="text" name="email" id="email"/>
+<?php show_errors('email'); ?>
+</p>
+<p>Password:<input type="password" name="password" id="pass"/>
+<?php show_errors('password'); ?>
+</p>
+<p><input type="checkbox" name="remember" value="remember">Remember Me</p>
+<input type="submit" name="btn"/>
+</form>
+</body>
+</html>
+==========================
+#program save=lgcode.php
+<?php
+include "functions.php";
+include "errors.php";
+if($_SERVER['REQUEST_METHOD']=='POST'){
+	if(isset($_POST['btn']) and !empty($_POST['btn'])){
+		$email=isset($_POST['email'])?$_POST['email']:null;
+		$password=isset($_POST['password'])?$_POST['password']:null;
+		$email=sanitise($email);
+		$password=sanitise($password);
+		$dbemail="ranjana@gmail.com";
+		$dbpass="1234";
+		
+		//email empty vaildation	
+		if(is_null($email) or empty($email)){
+			header("location:{$_REQUEST['/']}?action=email&msg=303");
+			exit;
+		}
+		
+		//password empty vailidation
+		if(is_null($password) or empty($password)){
+			header("location:{$_REQUEST['/']}?action=password&msg=304");
+			exit;
+		}
+		
+		//email and password not empty vailidation
+		if(!empty($email) and !empty($password)){
+			//check database email and password
+			if($email==$dbemail and $password==$dbpass){
+				header("location:dashboard.php?login_status=login-success");
+			}else{
+				header("location:{$_REQUEST['/']}?msg=305");
+			}
+		}
+		
+	}else{
+		header("location:{$_REQUEST['/']}?msg=302");
+	}
+}else{
+	header("location:{$_REQUEST['/']}?msg=301");
+}
+
+?>
+==========================
+#progran save=errors.php
+<?php
+/*
+  
+#Convention
+#301 => Illegal request send from the form
+#302 => Invailid Button
+#303 => email blank
+#304 =>password black
+#305 =>Login error Invaild credentials or email or password invaild
+*/
+$msg['301']="* Ill -request send from form";
+$msg['302']="* Invaild Button";
+$msg['303']="* Email cannot be empty ";
+$msg['304']="* Password cannot be empty";
+$msg['305']="* Invaild Email or Password";
+$msg['306']="<span style='color:green;'>Logout Successfull !</span>";
+?>
+
+<h1>Welcome to the dashboard !</h1>
+<a href="logout.php">Logout</a>
+
+<?php
+header("location:login.php?msg=306");
+?>
+================================
+
+
+
+'time_stamp'=>time();
+step 1:save=lgcode.php
+//session created
+				session_start();//timestamp for user_error
+				
+				//Initialize the session database
+				$_SESSION['user']=array(
+				  'name'=>'admin',
+				  'email'=>$email,
+				  'password'=>$password
+				);
+				
+				
+step 2:save=dashbord.php
+<?php
+//starting the session
+session_start();
+
+//access the session 
+$session=$_SESSION['user'];
+
+//secure the session
+if(!isset($session)){
+	if(is_null($session) or empty($session)){
+		header("location:login.php?msg=307");
+	}
+}
+
+//how to get the session
+$email = $session['email'];
+?>
+
+step 3:save=logout.php
+<?php
+header("location:login.php?msg=306");
+//session start
+session_start();
+$session=$_SESSION['user'];
+
+//logout logic
+if(isset($session)){
+	if(!is_null($session) and !empty($session)){
+		
+		//1.unset the session variable
+		//2.destroy the session
+		session_unset($_SESSION['admin']);//unset the session key
+		session_destroy();//destroy the timestap of the session
+		header("location:login.php?msg=306");//redirect the page
+	}
+}
+?>
+
+step 4:save=error.php
+$msg['307']="Session is deleted Login Again !";				
+
+
+
+
+
+
+
+
+
+
+
+
+
+

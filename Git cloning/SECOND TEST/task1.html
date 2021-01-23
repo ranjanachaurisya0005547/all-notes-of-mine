@@ -1,0 +1,921 @@
+<html>
+   <head>
+      <style>
+	     #outer{
+		    min-height:1000px;
+			width:1000px;
+			border:1px solid black;
+		 }
+		 	     *{
+		    margin:0px;
+			padding:0px;
+		 }
+	       #outer{
+		       min-height:4000px;
+			   width:1000px;
+			   border:1px solid black;
+			   margin:0px auto;
+		   }
+		   #imgarea{
+		      height:700px;
+			  width:1000px;
+			  background-image:url(images/Desert.jpg);
+			  background-size:100% 100%;
+		   }
+		   #rgbaarea{
+		      height:670px;
+			  width:1000px;
+			  background:rgba(240,76,56,.6);
+			  text-align:center;
+			  padding-top:30px;
+			  
+		   }
+		   #inner{
+		      height:60px;
+			  width:1000px;
+			  background:transparent;
+			  position:sticky;
+			  top:0px;
+			  
+			  
+		   }
+		   #logo{
+		     height:60px;
+			 width:145px;
+			 float:left;
+			 font-size:22px;
+			 color:white;
+			 font-weight:bold;
+			 font-family:impact;
+			 letter-spacing:2px;
+			 padding-left:5px;
+			 padding-top:10px;
+			 text-align:center;
+			 
+		   }
+		   #menu{
+		     height:60px;
+			 width:850px;
+			 float:left;
+			 
+		   }
+		   #menu ul{
+		     list-style:none;
+		   }
+		   #menu ul a li{
+		      height:55px;
+			  width:110px;
+			  float:left;
+			  color:white;
+			 font-size:19px;
+			 margin-left:5px;
+			 margin-right:5px;
+			 text-align:center;
+			 line-height:60px;
+			 font-family:regular;
+			 border-top:5px solid transparent;
+			 transition:all ease 1s;
+			 font-weight:bold;
+			 
+		   }
+		   #menu ul a li:hover{
+			   color:orange;
+			   transition:all ease 1s;
+		   }
+		   #btn1{
+		       background:#f04c36;
+			   height:30px;
+			   transform:translateY(5px);
+			   border-radius:10px;
+			   border:1px solid white;
+			   
+		   }
+		   #btn1:hover{
+		     border:none;
+			 background:blue;
+			 color:white;
+			 border:1px solid transparent;
+
+		   }
+		   #txtarea{
+		      height:400px;
+			  width:1000px;
+			  text-align:center;
+			  font-size:20px;
+			  margin-top:150px;
+			  color:white;
+		   }
+		   .btn2{
+		      background:#74443e;
+			  padding:20px;
+			  cursor:pointer;
+		   } 
+		   .btn2 a{
+		      text-decoration:none;
+			  color:white;
+		   }
+		   #txta1{
+		      min-height:300px;
+			  width:900px;
+			  background:white;
+			  padding:0px 50px;
+			  
+		   }
+		   
+		   .box1{
+		     height:300px;
+			 width:270px;
+			 float:left;
+			 background:white;
+			 margin:0px 15px;
+			 position:relative;
+			 top:-70px;
+			 box-shadow:4px 4px 3px #e5e4eb;
+			
+		   }
+		   .tbox1{
+		     height:80px;
+			 width:170px;
+			 padding:10px 0px 10px 100px;
+			 
+		   }
+		   .bbox1{
+		     height:200px;
+			 width:270px;
+			 background:white;
+			 text-align:center;
+		   }
+		   #imgpart{
+		      min-height:400px;
+			  width:1000px;
+			  
+		   }
+		   .lpart{
+		      height:340px;
+			  width:540px;
+			  float:left;
+			  background:url(images/img2.jpg);
+			  background-size:100% 100%;
+			  margin:30px 30px;
+		   }
+		   .rpart{
+		      height:400px;
+			  width:400px;
+			  float:left;
+		   }
+		   #txtpart{
+		      min-height:600px;
+			  width:1000px;
+		   }
+		   #ttxtpart{
+		      min-height:200px;
+			  width:940px;
+			  margin:0px 30px;
+			  
+		   }
+		   #btxtpart{
+		     min-height:400px;
+			 width:940px;
+			 margin:0px 30px;
+			 color:#8f8888;
+			  font-family:regular;
+			  font-weight:bold;
+			  font-size:18px;
+			  text-align:justify;
+			  word-spacing:2;
+		   }
+		   #imgpart2{
+		      min-height:350px;
+			  width:1000px;
+			  background:url(images/Desert.jpg);
+			  background-size:100% 100%;
+		   }
+		   #imgrgba{
+		      height:290px;
+			  width:945px;
+			  background:rgba(0,0,0,.7);
+			  padding:60px 0px 0px 55px;
+			  color:white;
+		   }
+		   .btn3{
+		      padding:16px 40px;
+			  background:red;
+			  cursor:pointer;
+			  border-radius:7px;
+		   }
+		   .btn3 a{
+		      color:white;
+			  font-weight:bold;
+			  text-align:center;
+			  text-decoration:none;
+		   }
+		   #txtpart3{
+		      min-height:200px;
+			  width:1000px;
+			  text-align:center;
+			  padding-top:50px;
+			  color:#9a9a9a;
+			  font-size:19px;
+			  line-height:28px;
+		   }
+		   #imgpart3{
+		      min-height:400px;
+			  width:980px;
+			  padding:10px 10px;
+			  
+		   }
+		   .imga1{
+		        height:400px;
+				width:215px;
+				float:left;
+				margin:0px 10px;
+				border:5px solid red;
+		   }
+		   .timg1{
+		       height:225px;
+			   width:215px;
+			   background:url(images/img8.jpg);
+			   background-size:100% 100%;
+		   }
+		   .bimg1{
+		      height:175px;
+			  width:215px;
+		   }
+		   .name1{
+		      height:90px;
+			  width:215px;
+			  text-align:center;
+			  padding-top:30px;
+		   }
+		   .icons{
+		     height:85px;
+			 width:215px;
+		   }
+		   .icons img{
+		     height:30px;
+			 width:35px;
+			 position:relative;
+			 bottom:-29px;
+			 left:10;
+		   }
+		   #boxgroup{
+		      min-height:900px;
+			  width:1000px;
+              margin-top:100px;
+			  background:url(images/Desert.jpg);
+			  background-size:100% 100%;
+			  background-attachment:fixed;
+		   }
+		   #rgbaa1{
+		      height:950px;
+			  width:1000px;
+			  background:rgba(0,0,0,.5);
+		   }
+		   #toptxtbox{
+		      min-height:225px;
+			  width:1000px;
+			  text-align:center;
+			  color:white;
+			  padding-top:75px;
+			  font-size:17px;
+			  
+		   }
+		   .mboxa1{
+		      min-height:290px;
+			  width:969px;
+			  margin:15px 15.5px;
+			  
+		   }
+		   .boxa1{
+		      height:290px;
+			  width:300px;
+			  margin-right:20px;
+			  float:left;
+			  text-align:center;
+			  background:white;
+			  border-radius:10px;
+		   }
+		   .a1{
+		       height:95px;
+			   width:280px;
+			   padding-left:20px;
+			   padding-top:5px;
+		   }
+		   .a2{
+		      height:200px;
+			  width:300px;
+			  color:#808080;
+		   }
+		  .anotherimggroup{
+		       min-height:500px;
+			   width:1000px;
+			   
+		  }
+		  .timgpart{
+		     min-height:250px;
+			 width:970px;
+			 margin:10px 15.5px;
+		  }
+		  .imgc1{
+		    height:250px;
+			width:313px;
+			margin-left:10px;
+			background:url(images/img10.jpg);
+			background-size:100% 100%;
+			float:left;
+			transition:all ease .6s;
+		  }
+		  .imgc1:hover{
+		     transform:translateY(-5px);
+			 transition:all ease .8s;
+		  }
+		  #imgpartd1{
+		     min-height:500px;
+			 width:1000px;
+			 background:url(images/Desert.jpg);
+			 background-size:100% 100%;
+			 margin:100px 0px 20px 0px;
+		  }
+		  #d1rgba{
+		     min-height:430px;
+			 width:1000px;
+			 background:rgba(0,0,0,.6);
+			 text-align:center;
+			 color:white;
+			 padding-top:70px;
+			 font-size:19px;
+		  }
+		  #sliderarea{
+		     min-height:500px;
+			 width:900px;
+			 padding:15px 50px;
+			 
+		  }
+		  .lslider{
+		     height:500px;
+			 width:436px;
+			 background:#f1f1f1;
+			 margin-right:10px;
+			 float:left;
+			 border:2px solid gray;
+			 
+		  }
+		  .rslider{
+		     height:500px;
+			 width:436px;
+			 background:#f4f4f4;
+			 margin-left:10px;
+			 float:left;
+			 border:2px solid gray;
+			 
+		  }
+		  .topparte1{
+		     height:150px;
+			 width:436px;
+			 
+		  }
+		  .z1{
+		     height:150px;
+			 width:150px;
+			 background:url(images/img12.jpg);
+			 background-size:100% 100%;
+			 border-radius:50%;
+			 float:left;
+			 
+		  }
+		  .z2{
+		     height:100px;
+			 width:150px;
+			 float:left;
+			 padding-top:50px;
+			 padding-left:50px;
+			 font-size:18px;
+			 text-aligh:center;
+		  }
+		  .z3{
+		     height:150px;
+			 width:86px;
+			 background:url(images/img13.jpg);
+			 background-size:100% 100%;
+			
+			 float:left;
+			 
+		  }
+		  .bottomparte2{
+		     height:250px;
+			 width:396px;
+			 font-size:19px;
+			 color:#808080;
+			 text-align:justify;
+			 padding:50px 20px;
+		  }
+		  #txtparth1{
+		     height:850px;
+			 width:1000px;
+			 background:linear-gradient(#edf6fd,#e1e5f1);
+			 margin-top:100px;
+		  }
+		  #imgpartf1{
+		     height:540px;
+			 width:900px;
+			 margin:5px 50px;
+			 
+		  }
+		  .imgpartw1{
+		     height:540px;
+			 width:290px;
+			 float:left;
+			 background:white;
+			 margin-right:10px;
+			 
+		  }
+		  .t11{
+		    height:200px;
+			width:290px;
+			background:url(images/img15.jpg);
+			background-size:100% 100%;
+			
+		  }
+		  .t11:hover{
+		     transform:scale(1.02);
+			 transition:all ease .6s;
+		  }
+		  .b11{
+		     height:330px;
+			 width:250px;
+			 background:white;
+			 padding:5px 20px;
+			 text-align:justify;
+			 font-size:20px;
+			 color:#808080;
+		  }
+		  #footer{
+		     height:350px;
+			 width:1000px;
+			 background:#1f2360;
+			 color:white;
+			 font-size:16px;
+			 text-align:justify;
+			 
+		  }
+		  .lfooter{
+		     height:250px;
+			 width:200px;
+			 float:left;
+			 padding:50px 50px;
+	
+		  }
+		  .mfooter{
+		     height:250px;
+			 width:160px;
+			 float:left;
+			 padding:50px 20px;
+		  }
+	  </style>
+   </head>
+   <body>
+      <div id="outer">
+	     <div id="imgarea">
+		    <div id="rgbaarea">
+			 <div id="inner">
+			   <div id="logo">
+			   <img src="images/bulb.jpg" height="30px" style="transform:translateY(7px);border-radius:20px;"/>
+			   Nawarly</div>
+			    <div id="menu">
+				   <ul>
+				      <a href=""><li>Home</li></a>
+					  <a href=""><li>About Us</li></a>
+					  <a href=""><li>Services</li></a>
+					  <a href=""><li>Projets</li></a>
+					  <a href=""><li>FAQ</li></a>
+					  <a href=""><li>Contact</li></a>
+					  <a href="">
+					  <li id="btn1">Contact US</li></a>
+				   </ul>
+				</div>
+			 </div>
+			 <div id="txtarea">
+			    <p style="color:yellow;">―  Get All Electricity Problems Fixed ―</p><br/><br/>
+				<h2 style="font-family:verdana;color:white;">
+				We Are More Trusted Electricity &<br/> Electricion Services Company</h2>
+				<br/><br/>
+				<p>
+				  Lorem Ipsum is simply dummy text of the printing and typesetting<br/> 
+				  industry. Lorem Ipsum has been the industry's 
+				</p><br/><br/>
+				<span class="btn2"><a href="">CONTACT US</a></span>
+				<span class="btn2"><a href="">LEARN MORE</a></span>
+			 </div>
+			</div> 
+		  </div>
+		  <div id="txta1">
+		      <div class="box1">
+			     <div class="tbox1">
+				    <img src="images/img1.jpg"/>
+				 </div>
+				 <div class="bbox1">
+				 <br/><br/>
+				    <h2 style="color:#00006a;text-align:center;">Trusted Professionals</h2><br/>
+					  <p>
+					     Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+					  </p>
+				 </div>
+			  </div>
+			  <div class="box1">
+			     <div class="tbox1">
+				    <img src="images/img1.jpg"/>
+				 </div>
+				 <div class="bbox1">
+				 <br/><br/>
+				    <h2 style="color:#00006a;text-align:center;">Trusted Professionals</h2><br/>
+					  <p>
+					     Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+					  </p>
+				 </div>
+			  </div>
+			  <div class="box1">
+			     <div class="tbox1">
+				    <img src="images/img1.jpg"/>
+				 </div>
+				 <div class="bbox1">
+				 <br/><br/>
+				    <h2 style="color:#00006a;text-align:center;">Trusted Professionals</h2><br/>
+					  <p>
+					     Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+					  </p>
+				 </div>
+			  </div>
+		  </div>
+		  <div id="imgpart">
+		      <div class="lpart"></div>
+			  <div class="rpart"></div>
+		  </div>
+		  <div id="txtpart">
+		     <div id="ttxtpart" style="text-transform:capitalize;color:#13287e;font-size:40px;">
+			     We Provide the best electrical <br/>services from our leading<br/> company
+			 </div>
+			 <div id="btxtpart">
+			    			        <p>
+					   Lorem Ipsum is simply dummy text of the printing and typesetting<br/> 
+					   industry. Lorem Ipsum has been the industry's standard dummy <br/>
+					   text ever since the 1500s, when an unknown printer took a <br/>
+					   galley of type and scrambled it to make a<br/>
+					   type specimen book. It has survived not only five centuries,<br/>
+					</p>
+					<br/><img src="images/check1.jpg" height="50px" style="border-radius:50%;transform:translateY(19px);"/>
+					<span>30+years of experience in Electrical & repairing </span>
+					<br/><img src="images/check1.jpg" height="50px" style="border-radius:50%;transform:translateY(19px);"/>
+					<span>30+years of experience in Electrical & repairing</span>
+					<br/><img src="images/check1.jpg" height="50px" style="border-radius:50%;transform:translateY(19px);"/>
+					<span>30+years of experience in Electrical & repairing</span>
+					<br/><img src="images/check1.jpg" height="50px" style="border-radius:50%;transform:translateY(19px);"/>
+					<span>30+years of experience in Electrical & repairing</span>
+
+			 </div>
+		  </div>
+		  <div id="imgpart2">
+		      <div id="imgrgba">
+			    <h1>
+				   GET your quote or call:(080) 5388-233-267<br/>
+				   are you ready ? book application now !
+				</h1><br/><br/><br/>
+				<span class="btn3"><a href="">BOOK NOW</a></span>
+			  </div>
+		  </div>
+		  <div id="txtpart3">
+		     <h4 style="color:cyan;">Our Team</h4>
+			 <h1 style="color:#000071;">Awesome Team</h1><br/>
+			 <p>
+			    Lorem Ipsum is simply dummy text of the printing and <br/>
+				typesetting industry. Lorem Ipsum has been the industry's 
+			 </p>
+		  </div>
+		  <div id="imgpart3">
+		     <div class="imga1">
+			     <div class="timg1"></div>
+				 <div class="bimg1">
+				     <div class="name1">
+					    <h3 style="text-transform:uppercase;">Joman helal</h3>
+					 </div>
+					 <div class="icons">
+					    <a href="#"><img src="images/img3.jpg"/></a>
+						 <a href="#"><img src="images/img4.jpg"/></a>
+						 <a href="#"><img src="images/img5.jpg"/></a>
+						 <a href="#"><img src="images/img6.jpg"/></a>
+						 <a href="#"><img src="images/img7.jpg"/></a>
+					 </div>
+				 </div>
+			 </div>
+			 <div class="imga1">
+			     <div class="timg1"></div>
+				 <div class="bimg1">
+				     <div class="name1">
+					    <h3 style="text-transform:uppercase;">Joman helal</h3>
+					 </div>
+					 <div class="icons">
+					     <a href="#"><img src="images/img3.jpg"/></a>
+						 <a href="#"><img src="images/img4.jpg"/></a>
+						 <a href="#"><img src="images/img5.jpg"/></a>
+						 <a href="#"><img src="images/img6.jpg"/></a>
+						 <a href="#"><img src="images/img7.jpg"/></a>
+					 </div>
+				 </div>
+			 </div>
+			 <div class="imga1">
+			     <div class="timg1"></div>
+				 <div class="bimg1">
+				     <div class="name1">
+					    <h3 style="text-transform:uppercase;">Joman helal</h3>
+					 </div>
+					 <div class="icons">
+					     <a href="#"><img src="images/img3.jpg"/></a>
+						 <a href="#"><img src="images/img4.jpg"/></a>
+						 <a href="#"><img src="images/img5.jpg"/></a>
+						 <a href="#"><img src="images/img6.jpg"/></a>
+						 <a href="#"><img src="images/img7.jpg"/></a>
+					 </div>
+				 </div>
+			 </div>
+			 <div class="imga1">
+			     <div class="timg1"></div>
+				 <div class="bimg1">
+				     <div class="name1">
+					    <h3 style="text-transform:uppercase;">Joman helal</h3>
+					 </div>
+					 <div class="icons">
+					     <a href="#"><img src="images/img3.jpg"/></a>
+						 <a href="#"><img src="images/img4.jpg"/></a>
+						 <a href="#"><img src="images/img5.jpg"/></a>
+						 <a href="#"><img src="images/img6.jpg"/></a>
+						 <a href="#"><img src="images/img7.jpg"/></a>
+					 </div>
+				 </div>
+			 </div>
+		  </div>
+		  <!--------------------------6 boxes---------------------------------->
+		  <div id="boxgroup">
+		  <div id="rgbaa1">
+		      <div id="toptxtbox">
+			      <h4 style="color:yellow;font-size:22px;">Our Dreams</h4><br/><br/>
+				  <h1>Our Core Services</h1><br/><br/>
+				  <p>
+				     Lorem Ipsum is simply dummy text of the printing and <br/>
+				typesetting industry. Lorem Ipsum has been the industry's 
+				  </p>
+			  </div>
+			  <div class="mboxa1">
+			      <div class="boxa1">
+				      <div class="a1">
+					    <img src="images/img9.jpg" style="border-radius:50%;"/>
+					  </div>
+					  <div class="a2"><br/>
+					      <h2>System Installatin</h2><br/>
+						  <p>
+				     Lorem Ipsum is simply dummy text of the<br/> printing and 
+				typesetting industry.  
+				  </p><br/><br/>
+				  <span class="btn3" style="padding:16px 30px;"><a href="">Read More →</a></span>
+					  </div>
+				  </div>
+				  <div class="boxa1">
+				      <div class="a1">
+					    <img src="images/img9.jpg" style="border-radius:50%;"/>
+					  </div>
+					  <div class="a2"><br/>
+					      <h2>System Installatin</h2><br/>
+						  <p>
+				     Lorem Ipsum is simply dummy text of the<br/> printing and 
+				typesetting industry.  
+				  </p><br/><br/>
+				  <span class="btn3" style="padding:16px 30px;"><a href="">Read More →</a></span>
+					  </div>
+				  </div>
+				  <div class="boxa1">
+				      <div class="a1">
+					    <img src="images/img9.jpg" style="border-radius:50%;"/>
+					  </div>
+					  <div class="a2"><br/>
+					      <h2>System Installatin</h2><br/>
+						  <p>
+				     Lorem Ipsum is simply dummy text of the<br/> printing and 
+				typesetting industry.  
+				  </p><br/><br/>
+				  <span class="btn3" style="padding:16px 30px;"><a href="">Read More →</a></span>
+					  </div>
+				  </div>
+			  </div>
+			  <div class="mboxa1">
+			      <div class="boxa1">
+				      <div class="a1">
+					    <img src="images/img9.jpg" style="border-radius:50%;"/>
+					  </div>
+					  <div class="a2"><br/>
+					      <h2>System Installatin</h2><br/>
+						  <p>
+				     Lorem Ipsum is simply dummy text of the<br/> printing and 
+				typesetting industry.  
+				  </p><br/><br/>
+				  <span class="btn3" style="padding:16px 30px;"><a href="">Read More →</a></span>
+					  </div>
+				  </div>
+				  <div class="boxa1">
+				      <div class="a1">
+					    <img src="images/img9.jpg" style="border-radius:50%;"/>
+					  </div>
+					  <div class="a2"><br/>
+					      <h2>System Installatin</h2><br/>
+						  <p>
+				     Lorem Ipsum is simply dummy text of the<br/> printing and 
+				typesetting industry.  
+				  </p><br/><br/>
+				  <span class="btn3" style="padding:16px 30px;"><a href="">Read More →</a></span>
+					  </div>
+				  </div>
+				  <div class="boxa1">
+				      <div class="a1">
+					    <img src="images/img9.jpg" style="border-radius:50%;"/>
+					  </div>
+					  <div class="a2"><br/>
+					      <h2>System Installatin</h2><br/>
+						  <p>
+				     Lorem Ipsum is simply dummy text of the<br/> printing and 
+				typesetting industry.  
+				  </p><br/><br/>
+				  <span class="btn3" style="padding:16px 30px;"><a href="">Read More →</a></span>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		 </div> 
+		 <!---------------------------------another txt area---------------------------------------->
+	      <div id="txtpart3">
+		     <h4 style="color:cyan;">Latest Project</h4><br/>
+			 <h1 style="color:#000071;">Our Latest Projects</h1><br/>
+			 <p>
+			    Lorem Ipsum is simply dummy text of the printing and <br/>
+				typesetting industry. Lorem Ipsum has been the industry's 
+			 </p>
+		  </div>
+		  <!-----------------------another image group------------------------------>
+	      <div class="anotherimggroup">
+		         <div class="timgpart">
+				      <div class="imgc1">
+					     
+					  </div>
+					  <div class="imgc1"></div>
+					  <div class="imgc1"></div>
+				 </div>
+				 <div class="timgpart">
+				      <div class="imgc1"></div>
+					  <div class="imgc1"></div>
+					  <div class="imgc1"></div>
+				 </div>
+		  </div>
+	     <!----------------------------------video area-------------------------------->
+	     <div id="imgpartd1">
+	      <div id="d1rgba">
+	             <a href="https://www.youtube.com" target="_blank">
+				  <img src="images/img11.jpg" style="border-radius:50%;"/>
+				 </a> <br/><br/>
+				 <h1>We Are The Most Popular Electricity &<br/>
+				 Electrician Services Company</h1><br/>
+				 <p>
+				  Lorem Ipsum is simply dummy text of the printing and typesetting<br/> 
+				  industry. Lorem Ipsum has been the industry's 
+				</p><br/><br/>
+	      </div>
+	     </div>
+		  <!---------------------------------another txt area---------------------------------------->
+	      <div id="txtpart3">
+		     <h4 style="color:cyan;">Latest Project</h4><br/>
+			 <h1 style="color:#000071;">Our Latest Projects</h1><br/>
+			 <p>
+			    Lorem Ipsum is simply dummy text of the printing and <br/>
+				typesetting industry. Lorem Ipsum has been the industry's 
+			 </p>
+		  </div>
+		  <!----------------------------slider Area--------------------------------------------->
+		<div id="sliderarea">
+		    <div class="lslider">
+			    <div class="topparte1">
+				   <div class="z1"></div>
+				   <div class="z2">
+				     <h2 style="color:#000080;">Jabin Khan</h2>one of my client
+					 
+					</div>
+					<div class="z3"></div>
+				</div>
+				<div class="bottomparte2">
+				   <p>
+					     Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's
+						 Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+						 Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's
+						 Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+					  </p>
+				</div>
+			</div>
+		    <div class="lslider">
+			    <div class="topparte1">
+				   <div class="z1" style="background:url(images/img14.jpg);background-size:100% 100%;"></div>
+				   <div class="z2">
+				     <h2 style="color:#000080;">Jabin Khan</h2>one of my client
+					 
+					</div>
+					<div class="z3"></div>
+				</div>
+				<div class="bottomparte2">
+				   <p>
+					     Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's
+						 Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+						 Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's
+						 Lorem Ipsum is simply dummy text of the printing and 
+						 typesetting industry. Lorem Ipsum has been the industry's 
+					  </p>
+				</div>
+			</div>
+			</div>
+			<!-------------------------------above part1--------------------------------------->
+		    <div id="txtparth1">
+			      <div id="txtpart3">
+		             <h4>Blog Post</h4><br/>
+			         <h1 style="color:#000071;">Latest News</h1><br/>
+			         <p>
+			             Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's 
+			         </p>
+		          </div>
+				  <div id="imgpartf1">
+				        <div class="imgpartw1">
+						   <div class="t11"></div>
+						   <div class="b11"><br/>
+						       <h4 style="color:#000080;">Why Bussiness Planning is Important</h4>
+							   <br/><p>
+			             Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's
+Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's 						 
+			         </p>
+						   </div>
+						</div>
+						<div class="imgpartw1">
+						   <div class="t11"></div>
+						   <div class="b11"><br/>
+						       <h4 style="color:#000080;">Why Bussiness Planning is Important</h4>
+							   <br/><p>
+			             Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's
+Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's 						 
+			         </p>
+						   </div>
+						</div>
+						<div class="imgpartw1">
+						   <div class="t11"></div>
+						   <div class="b11"><br/>
+						       <h4 style="color:#000080;">Why Bussiness Planning is Important</h4>
+							   <br/><p>
+			             Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's
+Lorem Ipsum is simply dummy text of the printing and <br/>
+				         typesetting industry. Lorem Ipsum has been the industry's 						 
+			         </p>
+						   </div>
+						</div>
+				  </div>
+			</div>
+		    <div id="footer">
+			    <div class="lfooter"><br/>
+				   <img src="images/bulb.jpg" height="30px" style="transform:translateY(7px);border-radius:20px;"/>
+			   <b style="font-size:35px;">Nawarly</b><br/><br/><br/>
+			   Lorem Ipsum is simply dummy text of the printing and 
+				         typesetting industry. 
+				</div>
+				<div class="mfooter">
+				   <b style="font-size:19px;text-transform:uppercase;">privacy & tos</b><br/><br/><br/>
+			   Lorem Ipsum is simply dummy text of the printing and 
+				         typesetting industry. 
+				</div>
+				<div class="mfooter">
+				   <b style="font-size:19px;text-transform:uppercase;">Navigate</b><br/><br/><br/>
+			   Lorem Ipsum is simply dummy text of the printing and 
+				         typesetting industry. 
+				</div>
+				<div class="lfooter">
+			   <b style="font-size:19px;">CONTACT US</b><br/><br/><br/>
+			   Lorem Ipsum is simply dummy text of the printing and 
+				         typesetting industry. 
+				</div>
+			</div>
+		</div> 
+   </body>
+</html>

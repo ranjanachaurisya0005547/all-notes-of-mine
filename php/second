@@ -1,0 +1,137 @@
+1p=[Date:19/12/2020(Saturday)
+
+1)Running first php script on localhost server
+Following are the step to do it
+step 1:goto directory c://xampp/htdocs
+step 2:make a folder <test>
+step 3:Inside that folder make a php file using any textEditor sublime Text 3 or Notepad++ or vscode(choice is yours)
+step 4:write the following code snippet
+<?php echo "test"; ?>
+step 5:Make the request to the resource
+
+===========================================================================================================
+How to request to the resource?
+Client Server model
+Here client =browser
+Here Srever = It is Autonomous computer /hardware /Any Feeding Machine that can take input and perform the task 
+according to your choice .
+Note:Meaning of Autonomous=do not require any human Intervension
+
+=============================================================================================================
+In todays scenerio we are leaving in the distributed network system every resource is distributed
+=>aided and unaided network
+=>How people used to transfer message in Binary ?
+=>morse code
+=>Time lac
+
+==============================================================================================================
+Requirement:
+1)All the Resourses should be available 24*7
+2)I can Access that resources from anywhere
+3)security and backup
+Sunch kind of autonomous computer is called server
+==============================================================================================================
+=>windows time/task schedular
+=>master slave configaration(today task)
+==============================================================================================================
+Types os server:
+1)online srever
+2)offline Server
+  a)Virtually Setup Srever
+  b)Privatelly Setup Srever(ISPconfig):
+  It is a third party tool used to setup the your own Dedicated.
+Note:In Hardware Terms,There are two types of server)
+1)dedicated:
+Are meant for serving of specific  task 
+  a)Master slave Configuration based Server is a Example of Dedicated Server
+  For Example Ganga and Gomati In User Portal
+2)Non-dedicated:Are general Purpose 
+
+Online Server:Are servers from where resourses can be accessed using web as a service 
+http://protocol ftp://smp://
+Webservice:
+service provided by webserever is called webservice.
+
+offile Server:are also called LocalServers,Your Simple Laptop or pc with good configaration is capable of 
+becoming local server.
+
+In order To make Any Computer work as local Server You need a server resource stack 
+1)after Apache Installing  Your system becomes a local server.
+2)
+
+
+In order to work as a developer you should know server side language
+is such language can be 
+
+PHP,JAVA(jsp+servlet),perl,c++,Ruby,haskell,Scala,Go
+
+php is server side language which is used to make dynamic weppages
+
+Since we required apache+Srever Side Language+database+configaration
+This configaration should be independent of plateform ,it is better 
+to go with amp=xampp
+
+========================================================================================================
+all exe file located on the specific port number
+
+cd..
+cd..
+c:\>cd windows/system32/drivers/etc
+c:/windows/system32/drivers/etc>start notepad++ hosts
+c:/windows\System32\drivers
+
+
+
+For Change the localhost to another name:
+=>This command run on the cmp prompt and open the hosts  file there you need to make changes:
+cd/:
+c:>cd c:/windows/system32/drivers/etc && start notepad++ hosts
+
+=>After open the hosts file in the end of the hosts file you change the localhost to another name like below
+(127.0.0.1 www.xyz.com)
+
+===========================================================
+[::1]:port_number/folder_name/file_name
+[::1]It is foreign address of localhost(or your system)
+
+127.0.0.1:port_number/folder_name/file_name 
+====================================================================
+header('Location','.$uri'/projects')//replace dashbored to the projects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

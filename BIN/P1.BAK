@@ -1,0 +1,14 @@
+//WAP to input minutes and total days and hours
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int minute;
+  clrscr();
+  printf("Enter the value in minutes:");
+  scanf("%d",&minute);
+  printf("%dminute=%fhour",minute,(m/60));
+  printf("%dminute=%ddays",minute,(m/24*60));
+
+getch();
+}

@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+ img{
+   height:550px;
+   width:400px;
+   border:10px double green;
+   border-radius:20px;
+   margin:0px 30px;
+ }
+ button{
+    background:green;
+	border:none;
+	border-radius:20px;
+	height:45px;
+	width:40%;
+	color:white;
+ }
+ button:hover{background:orange;}
+</style>
+<script>
+  function changeimg()
+  {
+     var img1=document.getElementById("img1");
+	 var img2=document.getElementById("img2");
+	 var path1=img1.src;
+	 var path2=img2.src;
+	 img1.src=path2;
+	 img2.src=path1;
+  }	
+</script>
+</head>
+<body>
+<img src="images/p1.jpg" id="img1"/>
+<img src="images/p2.jpg" id="img2"/><br/><br/>
+<center><button onclick="changeimg()">SWAP IMAGE</button></center>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+#d1{
+height:50px;
+width:200px;
+background:maroon;
+color:white;
+font-size:20px;
+font-weight:bold;
+margin-top:6px;
+border:10px solid lime;
+text-align:center;
+padding:12px 10px;
+border-radius:6px;
+}
+</style>
+<script>
+var arr=["HTML","CSS","JAVASCRIPT","PYTHON","AngularJS","jQuery","ANDROID"];
+var res="<select id='s1' onchange='demo1()'>";
+for(i=0;i<arr.length;i++)
+{
+   res=res+"<option>"+arr[i]+"</option>";
+}
+res=res+"</select>";
+document.write(res);
+
+function demo1()
+{
+  var s1=document.getElementById("s1");
+  document.getElementById("d1").innerHTML=s1.value;
+}
+</script>
+</head>
+<body>
+<div id="d1"></div>
+</body>
+</html>

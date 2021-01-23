@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+function hideimg()
+{
+ var img1=document.getElementById("img1");
+ var btn=document.getElementById("btn1");
+ 
+ if(img1.style.display=="block")
+ {
+    img1.style.display="none";
+	btn.innerText="SHOW";
+	
+ }
+ else
+ {
+    img1.style.display="block";
+	btn.innerText="HIDE";
+ }
+}
+</script>
+</head>
+<body>
+<img id="img1" src="images/p1.jpg" height="300px"/><br/><br/>
+<button onclick="hideimg()" id="btn1">HIDE</button>
+</body>
+</html>

@@ -1,0 +1,183 @@
+How to create the unique Identify for the form control:
+name attribute of the form tag used to provide the unique identity to a particular form control
+
+Creating unique identity for forms for sever-side:
+Any  Form control either it is input box,radio button ,select box,date, time,file or everything should have a 
+unique name this can be supplied by using name attribute.
+
+<input type="text" name="something"/>
+Note:name attribute of value becomes key at the server side.
+
+if GET request:
+print_r($_GET);
+output:
+Array([something]=>value of the form control);
+
+If POST Request:
+print_r($_POST);
+output:
+Array([something] => value of the form control);
+
+2)name attribute should be unique and case sensitive.
+3)if request is sent using GET then name attribute is accessible using $_GET
+4)If Request is send using POST the name attribute is accessible using $_POST
+5)If you don't want to care about method type you can go for $_REQUEST
+which is Independent of the method Type.
+
+Super Global Variable in php:
+super global variable are used predefined in built special variables used to get the value from the any scope.
+
+Scopes:
+1)local scope
+2)gloabal scope
+3)client side scope
+4)server side scope
+
+
+
+There are two types of super global variables
+1)mangled variable: 
+underscore(_) will be used prefix of the mangled variable.
+Example:
+i)$_GET
+ii)$_POST
+iii)$_FILES
+iv)$_SERVER
+v)$_REQUEST
+vi)$_COOKIE
+vii)$_SESSION
+viii)$_ENV
+
+
+$_GET:To recieve variable or formdata from GET REQUEST 
+can be recieved if query is generated.
+Query String each variable will a key in $_GET
+Like:
+?name=ravi&class=12
+<?
+$name=$_GET['name'];
+$class=$_GET['class'];
+echo $name; //ravi
+echo $class; //12
+?>
+invailid:
+$name=$_POST['name'];
+$class=$_POST['class'];
+
+$_POST:to recieve variable or formdata from POST REQUEST
+$_REQUEST:to recieve variable from the formdata with request $_GET or $_POST.
+
+Example:
+
+
+2)unmangled variable:They do not start from the underscore(_) as prefix.
+$GLOBALS
+There context are super  they can be session access any where.
+$GLOBALS: 
+It convert any local variable to the superglobal variable and this variable is formed such that it becomes 
+unmangled variable.
+Syntax:
+supergloabal= unmangled + mangled
+
+Note:name mangling:
+Its define the variable behaviour by adding the underscore before the variable name in the class.
+Like:
+class Test
+{
+   public $name;
+   private $_salary;(one space)
+   protected $__age;(two space)
+}
+============================================================================================
+Postmartum of superglobal variable $GLOBALS:
+Examples:
+<?php
+
+$a=10; //local for the script and global for the function
+
+echo "Local variable a = {$a} <br/>";
+
+function test()
+{
+	global $a;
+	$b=20;
+	echo "Local variable of the function b= {$b}<br/>";
+	echo "Global variable of the function a= {$a} <br/>";
+}
+test();//function calling of the test
+echo "Local Variable of the a= {$a}"
+
+?>
+
+=============================================================================================
+example 2:
+1)If same variable is used inside the local of the function local variable has the highest priority.
+2)Any change done in the global variable within the function will be reflected outside the function.
+
+<?php
+$a=10;
+
+echo "Local variable a= {$a} <br/>";
+function test()
+{
+	global $a;
+	echo "The value of the global before assigning  a= {$a}<br/>";
+	$a=20;
+	echo "The value of the global after assigning inside the function a= {$a}<br/>";
+}
+    test();
+	echo "The value of the global after assigning inside the function a= {$a}<br/>";
+
+?>
+=================================================================================================
+Example 3:
+<?php
+$a=10;
+
+echo "Local variable a= {$a} <br/>";
+function test()
+{
+	global $a;
+	echo "The value of the global a= {$a}<br/>";
+	$b=20;
+	echo "The value of the local b= {$b}<br/>";
+}
+    test();
+	echo "The value of the global  a= {$a}<br/>";
+	echo "function test local variable  b= {$b}<br/>";//out of the scope
+    
+
+?>
+=====================================================================================================
+Example:
+<?php
+
+function test()
+{
+	$b=20;//local variable
+	$GLOBALS['b']=$b; //now its work globaly
+	//Here $b is not a normal variable ,now its become a superglobal variable
+	//For Proof run this print_r($GLOBALS);
+	echo "local variable value inside the function b= {$b}<br/>";
+}
+
+test();
+echo "local variable of the function access out side the function value b= {$b}";
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

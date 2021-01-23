@@ -1,0 +1,67 @@
+Switch Statement:
+Switch Statement is used when you have  t execute different  statement based on the different
+single value of a variable.It is a optional part of else-if ladder statement.
+-------------------------------------------------------------------
+syntax:
+switch(value/expression)
+{
+   case value:
+   //statement;
+   break;
+   case value:
+   //statement
+   break;
+   -------------
+   -------------
+   -------------
+   -------------
+   default:
+   //statement;
+   
+}
+-----------------------------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int month;
+   clrscr();
+   printf("Enter the number:");
+   scanf("%d",&month);
+   switch(month)
+   {
+     case 1:
+	 printf("hello !");
+	 break;
+	 case 2:
+	 printf("Bye");
+	 break;
+	 default:
+     printf("No exits !");	 
+   
+   }
+   getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

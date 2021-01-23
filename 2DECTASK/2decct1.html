@@ -1,0 +1,81 @@
+<html>
+<head>
+<style>
+*{
+margin:0px;
+padding:0px;
+}
+#outer{
+  height:500px;
+  width:998px;
+  background:url(images/p1.jpg);
+  background-size:100% 100%;
+  border:13px solid red;
+}
+#inner{
+height:500px;
+width:998px;
+background:rgba(0,193,97,.5);
+color:white;
+font-size:60px;
+line-height:450px;
+text-align:center;
+letter-spacing:7;
+text-shadow:7px 6px 4px red;
+}
+#btn{
+height:50px;
+width:30%;
+color:white;
+background:blue;
+border:none;
+border-radius:10px;
+font-size:19px;
+margin-top:22px;
+font-family:Times New Roman;
+}
+#btn:hover{background:orange;color:black;}
+</style>
+<script>
+var imgarr=["p1.jpg","p2.jpg","p3.jpg","p4.jpg","p5.jpg"];
+var c1=["rgba(0,193,97,.5)","rgba(0,0,0,.5)","rgba(0,255,255,.5)","rgba(128,0,0,.5)","rgba(0,0,255,.5)"];
+var c2=["13px solid red","13px solid blue","13px solid maroon","13px solid yellow","13px solid lime"];
+var txt=["HII RANJANA....","WELCOME","TO THE","WORLD OF","JAVASCRIPT !"];
+var i=0,j=0;
+function demo()
+{
+  var inner=document.getElementById("inner");
+  inner.innerHTML=txt[i];
+  inner.style.background=c1[i];
+  
+  var dv1=document.getElementById("outer");
+  dv1.style.background="url('images/"+imgarr[i]+"')";
+  dv1.style.backgroundSize="100% 100%";
+  dv1.style.border=c2[i];
+  
+  i++;
+  if(i==txt.length)
+  i=0;
+}
+function start()
+{
+x=setInterval(demo,1000);
+}
+function stop()
+{
+window.clearInterval(x);
+}
+</script>
+</head>
+<body onload="demo()">
+<div id="outer">
+<div id="inner">
+<b></b>
+</div>
+</div>
+<center>
+<button id="btn" onclick="start()">START</button>
+<button id="btn" onclick="stop()">STOP</button>
+</center>
+</body>
+</html>

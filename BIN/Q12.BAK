@@ -1,0 +1,12 @@
+//WAP to cnvert inches to centemeter
+#include<stdio.h>
+#include<cnio.h>
+void main()
+{
+   float inch;
+   clrsrc();
+   printf("Enter the value in inches:");
+   scanf("%f",&inch);
+   printf("%finches=%fcentimeter",inch,(inch*2.5));
+   getch();
+}

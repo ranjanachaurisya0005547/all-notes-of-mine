@@ -1,0 +1,18 @@
+//WAP to print all numbers that is divisible by 7 within 1 to 100
+#include<stdio.h>
+#include<conio.h>
+ void main()
+{
+   int i;
+   clrscr();
+   i=1;
+    while(i<=100)
+    {
+       if(i%7==0)
+       {
+	  printf("%d\t",i);
+       }
+       i++;
+    }
+  getch();
+}

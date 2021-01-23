@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int i=-1,j=1,k,l;
+  clrscr();
+  k=!i&&j;
+  l=!i||j;
+  printf("%d%d%d%d\n",i,j,k,l);
+
+  getch();
+}

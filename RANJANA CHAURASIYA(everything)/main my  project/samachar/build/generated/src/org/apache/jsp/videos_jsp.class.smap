@@ -1,0 +1,22 @@
+SMAP
+videos_jsp.java
+JSP
+*S JSP
+*F
++ 0 videos.jsp
+videos.jsp
++ 1 link.jsp
+master/link.jsp
++ 2 header.jsp
+master/header.jsp
++ 3 footer.jsp
+master/footer.jsp
+*L
+5,7:51
+5#1,11:58
+11#0,17:68
+5#2,166:85
+27#0,14:250
+5#3,250:264
+40#0,6:513
+*E

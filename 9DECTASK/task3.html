@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+*{
+margin:0px auto;
+}
+#txt1{
+height:400px;
+width:330px;
+float:left;
+background:purple;
+color:white;
+padding:45px;
+text-align:justify;
+margin:30px;
+font-size:22px;
+}
+#txt2{
+height:400px;
+width:330px;
+float:left;
+background:maroon;
+color:white;
+padding:45px;
+text-align:justify;
+margin:30px;
+font-size:22px;
+}
+button{
+border:none;
+background:blue;
+font-size:19px;
+color:white;
+height:45px;
+width:40%;
+font-family:calibri;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+var txt1=$("#txt1").text();
+var txt2=$("#txt2").text();
+$("#txt1").text(txt2);
+$("#txt2").text(txt1);
+
+})
+})
+</script>
+</head>
+<body>
+<div id="txt1">
+<h3>FIRST DIV</h3><br/>
+What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type specimen book
+when an unknown printer took a galley of type and scrambled it to make a type specimen book
+</div>
+<div id="txt2">
+<h3>SECOND DIV</h3><br/>
+Contrary to popular belief, Lorem Ipsum is not simply random text.
+ It has roots in a piece of classical Latin literature from 45 BC, making it over
+ 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+ looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+ 
+</div>
+<center>
+<button>SWAP TEXT</button>
+</center>
+</body>
+</html>

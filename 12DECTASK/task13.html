@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+#box{
+min-height:300px;
+width:200px;
+background:#ddd;
+padding:20px 30px;
+line-height:3;
+font-size:22px;
+text-align:center;
+float:left;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+var arr=["HINDI","ENGLISH","MATH","PHYSICS","CHEMISTRY","DRAWING","ECONOMICS","GEOGRAPHY"];
+setInterval(function(){
+var c="0123456789abcdef";
+var res="",color1="";
+for(i=0;i<6;i++)
+{
+var rindex=Math.ceil(Math.random()*15);
+color1+=c[rindex];
+}
+for(i=0;i<arr.length;i++)
+{
+res+="<b style='color:"+color1+";'>"+arr[i]+"</b><br/>";
+}
+$("#box").html(res);
+},2000)
+})
+</script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

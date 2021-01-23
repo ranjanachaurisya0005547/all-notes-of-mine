@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+#dv1{
+  height:300px;
+  width:400px;
+  background:skyblue;
+  border:10px solid purple;
+  border-radius:10px;
+}
+button{
+height:40px;
+width:45%;
+background:orange;
+border-radius:10px;
+border:none;
+color:white;
+font-size:20px;
+fnt-weight:bold;
+}
+</style>
+<script>
+function div()
+{
+  var dv=document.getElementById("dv1");
+  var btn=document.getElementById("btn1");
+  if(dv.style.display=="block")
+  {
+     dv.style.display="none";
+	 btn.innerText="SHOW";
+  }
+  else
+  {
+    dv.style.display="block";
+	btn.innerText="HIDE";
+  }
+}
+</script>
+</head>
+<body>
+<div id="dv1"></div>
+<br/><br/>
+<button onclick="div()" id="btn1">Show</button>
+</body>
+</html>

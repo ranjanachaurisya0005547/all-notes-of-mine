@@ -1,0 +1,281 @@
+Loop Hole:
+error key of $_FILES is used to detect error but this error key is related to processing or Illegal Error
+But not vailid or user defined error.
+$filename=$_FILES['keyname']['name'];
+$error=$_FILES['keyname']['error'];#processing error
+
+
+State Manage:
+Two types of the state.
+1)Previous state
+2)Forword state
+
+
+How to maintaining state of a page :
+state manage means:tracking user state (location path )where user migrated.
+
+There three way two manage state
+a)using url
+b)session
+c)file handling
+
+Using Url:
+We maintain the state or current url of user using query String .
+state should be maintain from the page itself.
+action="valid.upload.php?/=<?php echo basename($_SERVER['PHP_SELF']);?>";
+=>Here forward slash(/) is a key name.
+or
+<a href="target.php?/=<?php echo basename($_SERVER['PHP_SELF']);?>">
+
+Make a key in url and note down the current page name or its url.
+header("location:{$_REQUEST['/']}");
+
+then you can header(location) using keyname / for example
+header("location:{$_REQUEST['/']}");
+
+Manage State Using URL:
+Example:
+#save file-validate.php
+<html>
+<head></head>
+<body>
+<h1>$_FILES in PHP</h1>
+<form action="valid-upload.php?/=<?php echo basename($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
+<p>
+<input type="file" name="files"/>
+</p><br>
+<input type="submit"/>
+</form>
+</body>
+</html>
+
+#save valid-upload.php
+<?php
+
+if(($_SERVER['REQUEST_METHOD'])=='POST')
+{
+echo "Requrest is post";
+}else{
+	
+	header("location:{$_REQUEST['/']}");
+	
+}//end of if-else	
+
+?>
+-------------
+checking isset and unset variable:
+1)isset:its return true or false for weather is a variable is defined or not.
+
+Example:
+<?php
+$x=12;
+var_dump(isset($x));
+?>
+
+Output:
+bool(true)
+----
+2)unset: same reverse of isset it destroy the defined variable or key.
+
+example:
+<?php
+
+echo "<hr/>";
+$b='Ravi';
+echo "Value of the b = {$b}";
+echo "<hr/>";
+var_dump(isset($b));
+echo "<hr/>";
+unset($b);
+echo "<hr/>";
+echo "value of the b = {$b}";
+echo "<hr/>";
+var_dump(isset($b));
+?>
+
+Output:
+Value of the b = Ravi
+bool(true)
+value of the b =
+Notice: Undefined variable: b in C:\xampp\htdocs\php-class\file-uploading\unset.php on line 11
+
+bool(false)
+=======================================================
+How to set the default value to a undefined variable:
+We are going to use ternary operator for such logic
+
+General Syntax:
+---------------
+(condition)?true:false;
+
+Example:
+<?php
+
+$x=10;
+
+($x%2==0)?print("Even Number !"):print("Odd Number !");
+//It is a short version of the if-else
+?>
+
+Output:
+Even Number !
+-------------
+Loop Hole with Echo:
+Since echo is multi argument construct it can not be used to as a part of evaluated expression.
+
+Example 1:
+<?php
+
+$x=10;
+
+($x%2==0)?echo ("Even Number !"):echo ("Odd Number !");
+//It is a short version of the if-else
+?>
+
+output:
+Parse error: syntax error, unexpected 'echo' (T_ECHO) in 
+C:\xampp\htdocs\php-class\file-uploading\ternary.php on line 5
+---------------------------------------
+Example 2:
+
+<?php
+$a=echo("print");
+echo $a;
+?>
+
+Output:
+
+Parse error: syntax error, unexpected 'echo' (T_ECHO) in 
+C:\xampp\htdocs\php-class\file-uploading\ternary.php on line 7
+
+==========================
+if value is unset then undefined index error will raise.
+We Need to handle that 
+there are two possible ways 
+1)Suppress operator(@):@ is used to hide notice or warning error.
+2)Ternary Operater:can be to assign a default value if they not defined.
+
+Special care must be taken for get variable.
+
+Example:
+
+#save default-form.php
+<html>
+<head></head>
+<body>
+<h1>Handle Default Value </h1>
+<form action="default-set.php" method="get">
+<p>
+<input type="text" name="name"/>
+</p>
+<input type="submit"/>
+</form>
+</body>
+</html>
+
+#save default-set.php
+<?php
+#save defaultset.php
+
+$name=$_REQUEST['name'];
+echo $name;
+/*
+In this case we refresh the page without any key name then its generate the error so its not a good program
+So, for solve it You use the folowing two techniques.
+*/
+?>
+Solving error:Method 1:using suppress operator
+<?php
+#save defaultset.php
+
+@$name=$_REQUEST['name'];
+echo $name;
+
+?>
+
+Method 2:using ternary operator
+<?php
+#save defaultset.php
+
+$name=isset($_REQUEST['name'])?$_REQUEST['name']:NULL;
+if(is_null($name) or empty($name)){
+	
+	echo "name can not be empty !";
+}else{
+    echo "Your name {$name}";
+}
+
+?>
+output:
+name can not be empty !
+==========================================================
+difference b/w is_null empty and isset:
+Note:empty($name) or $name=="" same
+Note:In Php NULL is not equal to blank.
+Note:In php BLANK ==  EMPTY =='' OR ""
+
+empty():blank is allowed 
+If we print isset then its return true bcs empty means $name="";
+is_null():variable is defined with value null.
+isset():variable is defined.
+
+isset > empty > is_null
+=======================================================
+Vailidating file Uploads:
+File Validation using $_FILES:
+#save file-validate.php
+
+<html>
+<head></head>
+<body>
+<h1>$_FILES in PHP</h1>
+<form action="valid-upload.php?/=<?php echo basename($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
+<p>
+<input type="file" name="files"/>
+</p><br>
+<input type="submit" name="btn"/>
+</form>
+</body>
+</html>
+-----
+<?php
+#save valid-upload.php
+
+if(($_SERVER['REQUEST_METHOD'])=='POST')
+{
+     if(isset($_POST['btn']) and !empty($_POST['btn']))
+     {
+		//for valid request
+		$filename=isset($_FILES['files']['name'])?$_FILES['files']['name']:NULL;
+		$file_Type=isset($_FILES['files']['type'])?$_FILES['files']['type']:NULL;
+		$file_Location=isset($_FILES['files']['tmp_name'])?$_FILES['files']['tmp_name']:NULL;
+		$file_Size=isset($_FILES['files']['size'])?$_FILES['files']['size']:NULL;
+		$file_Error=isset($_FILES['files']['error'])?$_FILES['files']['error']:NULL;
+		echo "File name {$filename}<br/>";
+		echo "File Type {$file_Type}<br/>";
+		echo "File Location {$file_Location}<br/>";
+		echo "File Size {$file_Size}<br/>";
+		echo "File Error {$file_Error}<br/>";
+		
+		
+		
+	 }else{
+		header("location:{$_REQUEST['/']}"); 
+	 }
+     	 
+}else{
+	
+	header("location:{$_REQUEST['/']}");
+	
+}//end of if-else	
+
+?>
+Output:
+File name form1.html
+File Type text/html
+File Location C:\xampp\tmp\php3CE7.tmp
+File Size 1333
+File Error 0
+============================================================
+basename=return the last value of the last forward slash
+=>abosolute and relative url

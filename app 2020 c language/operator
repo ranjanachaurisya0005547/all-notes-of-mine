@@ -1,0 +1,218 @@
+input:scanf()
+Process
+output:printf()
+--------------------
+operator:
+operators are the special symbols that is is pre-defined in the program and used to
+perform a specific task.
+Operators always work on one or more operands.
+like.
+if a=10,b=10 then
+a+b=20;
+a,b->perands
++->operator
+-------------
+According to the working of the different operators,that are divided 
+into 7 parts.
+1)Arithmetic operator
+2)Relational operator
+3)Logical operator
+4)Assignment operators
+5)Conditional operator
+6)Increment & decrement operator
+7)Bitwise Operator
+------------------------------------------------
+1)Arithmetic Operator:
+Arithmetic operator are used to perform mathemetical operations.
+
+Arithemetic operator are:
++:Addition
+-:Subtraction
+/:Division
+%:Modular Division(it's can't apply on float type value.)
+*:Multiplication
+-----------
+Example:
+void main()
+{
+    int a=10,b=5;
+	printf("%d",(a+b));
+}
+
+---
+Output:
+15
+----------------------------------------------------------------------------------
+2)Relational Operator:
+Relational operator is used to define relation between
+two or more operands.It's always return either true(1) or false(0).
+
+----
+Relational Operator are-
+>  :first value is greater than second value
+<  :first value is less than second value
+== :first value and the second value both are same then it's return true
+<= :If first value is less than or equal to the second value
+>= :if the first value is greater than or equal to the second value
+!= :not equal to
+---------------------------------------------------------------------------------------
+3)Logical Operator:
+Logical Operator are used to specify the relation between two or more relation.
+It's always returns  either true or false.
+-------
+Logical perator are:
+&&:Logical AND->
+True & True=True
+True & False=False
+False & True=False
+False & False=False
+-----------
+||:Logical OR
+True||True=True
+True||False=True
+False||True=True
+False||False=False
+----------
+!:Logical NOT
+!False=True
+!True=False
+-------------------------------------------------------------------------------------
+4)Assignment Operator:
+Assignment Operator is used to assign a righthand side value to the left hand side.
+= is the Basic assignment perator.
+
+--------------------------------------------------------------------------------------
+5)Conditional perator:
+COnditional Operator is used to as the optional part of if-else statement.
+--
+Syntax:
+condition?true_block:False_block;
+
+---------------------------------------------------------------------------------------
+6)Increment & Decrement Operator:
+ Increment and decrement operator is an unary operator it is used to increase or decrease 
+ the value of a variable from 1.
+ ----
+ ++:Increment Operator
+ -------
+ Example:
+ int a=5;
+ printf("%d",a++ + ++a);
+ -----
+ ++a:pre-increment operator
+ a++:post-increment operator
+ -----------
+ --a:pre-decrement operator
+ a--:post-decrement operator
+-----------------------------------------------------------------------------------------
+7)Bitwise operator::
+Bitwise operator is used on binary values.
+Operators are:
+----
+&:Bitwise AND
+|:Bitwise OR 
+^:Exponential(XOR OPERATION)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+//Calculator
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int n1,n2;
+   char ch;
+   clrscr();
+   printf("Enter Any number:");
+   scanf("%d",&n1);
+   fflash(stdin);
+   printf("Enter the Operator:");
+   scanf("%c",&ch);
+   printf("Enter Second number:");
+   scanf("%d",&n2);
+
+   switch(ch)
+   {
+      case '+':printf("Result=%d",(n1+n2));
+      break;
+      case '-':printf("Result=%d",(n1-n2));
+      break;
+      case '*':printf("Result=%d",(n1*n2));
+      break;
+      case '/':printf("Result=%d",(n1/n2));
+      break;
+      case '%':printf("Result=%d",(n1%n2));
+      break;
+      default:printf("Invailid Operatin !");
+
+   }
+   getch();
+}

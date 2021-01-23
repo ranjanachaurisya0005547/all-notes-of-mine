@@ -1,0 +1,76 @@
+<html>
+<head>
+<style>
+#outer{
+min-height:600px;
+width:1350px;
+}
+#top{
+height:100px;
+width:1350px;
+background:black;
+color:white;
+font-size:20px;
+}
+#top h2{
+padding-top:24px;
+padding-left:52px;
+}
+#symbol{
+font-size:50px;
+float:right;
+position:absolute;
+top:20px;
+right:50px;
+}
+#bottom{
+height:300px;
+width:1250px;
+background:#e4e4e4;
+font-size:20px;
+padding:20px 50px;
+text-align:justify;
+}
+</style>
+<script src="js/jquery.js">
+</script>
+<script>
+$(document).ready(function(){
+$("#symbol").click(function(){
+var s=$("#symbol").text();
+if(s=="-")
+{
+ $("#symbol").text("+");
+ $("#bottom").hide("slow");
+}
+else
+{
+$("#symbol").text("-");
+$("#bottom").show("slow");
+}
+})
+})
+</script>
+</head>
+<body>
+<div id="outer">
+<div id="top"><h2>Collapsible</h2><b id="symbol">-</b></div>
+<div id="bottom">
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+</p>
+</div>
+</div>
+</body>
+</html>
